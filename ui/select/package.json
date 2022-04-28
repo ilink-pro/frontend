@@ -1,0 +1,35 @@
+{
+  "name": "@ui/select",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@ilink-ui-parts/select": "^0.0.1",
+    "@ui/button": "workspace:0.0.1",
+    "@ui/condition": "workspace:0.0.1",
+    "@ui/icons": "workspace:0.0.1",
+    "@ui/layout": "workspace:0.0.1",
+    "@ui/text": "workspace:0.0.1",
+    "@ui/utils": "workspace:0.0.1",
+    "downshift": "6.1.7",
+    "framer-motion": "^5.5.5",
+    "react-laag": "^2.0.3",
+    "styled-system": "^5.1.5",
+    "styled-tools": "^1.7.2"
+  },
+  "devDependencies": {
+    "@emotion/css": "^11.7.1",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "react": "^17.0.2",
+    "react-dom": "16",
+    "react-intl": "^5.24.8"
+  },
+  "peerDependencies": {
+    "@emotion/react": "*",
+    "@emotion/styled": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-intl": "*"
+  }
+}

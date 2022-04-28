@@ -1,0 +1,33 @@
+{
+  "name": "@ui/button",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "scripts": {
+    "generate-styles": "yarn ts-node --project tsconfig.generate.json src/button.generator.ts"
+  },
+  "dependencies": {
+    "@ilink-ui-parts/button": "^0.0.3",
+    "@ilink-ui-parts/styles": "^0.0.1",
+    "@ui/condition": "workspace:0.0.1",
+    "@ui/theme": "workspace:0.0.1",
+    "@ui/utils": "workspace:0.0.1",
+    "styled-tools": "^1.7.2"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@ilink-ui-generators/button": "^0.0.2",
+    "@types/styled-system": "^5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-system": "^5.1.5",
+    "ts-node": "^10.7.0"
+  },
+  "peerDependencies": {
+    "@emotion/react": "*",
+    "@emotion/styled": "*",
+    "react": "*",
+    "react-dom": "*",
+    "styled-system": "*"
+  }
+}
