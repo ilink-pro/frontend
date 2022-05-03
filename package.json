@@ -1,8 +1,9 @@
 {
-  "name": "web-client",
+  "name": "web",
   "private": true,
   "license": "BSD 3-Clause",
   "workspaces": [
+    "files/**/*",
     "site/**/*",
     "ui/**/*"
   ],
