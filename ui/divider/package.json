@@ -4,7 +4,7 @@
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
   "dependencies": {
-    "@atls-ui-proto/divider": "^0.0.2"
+    "@ilink-ui-proto/divider": "^0.0.1"
   },
   "devDependencies": {
     "@emotion/react": "^11.4.1",
