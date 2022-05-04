@@ -4,6 +4,7 @@ import { InjectRepository }     from '@nestjs/typeorm'
 
 import { Repository }           from 'typeorm'
 
+import { FilesBucketsRegistry } from '@files/buckets-config-adapter-module'
 import { Upload }               from '@files/domain-module'
 import { UploadRepository }     from '@files/domain-module'
 import { Storage }              from '@files/storage-adapter-module'
