@@ -5,7 +5,8 @@
   "workspaces": [
     "files/**/*",
     "site/**/*",
-    "ui/**/*"
+    "ui/**/*",
+    "identity/**/*"
   ],
   "resolutions": {
     "@types/react": "17",
