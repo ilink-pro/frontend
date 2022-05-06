@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "src/index.ts",
   "dependencies": {
-    "@ilink-ui-parts/select": "^0.0.1",
+    "@ilink-ui-parts/select": "^0.0.2",
     "@ui/button": "workspace:0.0.1",
     "@ui/condition": "workspace:0.0.1",
     "@ui/icons": "workspace:0.0.1",

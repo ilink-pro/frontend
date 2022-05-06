@@ -1,1 +1,1 @@
-export * from '@atls-ui-proto/divider'
+export * from '@ilink-ui-proto/divider'

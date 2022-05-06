@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "src/index.ts",
   "dependencies": {
-    "@ilink-ui-parts/layout": "^0.0.1"
+    "@ilink-ui-parts/layout": "^0.0.2"
   },
   "devDependencies": {
     "@emotion/react": "^11.4.1",

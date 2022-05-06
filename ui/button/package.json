@@ -6,8 +6,8 @@
     "generate-styles": "yarn ts-node --project tsconfig.generate.json src/button.generator.ts"
   },
   "dependencies": {
-    "@ilink-ui-parts/button": "^0.0.3",
-    "@ilink-ui-parts/styles": "^0.0.1",
+    "@ilink-ui-parts/button": "^0.0.4",
+    "@ilink-ui-parts/styles": "^0.0.2",
     "@ui/condition": "workspace:0.0.1",
     "@ui/theme": "workspace:0.0.1",
     "@ui/utils": "workspace:0.0.1",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
-    "@ilink-ui-generators/button": "^0.0.2",
+    "@ilink-ui-generators/button": "^0.0.4",
     "@types/styled-system": "^5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
