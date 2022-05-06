@@ -1,18 +1,17 @@
+import _m0  from 'protobufjs/minimal'
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
+import Long from 'long'
 
-export const protobufPackage = "tech.ilink.files.v1alpha1";
+export const protobufPackage = 'tech.ilink.files.v1alpha1'
 
 export interface File {
-  id: string;
-  url: string;
+  id: string
+  url: string
 }
 
-export const TECH_ILINK_FILES_V1ALPHA1_PACKAGE_NAME =
-  "tech.ilink.files.v1alpha1";
+export const TECH_ILINK_FILES_V1ALPHA1_PACKAGE_NAME = 'tech.ilink.files.v1alpha1'
 
 if (_m0.util.Long !== Long) {
-  _m0.util.Long = Long as any;
-  _m0.configure();
+  _m0.util.Long = Long as any
+  _m0.configure()
 }

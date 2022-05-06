@@ -1,4 +1,4 @@
-import { AppearanceStyleGenerator } from '@ilink-ui-parts-generators/button'
+import { AppearanceStyleGenerator } from '@ilink-ui-generators/button'
 
 import { theme }                    from '@ui/theme'
 

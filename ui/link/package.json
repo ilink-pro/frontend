@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "src/index.ts",
   "dependencies": {
-    "@ilink-ui-parts/link": "^0.0.2",
+    "@ilink-ui-parts/link": "^0.0.3",
     "@ui/text": "workspace:0.0.1"
   },
   "devDependencies": {

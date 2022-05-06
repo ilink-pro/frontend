@@ -16,7 +16,7 @@
     "@atls/grpc-error-status": "^0.0.3",
     "@atls/nestjs-grpc-errors": "^0.0.4",
     "@atls/nestjs-grpc-identity": "^0.0.6",
-    "@atls/nestjs-grpc-playground": "0.0.6",
+    "@atls/nestjs-grpc-playground": "0.0.8",
     "@atls/nestjs-logger": "^0.2.38",
     "@atls/nestjs-typeorm-seeding": "^0.0.5",
     "@files/application-module": "workspace:0.0.1",

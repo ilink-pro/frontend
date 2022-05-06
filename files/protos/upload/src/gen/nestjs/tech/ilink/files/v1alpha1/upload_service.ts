@@ -1,97 +1,76 @@
+import { Metadata }                     from '@grpc/grpc-js'
 /* eslint-disable */
-import { GrpcMethod, GrpcStreamMethod } from "@nestjs/microservices";
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { Observable } from "rxjs";
-import { Metadata } from "@grpc/grpc-js";
+import { GrpcMethod }                   from '@nestjs/microservices'
 
-export const protobufPackage = "tech.ilink.files.v1alpha1";
+import { GrpcStreamMethod } from '@nestjs/microservices'
+
+import _m0                              from 'protobufjs/minimal'
+import Long                             from 'long'
+import { Observable }                   from 'rxjs'
+
+export const protobufPackage = 'tech.ilink.files.v1alpha1'
 
 export interface CreateUploadRequest {
-  bucket: string;
-  name: string;
-  size: number;
+  bucket: string
+  name: string
+  size: number
 }
 
 export interface CreateUploadResponse {
-  id: string;
-  url: string;
+  id: string
+  url: string
 }
 
 export interface ConfirmUploadRequest {
-  id: string;
+  id: string
 }
 
 export interface ConfirmUploadResponse {
-  id: string;
-  url: string;
+  id: string
+  url: string
 }
 
-export const TECH_ILINK_FILES_V1ALPHA1_PACKAGE_NAME =
-  "tech.ilink.files.v1alpha1";
+export const TECH_ILINK_FILES_V1ALPHA1_PACKAGE_NAME = 'tech.ilink.files.v1alpha1'
 
 export interface UploadServiceClient {
-  createUpload(
-    request: CreateUploadRequest,
-    metadata?: Metadata
-  ): Observable<CreateUploadResponse>;
+  createUpload(request: CreateUploadRequest, metadata?: Metadata): Observable<CreateUploadResponse>
 
   confirmUpload(
     request: ConfirmUploadRequest,
     metadata?: Metadata
-  ): Observable<ConfirmUploadResponse>;
+  ): Observable<ConfirmUploadResponse>
 }
 
 export interface UploadServiceController {
   createUpload(
     request: CreateUploadRequest,
     metadata?: Metadata
-  ):
-    | Promise<CreateUploadResponse>
-    | Observable<CreateUploadResponse>
-    | CreateUploadResponse;
+  ): Promise<CreateUploadResponse> | Observable<CreateUploadResponse> | CreateUploadResponse
 
   confirmUpload(
     request: ConfirmUploadRequest,
     metadata?: Metadata
-  ):
-    | Promise<ConfirmUploadResponse>
-    | Observable<ConfirmUploadResponse>
-    | ConfirmUploadResponse;
+  ): Promise<ConfirmUploadResponse> | Observable<ConfirmUploadResponse> | ConfirmUploadResponse
 }
 
 export function UploadServiceControllerMethods() {
   return function (constructor: Function) {
-    const grpcMethods: string[] = ["createUpload", "confirmUpload"];
+    const grpcMethods: string[] = ['createUpload', 'confirmUpload']
     for (const method of grpcMethods) {
-      const descriptor: any = Reflect.getOwnPropertyDescriptor(
-        constructor.prototype,
-        method
-      );
-      GrpcMethod("UploadService", method)(
-        constructor.prototype[method],
-        method,
-        descriptor
-      );
+      const descriptor: any = Reflect.getOwnPropertyDescriptor(constructor.prototype, method)
+      GrpcMethod('UploadService', method)(constructor.prototype[method], method, descriptor)
     }
-    const grpcStreamMethods: string[] = [];
+    const grpcStreamMethods: string[] = []
     for (const method of grpcStreamMethods) {
-      const descriptor: any = Reflect.getOwnPropertyDescriptor(
-        constructor.prototype,
-        method
-      );
-      GrpcStreamMethod("UploadService", method)(
-        constructor.prototype[method],
-        method,
-        descriptor
-      );
+      const descriptor: any = Reflect.getOwnPropertyDescriptor(constructor.prototype, method)
+      GrpcStreamMethod('UploadService', method)(constructor.prototype[method], method, descriptor)
     }
-  };
+  }
 }
 
-export const UPLOAD_SERVICE_NAME = "UploadService";
+export const UPLOAD_SERVICE_NAME = 'UploadService'
 
 if (_m0.util.Long !== Long) {
-  _m0.util.Long = Long as any;
-  _m0.configure();
+  _m0.util.Long = Long as any
+  _m0.configure()
 }

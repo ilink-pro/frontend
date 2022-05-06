@@ -7,7 +7,7 @@
   "dependencies": {
     "@atls/nestjs-grpc-errors": "^0.0.4",
     "@atls/nestjs-grpc-identity": "^0.0.6",
-    "@atls/nestjs-grpc-playground": "^0.0.6",
+    "@atls/nestjs-grpc-playground": "^0.0.8",
     "@atls/nestjs-grpc-reflection": "^0.0.3",
     "@files/application-module": "workspace:0.0.1",
     "@files/domain-module": "workspace:0.0.1",
