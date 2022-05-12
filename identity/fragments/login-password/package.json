@@ -4,11 +4,16 @@
   "license": "MIT",
   "main": "src/index.tsx",
   "devDependencies": {
-    "@atls/react-kratos-browser-flows": "0.0.1",
+    "@atls/next-identity-integration": "^0.0.8",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
+    "@identity/messages-fragment": "workspace:0.0.1",
+    "@ilink-ui-proto/button": "^0.0.1",
+    "@ilink-ui-proto/input": "^0.0.1",
     "@types/react": "^17.0.8",
     "@types/styled-system": "^5.1.11",
+    "@ui/layout": "workspace:0.0.1",
+    "@ui/link": "workspace:0.0.1",
     "react": "^17.0.2",
     "styled-system": "^5.1.5",
     "styled-tools": "^1.7.2"

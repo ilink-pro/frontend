@@ -1,5 +1,6 @@
 const colors = {
   background: {
+    white: 'rgb(255,255,255)',
     lightPurple: 'rgb(251,250,255)',
     lightPurpleAccent: 'rgb(219,216,238)',
   },
@@ -8,6 +9,7 @@ const colors = {
     accent: 'rgb(116,97,240)',
     secondary: 'rgb(153,147,189)',
     red: 'rgb(220,103,103)',
+    gray: 'rgb(155,164,167)',
   },
   button: {
     secondary: {

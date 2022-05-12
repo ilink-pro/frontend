@@ -4,7 +4,11 @@
   "license": "MIT",
   "main": "src/index.tsx",
   "devDependencies": {
-    "@types/react": "^17.0.8"
+    "@atls/next-identity-integration": "^0.0.8",
+    "@identity/auth-layout-fragment": "workspace:0.0.1",
+    "@identity/recovery-link-fragment": "workspace:0.0.1",
+    "@types/react": "^17.0.8",
+    "@ui/layout": "workspace:0.0.1"
   },
   "peerDependencies": {
     "react": "^17.0.1"

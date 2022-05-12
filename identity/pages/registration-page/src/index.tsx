@@ -1,4 +1,1 @@
-import React from 'react'
-
-// eslint-disable-next-line
-export default () => <></>
+export { RegistrationPage as default } from './registration.page'

@@ -1,4 +1,1 @@
-import React from 'react'
-
-// eslint-disable-next-line
-export default () => <></>
+export { RecoveryPage as default } from './recovery.page'
