@@ -337,18 +337,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atls/react-kratos-browser-flows@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@atls/react-kratos-browser-flows@npm:0.0.1"
-  dependencies:
-    "@ory/kratos-client": ^0.7.6-alpha.1
-    events: ^3.3.0
-  peerDependencies:
-    react: ^17.0.1
-  checksum: 8a6376a64cd3342fe028b51d875f7cf9f70d15a186918ad9dae758e6ad812e1dfa2d662531ae912f478de0a20d74ca037c231080d169abb80d399ca3295b21ca
-  languageName: node
-  linkType: hard
-
 "@atls/react-user@npm:^0.1.44":
   version: 0.1.44
   resolution: "@atls/react-user@npm:0.1.44"
@@ -781,21 +769,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.6.2, @babel/runtime@npm:^7.7.2":
+  version: 7.17.9
+  resolution: "@babel/runtime@npm:7.17.9"
+  dependencies:
+    regenerator-runtime: ^0.13.4
+  checksum: 4d56bdb82890f386d5a57c40ef985a0ed7f0a78f789377a2d0c3e8826819e0f7f16ba0fe906d9b2241c5f7ca56630ef0653f5bb99f03771f7b87ff8af4bf5fe3
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.15.4":
   version: 7.17.8
   resolution: "@babel/runtime@npm:7.17.8"
   dependencies:
     regenerator-runtime: ^0.13.4
   checksum: 68d195c1630bb91ac20e86635d292a17ebab7f361cfe79406b3f5a6cc2e59fa283ae5006568899abf869312c2b35b744bd407aea8ffdb650f1a68d07785d47e9
-  languageName: node
-  linkType: hard
-
-"@babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.7.2":
-  version: 7.17.9
-  resolution: "@babel/runtime@npm:7.17.9"
-  dependencies:
-    regenerator-runtime: ^0.13.4
-  checksum: 4d56bdb82890f386d5a57c40ef985a0ed7f0a78f789377a2d0c3e8826819e0f7f16ba0fe906d9b2241c5f7ca56630ef0653f5bb99f03771f7b87ff8af4bf5fe3
   languageName: node
   linkType: hard
 
@@ -998,7 +986,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.1.5, @emotion/react@npm:^11.4.1, @emotion/react@npm:^11.7.1":
+"@emotion/react@npm:^11.4.1, @emotion/react@npm:^11.7.1, @emotion/react@npm:^11.9.0":
   version: 11.9.0
   resolution: "@emotion/react@npm:11.9.0"
   dependencies:
@@ -1041,7 +1029,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:^11.3.0, @emotion/styled@npm:^11.6.0":
+"@emotion/styled@npm:^11.3.0, @emotion/styled@npm:^11.6.0, @emotion/styled@npm:^11.8.1":
   version: 11.8.1
   resolution: "@emotion/styled@npm:11.8.1"
   dependencies:
@@ -1713,14 +1701,19 @@ __metadata:
     "@identity/logout-page": "workspace:0.0.1"
     "@identity/recovery-page": "workspace:0.0.1"
     "@identity/registration-page": "workspace:0.0.1"
+    "@sumsub/websdk": ^1.3.0
+    "@sumsub/websdk-react": ^1.3.0
     "@types/node": ^17.0.0
     "@types/react": ^17.0.37
     "@types/react-dom": ^17.0.11
     "@ui/theme": "workspace:0.0.1"
+    axios: ^0.27.2
+    crypto: ^1.0.1
     next: ^12.1.0
     react: ^17.0.2
     react-dom: ^17.0.2
     react-intl: 5.23.0
+    react-query: ^3.39.0
     typescript: ^4.5.4
   languageName: unknown
   linkType: soft
@@ -1729,9 +1722,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@identity/auth-layout-fragment@workspace:identity/fragments/auth-layout"
   dependencies:
-    "@atls/react-kratos-browser-flows": 0.0.1
-    "@emotion/react": ^11.1.5
-    "@emotion/styled": ^11.3.0
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@types/react": ^17.0.8
     "@types/styled-system": ^5.1.11
     "@ui/layout": "workspace:0.0.1"
@@ -1749,8 +1741,8 @@ __metadata:
   resolution: "@identity/error-fragment@workspace:identity/fragments/error"
   dependencies:
     "@atls/next-identity-integration": ^0.0.8
-    "@atls/react-kratos-browser-flows": 0.0.1
-    "@emotion/styled": ^11.6.0
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@ilink-ui-proto/button": 0.0.1
     "@types/react": ^17.0.38
     "@types/styled-system": ^5.1.15
@@ -1769,13 +1761,16 @@ __metadata:
   resolution: "@identity/error-page@workspace:identity/pages/error-page"
   dependencies:
     "@atls/next-identity-integration": ^0.0.8
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@identity/auth-layout-fragment": "workspace:0.0.1"
     "@identity/error-fragment": "workspace:0.0.1"
     "@types/react": ^17.0.38
+    react-intl: ^5.25.1
   peerDependencies:
     react: ^17.0.1
     react-helmet: ^6.1.0
-    react-intl: ^5.18.1
+    react-intl: "*"
   languageName: unknown
   linkType: soft
 
@@ -1783,6 +1778,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@identity/index-page@workspace:identity/pages/index-page"
   dependencies:
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@types/cookie": ^0.4.1
     "@types/cookies": ^0.7.7
     "@types/react": ^17.0.38
@@ -1794,18 +1791,34 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@identity/kyc-fragment@workspace:identity/fragments/kyc":
+"@identity/kyc-fragment@workspace:0.0.1, @identity/kyc-fragment@workspace:identity/fragments/kyc":
   version: 0.0.0-use.local
   resolution: "@identity/kyc-fragment@workspace:identity/fragments/kyc"
   dependencies:
-    "@atls/react-kratos-browser-flows": 0.0.1
-    "@emotion/styled": ^11.3.0
+    "@atls/next-identity-integration": ^0.0.8
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
+    "@ilink-ui-proto/button": 0.0.1
+    "@ilink-ui-proto/input": 0.0.1
+    "@sumsub/websdk-react": ^1.3.0
     "@types/react": ^17.0.8
     "@types/styled-system": ^5.1.11
+    "@ui/condition": "workspace:0.0.1"
+    "@ui/layout": "workspace:0.0.1"
+    "@ui/text": "workspace:0.0.1"
+    axios: ^0.27.2
+    crypto: ^1.0.1
+    react-intl: ^5.25.1
+    react-query: ^3.39.0
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
+    "@sumsub/websdk-react": "*"
+    axios: "*"
+    crypto: "*"
     react: ^17.0.1
+    react-intl: "*"
+    react-query: "*"
   languageName: unknown
   linkType: soft
 
@@ -1813,12 +1826,25 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@identity/kyc-page@workspace:identity/pages/kyc-page"
   dependencies:
+    "@atls/next-identity-integration": ^0.0.8
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
+    "@identity/kyc-fragment": "workspace:0.0.1"
     "@types/cookie": ^0
     "@types/cookies": ^0
     "@types/react": ^17.0.8
+    axios: ^0.27.2
+    crypto: ^1.0.1
     js-cookie: ^3.0.1
+    react-intl: ^5.25.1
+    react-query: ^3.39.0
   peerDependencies:
+    "@sumsub/websdk-react": "*"
+    axios: "*"
+    crypto: "*"
     react: ^17.0.1
+    react-intl: "*"
+    react-query: "*"
   languageName: unknown
   linkType: soft
 
@@ -1827,12 +1853,16 @@ __metadata:
   resolution: "@identity/login-page@workspace:identity/pages/login-page"
   dependencies:
     "@atls/next-identity-integration": ^0.0.8
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@identity/auth-layout-fragment": "workspace:0.0.1"
     "@identity/login-password-fragment": "workspace:0.0.1"
     "@types/react": ^17.0.8
     "@ui/layout": "workspace:0.0.1"
+    react-intl: ^5.25.1
   peerDependencies:
     react: ^17.0.1
+    react-intl: "*"
   languageName: unknown
   linkType: soft
 
@@ -1841,20 +1871,22 @@ __metadata:
   resolution: "@identity/login-password-fragment@workspace:identity/fragments/login-password"
   dependencies:
     "@atls/next-identity-integration": ^0.0.8
-    "@emotion/react": ^11.1.5
-    "@emotion/styled": ^11.3.0
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@identity/messages-fragment": "workspace:0.0.1"
-    "@ilink-ui-proto/button": ^0.0.1
-    "@ilink-ui-proto/input": ^0.0.1
+    "@ilink-ui-proto/button": 0.0.1
+    "@ilink-ui-proto/input": 0.0.1
     "@types/react": ^17.0.8
     "@types/styled-system": ^5.1.11
     "@ui/layout": "workspace:0.0.1"
     "@ui/link": "workspace:0.0.1"
     react: ^17.0.2
+    react-intl: ^5.25.1
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
     react: ^17.0.1
+    react-intl: "*"
   languageName: unknown
   linkType: soft
 
@@ -1863,6 +1895,8 @@ __metadata:
   resolution: "@identity/logout-page@workspace:identity/pages/logout-page"
   dependencies:
     "@atls/next-identity-integration": ^0.0.8
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@identity/auth-layout-fragment": "workspace:^"
     "@types/react": ^17.0.37
     react-helmet: ^6.1.0
@@ -1878,8 +1912,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@identity/messages-fragment@workspace:identity/fragments/messages"
   dependencies:
-    "@emotion/react": ^11.7.1
-    "@emotion/styled": ^11.6.0
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@ory/kratos-client": ^0.8.2-alpha.1
     "@types/react": ^17.0.38
     "@types/styled-system": ^5.1.15
@@ -1898,19 +1932,21 @@ __metadata:
   resolution: "@identity/recovery-link-fragment@workspace:identity/fragments/recovery-link"
   dependencies:
     "@atls/next-identity-integration": ^0.0.8
-    "@emotion/react": ^11.1.5
-    "@emotion/styled": ^11.3.0
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@identity/messages-fragment": "workspace:0.0.1"
-    "@ilink-ui-proto/button": ^0.0.1
-    "@ilink-ui-proto/input": ^0.0.1
+    "@ilink-ui-proto/button": 0.0.1
+    "@ilink-ui-proto/input": 0.0.1
     "@types/react": ^17.0.8
     "@types/styled-system": ^5.1.11
     "@ui/layout": "workspace:0.0.1"
     react: ^17.0.2
+    react-intl: ^5.25.1
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
     react: ^17.0.1
+    react-intl: "*"
   languageName: unknown
   linkType: soft
 
@@ -1919,12 +1955,16 @@ __metadata:
   resolution: "@identity/recovery-page@workspace:identity/pages/recovery-page"
   dependencies:
     "@atls/next-identity-integration": ^0.0.8
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@identity/auth-layout-fragment": "workspace:0.0.1"
     "@identity/recovery-link-fragment": "workspace:0.0.1"
     "@types/react": ^17.0.8
     "@ui/layout": "workspace:0.0.1"
+    react-intl: ^5.25.1
   peerDependencies:
     react: ^17.0.1
+    react-intl: "*"
   languageName: unknown
   linkType: soft
 
@@ -1932,9 +1972,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@identity/recovery-password-fragment@workspace:identity/fragments/recovery-password"
   dependencies:
-    "@atls/react-kratos-browser-flows": 0.0.1
-    "@emotion/react": ^11.1.5
-    "@emotion/styled": ^11.3.0
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@types/react": ^17.0.8
     "@types/styled-system": ^5.1.11
     react: ^17.0.2
@@ -1950,12 +1989,16 @@ __metadata:
   resolution: "@identity/registration-page@workspace:identity/pages/registration-page"
   dependencies:
     "@atls/next-identity-integration": ^0.0.8
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@identity/auth-layout-fragment": "workspace:0.0.1"
     "@identity/registration-password-fragment": "workspace:0.0.1"
     "@types/react": ^17.0.8
     "@ui/layout": "workspace:0.0.1"
+    react-intl: ^5.25.1
   peerDependencies:
     react: ^17.0.1
+    react-intl: "*"
   languageName: unknown
   linkType: soft
 
@@ -1964,21 +2007,23 @@ __metadata:
   resolution: "@identity/registration-password-fragment@workspace:identity/fragments/registration-password"
   dependencies:
     "@atls/next-identity-integration": ^0.0.8
-    "@emotion/react": ^11.1.5
-    "@emotion/styled": ^11.3.0
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
     "@identity/messages-fragment": "workspace:0.0.1"
-    "@ilink-ui-proto/button": ^0.0.1
-    "@ilink-ui-proto/input": ^0.0.1
+    "@ilink-ui-proto/button": 0.0.1
+    "@ilink-ui-proto/input": 0.0.1
     "@types/react": ^17.0.8
     "@types/styled-system": ^5.1.11
     "@ui/condition": "workspace:0.0.1"
     "@ui/layout": "workspace:0.0.1"
     "@ui/text": "workspace:0.0.1"
     react: ^17.0.2
+    react-intl: ^5.25.1
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
     react: ^17.0.1
+    react-intl: "*"
   languageName: unknown
   linkType: soft
 
@@ -2106,7 +2151,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ilink-ui-proto/button@npm:0.0.1, @ilink-ui-proto/button@npm:^0.0.1":
+"@ilink-ui-proto/button@npm:0.0.1":
   version: 0.0.1
   resolution: "@ilink-ui-proto/button@npm:0.0.1"
   dependencies:
@@ -2135,7 +2180,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ilink-ui-proto/input@npm:^0.0.1":
+"@ilink-ui-proto/input@npm:0.0.1":
   version: 0.0.1
   resolution: "@ilink-ui-proto/input@npm:0.0.1"
   dependencies:
@@ -3020,15 +3065,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ory/kratos-client@npm:^0.7.6-alpha.1":
-  version: 0.7.6-alpha.7
-  resolution: "@ory/kratos-client@npm:0.7.6-alpha.7"
-  dependencies:
-    axios: ^0.21.1
-  checksum: c4c35e4625334ea6ee2878e9447f86ea8b827882e59a97433db2cddb3b2f470a9b47cfa6d861775afdaf61ab6635c89f3e6dd460d218b9697a830c8f23101d24
-  languageName: node
-  linkType: hard
-
 "@ory/kratos-client@npm:^0.8.2-alpha.1":
   version: 0.8.2-alpha.1
   resolution: "@ory/kratos-client@npm:0.8.2-alpha.1"
@@ -3339,6 +3375,23 @@ __metadata:
     "@styled-system/core": ^5.1.2
     "@styled-system/css": ^5.1.5
   checksum: becddaa0269004bd788e25d6b5c6f92af1c87009fe31844b4c19bba5233d54e59cfc4c007f8825d812db84c8d1bade5f8a99eb744db41c9124e0c145db64b5b5
+  languageName: node
+  linkType: hard
+
+"@sumsub/websdk-react@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@sumsub/websdk-react@npm:1.3.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 8b6a60eec406c8cd9f9c69aafe2fb3c9be5ad80f9fa87abe80b127c9c638ae645112ccdef75a305150f4da90f7260922ea618f43f4ec5e1c67821d13add78523
+  languageName: node
+  linkType: hard
+
+"@sumsub/websdk@npm:*, @sumsub/websdk@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@sumsub/websdk@npm:1.3.0"
+  checksum: aba9d347edeb10fdb928dfae09a98c9640b90333c809ef3f8da7d99c82ab87a4fc5e957db441b237a2a3072299787f783280e991ad72fe664f9be74c7b3df4c1
   languageName: node
   linkType: hard
 
@@ -5540,6 +5593,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.27.2":
+  version: 0.27.2
+  resolution: "axios@npm:0.27.2"
+  dependencies:
+    follow-redirects: ^1.14.9
+    form-data: ^4.0.0
+  checksum: 38cb7540465fe8c4102850c4368053c21683af85c5fdf0ea619f9628abbcb59415d1e22ebc8a6390d2bbc9b58a9806c874f139767389c862ec9b772235f06854
+  languageName: node
+  linkType: hard
+
 "babel-jest@npm:^27.5.1":
   version: 27.5.1
   resolution: "babel-jest@npm:27.5.1"
@@ -5667,6 +5730,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"big-integer@npm:^1.6.16":
+  version: 1.6.51
+  resolution: "big-integer@npm:1.6.51"
+  checksum: 3d444173d1b2e20747e2c175568bedeebd8315b0637ea95d75fd27830d3b8e8ba36c6af40374f36bdaea7b5de376dcada1b07587cb2a79a928fccdb6e6e3c518
+  languageName: node
+  linkType: hard
+
 "big.js@npm:^5.2.2":
   version: 5.2.2
   resolution: "big.js@npm:5.2.2"
@@ -5760,6 +5830,22 @@ __metadata:
   dependencies:
     fill-range: ^7.0.1
   checksum: e2a8e769a863f3d4ee887b5fe21f63193a891c68b612ddb4b68d82d1b5f3ff9073af066c343e9867a393fe4c2555dcb33e89b937195feb9c1613d259edfcd459
+  languageName: node
+  linkType: hard
+
+"broadcast-channel@npm:^3.4.1":
+  version: 3.7.0
+  resolution: "broadcast-channel@npm:3.7.0"
+  dependencies:
+    "@babel/runtime": ^7.7.2
+    detect-node: ^2.1.0
+    js-sha3: 0.8.0
+    microseconds: 0.2.0
+    nano-time: 1.0.0
+    oblivious-set: 1.0.0
+    rimraf: 3.0.2
+    unload: 2.2.0
+  checksum: 803794c48dcce7f03aca69797430bd8b1c4cfd70b7de22079cd89567eeffaa126a1db98c7c2d86af8131d9bb41ed367c0fef96dfb446151c927b831572c621fc
   languageName: node
   linkType: hard
 
@@ -6585,6 +6671,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"crypto@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "crypto@npm:1.0.1"
+  checksum: 087fe3165bd94c333a49e6ed66a0193911f63eac38a24f379b3001a5fe260a59c413646e53a0f67875ba13902b2686d81dc703cb2c147a4ec727dcdc04e5645e
+  languageName: node
+  linkType: hard
+
 "cssom@npm:^0.4.4":
   version: 0.4.4
   resolution: "cssom@npm:0.4.4"
@@ -6847,6 +6940,13 @@ __metadata:
   version: 2.1.0
   resolution: "detect-newline@npm:2.1.0"
   checksum: c55146fd5b97a9ce914f17f85a01466c9e8679289e2d390588b027a58f2e090dbc38457923072369c603b8904f982f87b78fee17e48d5706f35571642f4599f8
+  languageName: node
+  linkType: hard
+
+"detect-node@npm:^2.0.4, detect-node@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "detect-node@npm:2.1.0"
+  checksum: 832184ec458353e41533ac9c622f16c19f7c02d8b10c303dfd3a756f56be93e903616c0bb2d4226183c9351c15fc0b3dba41a17a2308262afabcfa3776e6ae6e
   languageName: node
   linkType: hard
 
@@ -7383,7 +7483,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"events@npm:^3.2.0, events@npm:^3.3.0":
+"events@npm:^3.2.0":
   version: 3.3.0
   resolution: "events@npm:3.3.0"
   checksum: f6f487ad2198aa41d878fa31452f1a3c00958f46e9019286ff4787c84aac329332ab45c9cdc8c445928fc6d7ded294b9e005a7fce9426488518017831b272780
@@ -7694,7 +7794,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.0":
+"follow-redirects@npm:^1.14.0, follow-redirects@npm:^1.14.9":
   version: 1.15.0
   resolution: "follow-redirects@npm:1.15.0"
   peerDependenciesMeta:
@@ -7719,6 +7819,17 @@ __metadata:
     combined-stream: ^1.0.8
     mime-types: ^2.1.12
   checksum: b019e8d35c8afc14a2bd8a7a92fa4f525a4726b6d5a9740e8d2623c30e308fbb58dc8469f90415a856698933c8479b01646a9dff33c87cc4e76d72aedbbf860d
+  languageName: node
+  linkType: hard
+
+"form-data@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "form-data@npm:4.0.0"
+  dependencies:
+    asynckit: ^0.4.0
+    combined-stream: ^1.0.8
+    mime-types: ^2.1.12
+  checksum: 01135bf8675f9d5c61ff18e2e2932f719ca4de964e3be90ef4c36aacfc7b9cb2fceb5eca0b7e0190e3383fe51c5b37f4cb80b62ca06a99aaabfcfd6ac7c9328c
   languageName: node
   linkType: hard
 
@@ -9428,6 +9539,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-sha3@npm:0.8.0":
+  version: 0.8.0
+  resolution: "js-sha3@npm:0.8.0"
+  checksum: 75df77c1fc266973f06cce8309ce010e9e9f07ec35ab12022ed29b7f0d9c8757f5a73e1b35aa24840dced0dea7059085aa143d817aea9e188e2a80d569d9adce
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -10162,6 +10280,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"match-sorter@npm:^6.0.2":
+  version: 6.3.1
+  resolution: "match-sorter@npm:6.3.1"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    remove-accents: 0.4.2
+  checksum: a4b02b676ac4ce64a89a091539ee4a70a802684713bcf06f2b70787927f510fe8a2adc849f9288857a90906083ad303467e530e8723b4a9756df9994fc164550
+  languageName: node
+  linkType: hard
+
 "media-typer@npm:0.3.0":
   version: 0.3.0
   resolution: "media-typer@npm:0.3.0"
@@ -10204,6 +10332,13 @@ __metadata:
     braces: ^3.0.2
     picomatch: ^2.3.1
   checksum: 02a17b671c06e8fefeeb6ef996119c1e597c942e632a21ef589154f23898c9c6a9858526246abb14f8bca6e77734aa9dcf65476fca47cedfb80d9577d52843fc
+  languageName: node
+  linkType: hard
+
+"microseconds@npm:0.2.0":
+  version: 0.2.0
+  resolution: "microseconds@npm:0.2.0"
+  checksum: 22bfa8553f92c7d95afff6de0aeb2aecf750680d41b8c72b02098ccc5bbbb0a384380ff539292dbd3788f5dfc298682f9d38a2b4c101f5ee2c9471d53934c5fa
   languageName: node
   linkType: hard
 
@@ -10493,6 +10628,15 @@ __metadata:
   dependencies:
     node-gyp: latest
   checksum: 33e1bb4dfca447fe37d4bb5889be55de154828632c8d38646db67293a21afd61ed9909cdf1b886214a64707d935926c4e60e2b09de9edfc2ad58de31d6ce8f39
+  languageName: node
+  linkType: hard
+
+"nano-time@npm:1.0.0":
+  version: 1.0.0
+  resolution: "nano-time@npm:1.0.0"
+  dependencies:
+    big-integer: ^1.6.16
+  checksum: eef8548546cc1020625f8e44751a7263e9eddf0412a6a1a6c80a8d2be2ea7973622804a977cdfe796807b85b20ff6c8ba340e8dd20effcc7078193ed5edbb5d4
   languageName: node
   linkType: hard
 
@@ -10955,6 +11099,13 @@ __metadata:
     has-symbols: ^1.0.1
     object-keys: ^1.1.1
   checksum: d621d832ed7b16ac74027adb87196804a500d80d9aca536fccb7ba48d33a7e9306a75f94c1d29cbfa324bc091bfc530bc24789568efdaee6a47fcfa298993814
+  languageName: node
+  linkType: hard
+
+"oblivious-set@npm:1.0.0":
+  version: 1.0.0
+  resolution: "oblivious-set@npm:1.0.0"
+  checksum: f31740ea9c3a8242ad2324e4ebb9a35359fbc2e6e7131731a0fc1c8b7b1238eb07e4c8c631a38535243a7b8e3042b7e89f7dc2a95d2989afd6f80bd5793b0aab
   languageName: node
   linkType: hard
 
@@ -11911,7 +12062,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-intl@npm:^5.18.1, react-intl@npm:^5.24.8":
+"react-intl@npm:^5.18.1, react-intl@npm:^5.24.8, react-intl@npm:^5.25.1":
   version: 5.25.1
   resolution: "react-intl@npm:5.25.1"
   dependencies:
@@ -11965,6 +12116,24 @@ __metadata:
   version: 1.1.0
   resolution: "react-merge-refs@npm:1.1.0"
   checksum: 90884352999002d868ab9f1bcfe3222fb0f2178ed629f1da7e98e5a9b02a2c96b4aa72800db92aabd69d2483211b4be57a2088e89a11a0b660e7ada744d4ddf7
+  languageName: node
+  linkType: hard
+
+"react-query@npm:^3.39.0":
+  version: 3.39.0
+  resolution: "react-query@npm:3.39.0"
+  dependencies:
+    "@babel/runtime": ^7.5.5
+    broadcast-channel: ^3.4.1
+    match-sorter: ^6.0.2
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 18fd745ef86375c73496d6bcffdd4a6d02b48feb1e63c05bcb1881406a91ecf776543d0751b776a6ff6ffddd3d7bf31973a37df8e4eb72d1626c41b815396aef
   languageName: node
   linkType: hard
 
@@ -12078,6 +12247,13 @@ __metadata:
   version: 1.1.0
   resolution: "reinterval@npm:1.1.0"
   checksum: 801ce2cc5f4096c593071c7c361acab5c5c3a0585fb660f7cee2d1a94b44dd185359d5c9b438391a9d3d32c53eb325de2d81268038e037b336e6d4c3897e6018
+  languageName: node
+  linkType: hard
+
+"remove-accents@npm:0.4.2":
+  version: 0.4.2
+  resolution: "remove-accents@npm:0.4.2"
+  checksum: 84a6988555dea24115e2d1954db99509588d43fe55a1590f0b5894802776f7b488b3151c37ceb9e4f4b646f26b80b7325dcea2fae58bc3865df146e1fa606711
   languageName: node
   linkType: hard
 
@@ -12250,7 +12426,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^3.0.0, rimraf@npm:^3.0.2":
+"rimraf@npm:3.0.2, rimraf@npm:^3.0.0, rimraf@npm:^3.0.2":
   version: 3.0.2
   resolution: "rimraf@npm:3.0.2"
   dependencies:
@@ -13898,6 +14074,16 @@ __metadata:
   version: 2.0.0
   resolution: "universalify@npm:2.0.0"
   checksum: 2406a4edf4a8830aa6813278bab1f953a8e40f2f63a37873ffa9a3bc8f9745d06cc8e88f3572cb899b7e509013f7f6fcc3e37e8a6d914167a5381d8440518c44
+  languageName: node
+  linkType: hard
+
+"unload@npm:2.2.0":
+  version: 2.2.0
+  resolution: "unload@npm:2.2.0"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    detect-node: ^2.0.4
+  checksum: 88ba950c5ff83ab4f9bbd8f63bbf19ba09687ed3c434efd43b7338cc595bc574df8f9b155ee6eee7a435de3d3a4a226726988428977a68ba4907045f1fac5d41
   languageName: node
   linkType: hard
 

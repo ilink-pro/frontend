@@ -1,12 +1,14 @@
-import { Button }           from '@ilink-ui-proto/button'
-import { Input }            from '@ilink-ui-proto/input'
 import { FlowNode }         from '@atls/next-identity-integration'
 import { FlowNodeMessages } from '@atls/next-identity-integration'
 import { FlowSubmit }       from '@atls/next-identity-integration'
+import { Button }           from '@ilink-ui-proto/button'
+import { Input }            from '@ilink-ui-proto/input'
 
 import React                from 'react'
 import { FC }               from 'react'
+import { FormattedMessage } from 'react-intl'
 import { useState }         from 'react'
+import { useIntl }          from 'react-intl'
 
 import { FieldMessages }    from '@identity/messages-fragment'
 import { Condition }        from '@ui/condition'
@@ -21,6 +23,7 @@ interface Message {
 }
 
 const RegistrationPassword: FC = () => {
+  const { formatMessage } = useIntl()
   const [password, setPassword] = useState<string>('')
   const [confirmPassword, setConfirmPassword] = useState<string>('')
   const [message, setMessage] = useState<Message>({ id: '', type: '', text: '' })
@@ -32,7 +35,15 @@ const RegistrationPassword: FC = () => {
           <FlowNode name='traits.email'>
             {({ attributes }, value, onChange) => (
               <Row height={56}>
-                <Input placeholder='Your email' value={value} onChange={onChange} {...attributes} />
+                <Input
+                  {...attributes}
+                  placeholder={formatMessage({
+                    id: 'registration_password.your_email',
+                    defaultMessage: 'Your email',
+                  })}
+                  value={value}
+                  onChange={onChange}
+                />
               </Row>
             )}
           </FlowNode>
@@ -48,13 +59,16 @@ const RegistrationPassword: FC = () => {
             {({ attributes }, value, onChange) => (
               <Row height={56}>
                 <Input
-                  placeholder='Create your password'
+                  {...attributes}
+                  placeholder={formatMessage({
+                    id: 'registration_password.create_your_password',
+                    defaultMessage: 'Create your password',
+                  })}
                   value={value}
                   onChange={(newValue) => {
                     setPassword(newValue)
                     onChange(newValue)
                   }}
-                  {...attributes}
                 />
               </Row>
             )}
@@ -69,7 +83,10 @@ const RegistrationPassword: FC = () => {
         <Column fill>
           <Row height={56}>
             <Input
-              placeholder='Repeat your password'
+              placeholder={formatMessage({
+                id: 'registration_password.repeat_your_password',
+                defaultMessage: 'Repeat your password',
+              })}
               value={confirmPassword}
               onChange={setConfirmPassword}
               type='password'
@@ -96,7 +113,10 @@ const RegistrationPassword: FC = () => {
                 }
               }}
             >
-              Create new account
+              <FormattedMessage
+                id='registration_password.create_new_account'
+                defaultMessage='Create new account'
+              />
             </Button>
           )}
         </FlowSubmit>

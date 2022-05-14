@@ -5,8 +5,8 @@
   "main": "src/index.tsx",
   "devDependencies": {
     "@atls/next-identity-integration": "^0.0.8",
-    "@atls/react-kratos-browser-flows": "0.0.1",
-    "@emotion/styled": "^11.6.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@ilink-ui-proto/button": "0.0.1",
     "@types/react": "^17.0.38",
     "@types/styled-system": "^5.1.15",

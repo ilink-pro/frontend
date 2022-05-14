@@ -1,5 +1,5 @@
-import { Button }    from '@ilink-ui-proto/button'
 import { ErrorNode } from '@atls/next-identity-integration'
+import { Button }    from '@ilink-ui-proto/button'
 
 import React         from 'react'
 

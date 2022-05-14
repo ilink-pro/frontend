@@ -5,6 +5,8 @@
   "main": "src/index.tsx",
   "devDependencies": {
     "@atls/next-identity-integration": "^0.0.8",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@identity/auth-layout-fragment": "workspace:^",
     "@types/react": "^17.0.37",
     "react-helmet": "^6.1.0",

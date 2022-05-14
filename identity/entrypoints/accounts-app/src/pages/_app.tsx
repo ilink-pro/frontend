@@ -5,7 +5,7 @@ import { ThemeProvider } from '@ui/theme'
 
 const App = ({ Component, pageProps, ...props }) => (
   <ThemeProvider>
-    <IntlProvider locale='ru' defaultLocale='ru' messages={{}}>
+    <IntlProvider locale='en' defaultLocale='en' messages={{}}>
       <Component {...pageProps} {...props} />
     </IntlProvider>
   </ThemeProvider>
