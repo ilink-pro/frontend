@@ -1,0 +1,9 @@
+export type FirstName = string
+export type LastName = string
+export type MiddleName = string
+export type DateOfBirth = string
+export type Nationality = string
+export type CountryOfBirth = string
+export type CountryOfResidence = string
+export type ReasonsForOpening = string
+export type AccountWillBeUsedFor = string

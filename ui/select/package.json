@@ -1,7 +1,7 @@
 {
   "name": "@ui/select",
   "version": "0.0.1",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "main": "src/index.ts",
   "dependencies": {
     "@ilink-ui-parts/select": "^0.0.2",

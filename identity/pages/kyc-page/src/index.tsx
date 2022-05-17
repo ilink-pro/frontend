@@ -1,1 +1,1 @@
-export { IndexPage as default } from './index.page'
+export { KYCPage as default } from './kyc.page'

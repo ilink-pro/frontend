@@ -1,15 +1,25 @@
 {
   "name": "@identity/kyc-page",
   "version": "0.0.1",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "main": "src/index.tsx",
+  "dependencies": {
+    "@identity/kyc-fragment": "workspace:0.0.1"
+  },
   "devDependencies": {
+    "@apollo/client": "^3.6.2",
+    "@atls/next-identity-integration": "^0.0.8",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@types/cookie": "^0",
     "@types/cookies": "^0",
     "@types/react": "^17.0.8",
-    "js-cookie": "^3.0.1"
+    "react-intl": "^5.25.1"
   },
   "peerDependencies": {
-    "react": "^17.0.1"
+    "@apollo/client": "*",
+    "@sumsub/websdk-react": "*",
+    "react": "^17.0.1",
+    "react-intl": "*"
   }
 }

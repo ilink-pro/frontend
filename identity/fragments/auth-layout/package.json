@@ -1,0 +1,22 @@
+{
+  "name": "@identity/auth-layout-fragment",
+  "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@ui/layout": "workspace:0.0.1",
+    "@ui/text": "workspace:0.0.1"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@types/react": "^17.0.8",
+    "@types/styled-system": "^5.1.11",
+    "react": "^17.0.2",
+    "styled-system": "^5.1.5",
+    "styled-tools": "^1.7.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1"
+  }
+}

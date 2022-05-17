@@ -1,4 +1,1 @@
-import React from 'react'
-
-// eslint-disable-next-line
-export default () => <></>
+export { ErrorPage as default } from './error.page'

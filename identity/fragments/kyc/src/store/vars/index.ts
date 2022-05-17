@@ -1,0 +1,5 @@
+export * from './common.vars'
+export * from './basic-information.vars'
+export * from './address.vars'
+export * from './proof-of-identity-one.vars'
+export * from './proof-of-address.vars'
