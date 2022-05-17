@@ -90,7 +90,7 @@ const LoginPassword: FC = () => {
         <Layout flexBasis={12} />
         <Layout width={['100%', '100%', 240]}>
           <NextLink path='/auth/registration'>
-            <Button variant='secondary' size='large' style={{ width: 240 }}>
+            <Button variant={'secondary' as any} size='large' style={{ width: 240 }}>
               <FormattedMessage
                 id='login_password.create_account'
                 defaultMessage='Create account'

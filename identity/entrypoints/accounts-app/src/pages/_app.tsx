@@ -1,14 +1,26 @@
-import React             from 'react'
-import { IntlProvider }  from 'react-intl'
+import { ApolloClient }   from '@apollo/client'
+import { ApolloProvider } from '@apollo/client'
+import { InMemoryCache }  from '@apollo/client'
 
-import { ThemeProvider } from '@ui/theme'
+import React              from 'react'
+import { IntlProvider }   from 'react-intl'
 
-const App = ({ Component, pageProps, ...props }) => (
-  <ThemeProvider>
-    <IntlProvider locale='en' defaultLocale='en' messages={{}}>
-      <Component {...pageProps} {...props} />
-    </IntlProvider>
-  </ThemeProvider>
-)
+import { ThemeProvider }  from '@ui/theme'
 
+const App = ({ Component, pageProps, ...props }) => {
+  const client = new ApolloClient({
+    uri: 'http://localhost:4000/',
+    cache: new InMemoryCache(),
+  })
+
+  return (
+    <ThemeProvider>
+      <IntlProvider locale='en' defaultLocale='en' messages={{}}>
+        <ApolloProvider client={client}>
+          <Component {...pageProps} {...props} />
+        </ApolloProvider>
+      </IntlProvider>
+    </ThemeProvider>
+  )
+}
 export default App

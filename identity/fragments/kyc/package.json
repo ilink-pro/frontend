@@ -4,6 +4,7 @@
   "license": "BSD-3-Clause",
   "main": "src/index.tsx",
   "devDependencies": {
+    "@apollo/client": "^3.6.2",
     "@atls/next-identity-integration": "^0.0.8",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
@@ -14,20 +15,16 @@
     "@types/styled-system": "^5.1.11",
     "@ui/condition": "workspace:0.0.1",
     "@ui/layout": "workspace:0.0.1",
+    "@ui/link": "workspace:0.0.1",
     "@ui/text": "workspace:0.0.1",
-    "axios": "^0.27.2",
-    "crypto": "^1.0.1",
     "react-intl": "^5.25.1",
-    "react-query": "^3.39.0",
     "styled-system": "^5.1.5",
     "styled-tools": "^1.7.2"
   },
   "peerDependencies": {
+    "@apollo/client": "*",
     "@sumsub/websdk-react": "*",
-    "axios": "*",
-    "crypto": "*",
     "react": "^17.0.1",
-    "react-intl": "*",
-    "react-query": "*"
+    "react-intl": "*"
   }
 }

@@ -1,23 +1,51 @@
-import { Button }                from '@ilink-ui-proto/button'
-import { Input }                 from '@ilink-ui-proto/input'
+import { Button }                  from '@ilink-ui-proto/button'
+import { Input }                   from '@ilink-ui-proto/input'
+import { useReactiveVar }          from '@apollo/client'
 
-import React                     from 'react'
-import { FC }                    from 'react'
-import { FormattedMessage }      from 'react-intl'
-import { useIntl }               from 'react-intl'
+import React                       from 'react'
+import { FC }                      from 'react'
+import { FormattedMessage }        from 'react-intl'
+import { useIntl }                 from 'react-intl'
 
-import { Column }                from '@ui/layout'
-import { Box }                   from '@ui/layout'
-import { Layout }                from '@ui/layout'
-import { Row }                   from '@ui/layout'
-import { Text }                  from '@ui/text'
+import { Column }                  from '@ui/layout'
+import { Box }                     from '@ui/layout'
+import { Layout }                  from '@ui/layout'
+import { Row }                     from '@ui/layout'
+import { Text }                    from '@ui/text'
 
-import { BasicInformationProps } from './basic-information.interfaces'
-import { useStep }               from '../store'
+import { FirstName }               from '../store'
+import { MiddleName }              from '../store'
+import { LastName }                from '../store'
+import { DateOfBirth }             from '../store'
+import { Nationality }             from '../store'
+import { CountryOfBirth }          from '../store'
+import { CountryOfResidence }      from '../store'
+import { AccountWillBeUsedFor }    from '../store'
+import { ReasonsForOpening }       from '../store'
+import { BasicInformationProps }   from './basic-information.interfaces'
+import { stepVar }                 from '../store'
+import { firstNameVar }            from '../store'
+import { middleNameVar }           from '../store'
+import { lastNameVar }             from '../store'
+import { dateOfBirthVar }          from '../store'
+import { nationalityVar }          from '../store'
+import { countryOfBirthVar }       from '../store'
+import { countryOfResidenceVar }   from '../store'
+import { reasonsForOpeningVar }    from '../store'
+import { accountWillBeUsedForVar } from '../store'
 
 const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
   const { formatMessage } = useIntl()
-  const [, setStep] = useStep()
+
+  const firstName = useReactiveVar<FirstName>(firstNameVar)
+  const lastName = useReactiveVar<LastName>(lastNameVar)
+  const middleName = useReactiveVar<MiddleName>(middleNameVar)
+  const dateOfBirth = useReactiveVar<DateOfBirth>(dateOfBirthVar)
+  const nationality = useReactiveVar<Nationality>(nationalityVar)
+  const countryOfBirth = useReactiveVar<CountryOfBirth>(countryOfBirthVar)
+  const countryOfResidence = useReactiveVar<CountryOfResidence>(countryOfResidenceVar)
+  const reasonsForOpening = useReactiveVar<ReasonsForOpening>(reasonsForOpeningVar)
+  const accountWillBeUsedFor = useReactiveVar<AccountWillBeUsedFor>(accountWillBeUsedForVar)
 
   return (
     <Box width={['100%', '100%', 736]} backgroundColor='background.white'>
@@ -33,6 +61,8 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
         <Layout width='100%' flexDirection={['column', 'column', 'row']}>
           <Layout width={312} height={56}>
             <Input
+              value={firstName}
+              onChange={firstNameVar}
               placeholder={formatMessage({
                 id: 'kyc.first_name',
                 defaultMessage: 'First name',
@@ -42,6 +72,8 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
           <Layout flexBasis={32} />
           <Layout width={312} height={56}>
             <Input
+              value={lastName}
+              onChange={lastNameVar}
               placeholder={formatMessage({
                 id: 'kyc.last_name',
                 defaultMessage: 'Last name',
@@ -53,6 +85,8 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
         <Layout width='100%' flexDirection={['column', 'column', 'row']}>
           <Layout width={312} height={56}>
             <Input
+              value={middleName}
+              onChange={middleNameVar}
               placeholder={formatMessage({
                 id: 'kyc.middle_name',
                 defaultMessage: 'Middle name',
@@ -62,6 +96,8 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
           <Layout flexBasis={32} />
           <Layout width={312} height={56}>
             <Input
+              value={dateOfBirth}
+              onChange={dateOfBirthVar}
               placeholder={formatMessage({
                 id: 'kyc.date_of_birth',
                 defaultMessage: 'Date of birth',
@@ -73,6 +109,8 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
         <Layout width='100%' flexDirection={['column', 'column', 'row']}>
           <Layout width={312} height={56}>
             <Input
+              value={nationality}
+              onChange={nationalityVar}
               placeholder={formatMessage({
                 id: 'kyc.nationality',
                 defaultMessage: 'Nationality',
@@ -82,6 +120,8 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
           <Layout flexBasis={32} />
           <Layout width={312} height={56}>
             <Input
+              value={countryOfBirth}
+              onChange={countryOfBirthVar}
               placeholder={formatMessage({
                 id: 'kyc.country_of_birth',
                 defaultMessage: 'Country of birth',
@@ -93,6 +133,8 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
         <Layout width='100%' flexDirection={['column', 'column', 'row']}>
           <Layout width={312} height={56}>
             <Input
+              value={countryOfResidence}
+              onChange={countryOfResidenceVar}
               placeholder={formatMessage({
                 id: 'kyc.select_your_country_of_residence',
                 defaultMessage: 'Select your country of residence',
@@ -102,6 +144,8 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
           <Layout flexBasis={32} />
           <Layout width={312} height={56}>
             <Input
+              value={reasonsForOpening}
+              onChange={reasonsForOpeningVar}
               placeholder={formatMessage({
                 id: 'kyc.reasons_for_opening_an_account',
                 defaultMessage: 'Reasons for opening an account',
@@ -113,6 +157,8 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
         <Layout width='100%' flexDirection={['column', 'column', 'row']}>
           <Layout width={312} height={56}>
             <Input
+              value={accountWillBeUsedFor}
+              onChange={accountWillBeUsedForVar}
               placeholder={formatMessage({
                 id: 'kyc.account_will_be_used_for',
                 defaultMessage: 'Account will be used for',
@@ -138,13 +184,13 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
         <Layout flexBasis={40} />
         <Layout width={['100%', '100%', 254]} flexDirection={['column', 'column', 'row']}>
           <Row>
-            <Button variant='secondary' size='large' style={{ width: '100%' }}>
+            <Button variant={'secondary' as any} size='large' style={{ width: '100%' }}>
               <FormattedMessage id='kyc.cancel' defaultMessage='Cancel' />
             </Button>
           </Row>
           <Layout flexBasis={[16, 16, 12]} />
           <Row>
-            <Button size='large' style={{ width: '100%' }} onClick={() => setStep(nextStep)}>
+            <Button size='large' style={{ width: '100%' }} onClick={() => stepVar(nextStep)}>
               <FormattedMessage id='kyc.next' defaultMessage='Next' />
             </Button>
           </Row>

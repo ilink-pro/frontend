@@ -10,6 +10,7 @@ import { ProgressProps }    from './progress.interfaces'
 import { Step }             from './step'
 
 const convertStepName = (step: StepEnum) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { formatMessage } = useIntl()
 
   if (step === StepEnum.BASIC_INFORMATION)

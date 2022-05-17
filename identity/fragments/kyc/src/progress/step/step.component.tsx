@@ -22,25 +22,23 @@ const Index: FC = ({ children }) => (
   </Box>
 )
 
-const Step: FC<StepProps> = ({ active, index, children }) => {
-  return (
-    <Box width={[32, 32, 'auto']} height={32} opacity={!active ? 0.5 : 1} alignItems='center'>
-      <Layout width={32} height={32}>
-        <Index>{index}</Index>
-      </Layout>
-      <Layout flexShrink={0} flexBasis={16} display={['none', 'none', 'flex']} />
-      <Layout display={['none', 'none', 'flex']}>
-        <Text
-          textTransform='uppercase'
-          whiteSpace='nowrap'
-          fontWeight='semiBold'
-          fontSize='semiRegular'
-        >
-          {children}
-        </Text>
-      </Layout>
-    </Box>
-  )
-}
+const Step: FC<StepProps> = ({ active, index, children }) => (
+  <Box width={[32, 32, 'auto']} height={32} opacity={!active ? 0.5 : 1} alignItems='center'>
+    <Layout width={32} height={32}>
+      <Index>{index}</Index>
+    </Layout>
+    <Layout flexShrink={0} flexBasis={16} display={['none', 'none', 'flex']} />
+    <Layout display={['none', 'none', 'flex']}>
+      <Text
+        textTransform='uppercase'
+        whiteSpace='nowrap'
+        fontWeight='semiBold'
+        fontSize='semiRegular'
+      >
+        {children}
+      </Text>
+    </Layout>
+  </Box>
+)
 
 export { Step }

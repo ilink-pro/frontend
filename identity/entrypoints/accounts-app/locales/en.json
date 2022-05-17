@@ -48,5 +48,12 @@
   "kyc.residence_permit": "Residence permit",
   "kyc.add_document": "Add document",
   "kyc.front_side": "Front side",
-  "kyc.back_side": "Back side"
+  "kyc.back_side": "Back side",
+  "kyc.proof_your_address": "Proof your address",
+  "kyc.choose_a_document_confirming_address": "Choose a document confirming address",
+  "kyc.go_to_banxe_digital": "Go to Banxe Digital",
+  "kyc.data_verification": "Data verification",
+  "kyc.account_verification_in_progress": "Account verification in progress",
+  "kyc.unable_to_complete_account_verification": "Unable to complete account verification",
+  "kyc.verification_passed_successfully": "Verification passed successfully"
 }

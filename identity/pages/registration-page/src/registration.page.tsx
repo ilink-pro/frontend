@@ -1,4 +1,4 @@
-\import { RegistrationFlow }     from '@atls/next-identity-integration'
+import { RegistrationFlow }     from '@atls/next-identity-integration'
 
 import React                    from 'react'
 import { FormattedMessage }     from 'react-intl'

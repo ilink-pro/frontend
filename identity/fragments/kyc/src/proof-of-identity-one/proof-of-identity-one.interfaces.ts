@@ -1,6 +1,6 @@
 import { Step } from '../store'
 
-export interface ProofOfIdentity1Props {
+export interface ProofOfIdentityOneProps {
   prevStep: Step
   nextStep: Step
 }

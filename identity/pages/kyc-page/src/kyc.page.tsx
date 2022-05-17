@@ -1,15 +1,11 @@
-import { SettingsFlow }        from '@atls/next-identity-integration'
+import { SettingsFlow } from '@atls/next-identity-integration'
 
-import React                   from 'react'
-import { QueryClient }         from 'react-query'
-import { QueryClientProvider } from 'react-query'
+import React            from 'react'
 
-import { KYC }                 from '@identity/kyc-fragment'
+import { KYC }          from '@identity/kyc-fragment'
 
 export const KYCPage = () => (
   <SettingsFlow>
-    <QueryClientProvider client={new QueryClient()}>
-      <KYC />
-    </QueryClientProvider>
+    <KYC />
   </SettingsFlow>
 )
