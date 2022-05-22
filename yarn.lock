@@ -2636,6 +2636,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nestjs/cqrs@npm:^8.0.0":
+  version: 8.0.4
+  resolution: "@nestjs/cqrs@npm:8.0.4"
+  dependencies:
+    uuid: 8.3.2
+  peerDependencies:
+    "@nestjs/common": ^8.0.0
+    "@nestjs/core": ^8.0.0
+    reflect-metadata: 0.1.13
+    rxjs: ^7.2.0
+  checksum: 720fce6fdfc387bd29294d34325abe9991953c076e12e064fd8174350a974eaa6a04d86a1b6bf73595553bdb502cfbae817b3ca737decdb335a6b64d1d42e1a7
+  languageName: node
+  linkType: hard
+
 "@nestjs/cqrs@npm:^8.0.2":
   version: 8.0.3
   resolution: "@nestjs/cqrs@npm:8.0.3"
@@ -2765,6 +2779,26 @@ __metadata:
     "@nestjs/websockets": ^8.0.0
     rxjs: ^7.1.0
   checksum: 8767137f366233578df285d3160c3594ba1042f48334db6a9b09456ddd9582157c43055abb2d8c05702b1ce65cf274ade270445d7cd4a041bfd43497e6510e7a
+  languageName: node
+  linkType: hard
+
+"@nestjs/testing@npm:^8.1.1":
+  version: 8.4.5
+  resolution: "@nestjs/testing@npm:8.4.5"
+  dependencies:
+    optional: 0.1.4
+    tslib: 2.4.0
+  peerDependencies:
+    "@nestjs/common": ^8.0.0
+    "@nestjs/core": ^8.0.0
+    "@nestjs/microservices": ^8.0.0
+    "@nestjs/platform-express": ^8.0.0
+  peerDependenciesMeta:
+    "@nestjs/microservices":
+      optional: true
+    "@nestjs/platform-express":
+      optional: true
+  checksum: 273ed54aab7f7774068e6d78800edac7a12243d4be0d2114be07d13090cc74ba8ea96f453bb471291de8dc4fe7d25f187b3675780108357a8b13791d7e81cbd3
   languageName: node
   linkType: hard
 
@@ -4120,6 +4154,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^16.11.10":
+  version: 16.11.36
+  resolution: "@types/node@npm:16.11.36"
+  checksum: 878e8e2032869785dd4f73dd862042c7eb588fb9a27199f1b493a7029438ccb58f96e203c35c2e66e08307ca3f9767133cae888958c15e031982f7e9719e5e47
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:^17.0.0":
   version: 17.0.29
   resolution: "@types/node@npm:17.0.29"
@@ -4563,7 +4604,143 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@verification/verification-proto@workspace:verification/protos/verification":
+"@verification/application-module@workspace:0.0.1, @verification/application-module@workspace:verification/core/application-module":
+  version: 0.0.0-use.local
+  resolution: "@verification/application-module@workspace:verification/core/application-module"
+  dependencies:
+    "@nestjs/common": ^8.1.1
+    "@nestjs/core": ^8.1.1
+    "@nestjs/cqrs": ^8.0.0
+    "@nestjs/testing": ^8.1.1
+    "@types/node": ^16.11.10
+    "@verification/domain-module": "workspace:0.0.1"
+    uuid: ^8.3.2
+  peerDependencies:
+    "@nestjs/common": ^8.0.4
+    "@nestjs/core": ^8.0.4
+    "@nestjs/cqrs": ^8.0.0
+  languageName: unknown
+  linkType: soft
+
+"@verification/cqrs-adapter-module@workspace:0.0.1, @verification/cqrs-adapter-module@workspace:verification/adapters/cqrs-adapter":
+  version: 0.0.0-use.local
+  resolution: "@verification/cqrs-adapter-module@workspace:verification/adapters/cqrs-adapter"
+  dependencies:
+    "@nestjs/common": ^8.3.1
+    "@nestjs/core": ^8.3.1
+    "@nestjs/cqrs": ^8.0.2
+    rxjs: ^7.4.0
+  peerDependencies:
+    "@nestjs/common": ^8.0.4
+    "@nestjs/core": ^8.0.4
+    "@nestjs/cqrs": ^8.0.2
+  languageName: unknown
+  linkType: soft
+
+"@verification/domain-module@workspace:0.0.1, @verification/domain-module@workspace:verification/core/domain-module":
+  version: 0.0.0-use.local
+  resolution: "@verification/domain-module@workspace:verification/core/domain-module"
+  dependencies:
+    "@nestjs/common": ^8.1.1
+    "@nestjs/core": ^8.1.1
+    "@nestjs/cqrs": ^8.0.0
+    "@nestjs/testing": ^8.1.1
+    "@types/uuid": ^8.3.1
+    rxjs: ^7.4.0
+    uuid: ^8.3.2
+  peerDependencies:
+    "@nestjs/common": ^8.0.4
+    "@nestjs/core": ^8.0.4
+    "@nestjs/cqrs": ^8.0.0
+  languageName: unknown
+  linkType: soft
+
+"@verification/grpc-adapter-module@workspace:0.0.1, @verification/grpc-adapter-module@workspace:verification/adapters/grpc-adapter":
+  version: 0.0.0-use.local
+  resolution: "@verification/grpc-adapter-module@workspace:verification/adapters/grpc-adapter"
+  dependencies:
+    "@atls/nestjs-grpc-errors": ^0.0.4
+    "@atls/nestjs-grpc-identity": ^0.0.6
+    "@atls/nestjs-grpc-playground": ^0.0.8
+    "@atls/nestjs-grpc-reflection": ^0.0.3
+    "@nestjs/common": ^8.3.1
+    "@nestjs/core": ^8.3.1
+    "@nestjs/cqrs": ^8.0.2
+    "@nestjs/microservices": ^8.3.1
+    "@nestjs/testing": ^8.3.1
+    "@types/node": ^16.6.1
+    "@verification/application-module": "workspace:0.0.1"
+    "@verification/domain-module": "workspace:0.0.1"
+    "@verification/verification-proto": "workspace:0.0.1"
+    class-transformer: ^0.4.0
+    class-validator: ^0.13.1
+    rxjs: ^7.3.0
+    uuid: ^8.3.2
+  peerDependencies:
+    "@nestjs/common": ^8.0.4
+    "@nestjs/core": ^8.0.4
+    "@nestjs/cqrs": ^8.0.0
+    "@nestjs/microservices": ^8.0.4
+  languageName: unknown
+  linkType: soft
+
+"@verification/service-entrypoint@workspace:verification/entrypoints/service-entrypoint":
+  version: 0.0.0-use.local
+  resolution: "@verification/service-entrypoint@workspace:verification/entrypoints/service-entrypoint"
+  dependencies:
+    "@atls/grpc-error-status": ^0.0.3
+    "@atls/nestjs-grpc-errors": ^0.0.4
+    "@atls/nestjs-grpc-identity": ^0.0.6
+    "@atls/nestjs-grpc-playground": 0.0.8
+    "@atls/nestjs-logger": ^0.2.38
+    "@atls/nestjs-typeorm-seeding": ^0.0.5
+    "@grpc/grpc-js": ^1.5.7
+    "@grpc/proto-loader": ^0.6.4
+    "@nestjs/common": ^8.3.1
+    "@nestjs/core": ^8.3.1
+    "@nestjs/cqrs": ^8.0.2
+    "@nestjs/microservices": ^8.3.1
+    "@nestjs/platform-express": ^8.3.1
+    "@nestjs/testing": ^8.3.1
+    "@nestjs/typeorm": ^8.0.3
+    "@types/jsonwebtoken": ^8.5.4
+    "@types/node-fetch": ^2
+    "@types/uuid": ^8.3.1
+    "@verification/application-module": "workspace:0.0.1"
+    "@verification/cqrs-adapter-module": "workspace:0.0.1"
+    "@verification/domain-module": "workspace:0.0.1"
+    "@verification/grpc-adapter-module": "workspace:0.0.1"
+    "@verification/sumsub-adapter-module": "workspace:0.0.1"
+    "@verification/verification-proto": "workspace:0.0.1"
+    class-transformer: ^0.4.0
+    class-validator: ^0.13.1
+    get-port: ^5.1.1
+    jsonwebtoken: ^8.5.1
+    node-fetch: ^2.6.1
+    reflect-metadata: ^0.1.13
+    rxjs: ^7.3.0
+    testcontainers: ^7.18.2
+    typeorm: ^0.2.37
+    uuid: ^8.3.2
+  languageName: unknown
+  linkType: soft
+
+"@verification/sumsub-adapter-module@workspace:0.0.1, @verification/sumsub-adapter-module@workspace:verification/adapters/sumsub-adapter":
+  version: 0.0.0-use.local
+  resolution: "@verification/sumsub-adapter-module@workspace:verification/adapters/sumsub-adapter"
+  dependencies:
+    "@nestjs/common": ^8.3.1
+    "@nestjs/core": ^8.3.1
+    "@verification/domain-module": "workspace:0.0.1"
+    axios: ^0.27.2
+    rxjs: ^7.4.0
+  peerDependencies:
+    "@nestjs/common": ^8.0.4
+    "@nestjs/core": ^8.0.4
+  languageName: unknown
+  linkType: soft
+
+"@verification/verification-proto@workspace:0.0.1, @verification/verification-proto@workspace:verification/protos/verification":
   version: 0.0.0-use.local
   resolution: "@verification/verification-proto@workspace:verification/protos/verification"
   dependencies:
@@ -5740,7 +5917,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:0.27.2":
+"axios@npm:0.27.2, axios@npm:^0.27.2":
   version: 0.27.2
   resolution: "axios@npm:0.27.2"
   dependencies:

@@ -72,3 +72,16 @@ services:
       - default
     ports:
       - 3000:3000
+
+  verification:
+    image: node:16
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn workspace @verification/service-entrypoint dev
+    networks:
+      - default
+    environment:
+      - DB_HOST=db
+    depends_on:
+      - db
