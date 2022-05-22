@@ -10,4 +10,8 @@ service VerificationService {
   rpc verifyDocuments (VerifyDocumentsRequest) returns (VerifyDocumentsResponse) {}
   rpc verifyAddresses (VerifyAddressesRequest) returns (VerifyAddressesResponse) {}
   rpc getVerificationStatus (GetVerificationStatusRequest) returns (GetVerificationStatusResponse) {}
+  rpc getApplicant (GetApplicantRequest) returns (GetApplicantResponse) {}
+  rpc createApplicant (CreateApplicantRequest) returns (CreateApplicantResponse) {}
+  rpc updateAddress (UpdateAddressRequest) returns (UpdateAddressResponse) {}
+  rpc verifyApplicant (VerifyApplicantRequest) returns (VerifyApplicantResponse) {}
 }

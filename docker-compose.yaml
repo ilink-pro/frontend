@@ -66,7 +66,7 @@ services:
       - KRATOS_BROWSER_URL=http://localhost:4433/
       - KRATOS_ADMIN_URL=http://kratos:4434/
       - BASE_URL=http://localhost:3000
-      - PRIVATE_GATEWAY_URL=http://private-gateway:3000/
+      - PRIVATE_GATEWAY_URL=http://localhost:3001/
     depends_on:
       - kratos
       - private-gateway

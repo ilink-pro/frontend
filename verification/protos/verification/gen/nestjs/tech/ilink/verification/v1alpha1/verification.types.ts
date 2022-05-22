@@ -23,6 +23,36 @@ export interface AccessToken {
   userId: string;
 }
 
+export interface IdDocument {
+  type: DocumentType;
+  frontSide: Uint8Array;
+  backSide: Uint8Array;
+}
+
+export interface AddressDocument {
+  file: Uint8Array;
+}
+
+export interface Applicant {
+  id: string;
+  firstName: string;
+  lastName: string;
+  middleName: string;
+  dateOfBirth: string;
+  nationality: string;
+  countryOfBirth: string;
+  countryOfResidence: string;
+  reasonsForOpeningAnAccount: string;
+  accountWillBeUsedFor: string;
+  city: string;
+  street: string;
+  apartmentOrHouse: string;
+  postalCode: string;
+  sumsubId: string;
+  idDocument?: IdDocument;
+  addressDocuments: AddressDocument[];
+}
+
 export const TECH_ILINK_VERIFICATION_V1ALPHA1_PACKAGE_NAME =
   "tech.ilink.verification.v1alpha1";
 

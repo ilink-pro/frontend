@@ -2,8 +2,6 @@ import { Inject }                from '@nestjs/common'
 import { CommandHandler }        from '@nestjs/cqrs'
 import { ICommandHandler }       from '@nestjs/cqrs'
 
-import { v4 as uuid }            from 'uuid'
-
 import { SUMSUB_SERVICE }        from '@verification/domain-module'
 import { SumsubServicePort }     from '@verification/domain-module'
 
@@ -18,7 +16,7 @@ export class VerifyIdentityCommandHandler implements ICommandHandler<VerifyIdent
 
   async execute(command: VerifyIdentityCommand) {
     await this.sumsubService.createApplicant({
-      externalUserId: uuid(),
+      externalUserId: command.externalUserId,
       fixedInfo: {
         firstName: command.firstName,
         lastName: command.lastName,

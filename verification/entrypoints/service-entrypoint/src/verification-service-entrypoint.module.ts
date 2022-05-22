@@ -1,9 +1,10 @@
-import { Module }                        from '@nestjs/common'
+import { Module }                           from '@nestjs/common'
 
-import { VerificationApplicationModule } from '@verification/application-module'
-import { CqrsAdapterModule }             from '@verification/cqrs-adapter-module'
-import { VerificationGrpcAdapterModule } from '@verification/grpc-adapter-module'
-import { SumsubAdapterModule }           from '@verification/sumsub-adapter-module'
+import { VerificationApplicationModule }    from '@verification/application-module'
+import { CqrsAdapterModule }                from '@verification/cqrs-adapter-module'
+import { VerificationGrpcAdapterModule }    from '@verification/grpc-adapter-module'
+import { VerificationInfrastructureModule } from '@verification/infrastructure-module'
+import { SumsubAdapterModule }              from '@verification/sumsub-adapter-module'
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { SumsubAdapterModule }           from '@verification/sumsub-adapter-modu
     VerificationGrpcAdapterModule.register(),
     VerificationApplicationModule.register(),
     SumsubAdapterModule.register(),
+    VerificationInfrastructureModule.register(),
   ],
 })
 export class VerificationServiceEntrypointModule {}

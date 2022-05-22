@@ -1,2 +1,6 @@
 export * from './enums'
 export * from './ports'
+export * from './aggregates'
+export * from './events'
+export * from './repositories'
+export * from './value-objects'

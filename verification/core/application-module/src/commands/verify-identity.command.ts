@@ -12,6 +12,7 @@ export class VerifyIdentityCommand {
     public readonly city: string,
     public readonly street: string,
     public readonly apartmentOrHouse: string,
-    public readonly postalCode: string
+    public readonly postalCode: string,
+    public readonly externalUserId: string
   ) {}
 }

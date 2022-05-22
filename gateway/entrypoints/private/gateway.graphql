@@ -6,6 +6,7 @@ schema {
 type Query {
   getAccessToken(input: GetAccessTokenInput): GetAccessTokenResponse
   getVerificationStatus(input: GetVerificationStatusInput): GetVerificationStatusResponse
+  getApplicant(input: GetApplicantInput): GetApplicantResponse
   connectivityState(tryToConnect: Boolean): ConnectivityState
 }
 
@@ -28,7 +29,59 @@ enum VerificationStatus {
 }
 
 input GetVerificationStatusInput {
-  applicantId: String
+  externalUserId: String
+}
+
+type GetApplicantResponse {
+  applicant: Applicant
+}
+
+type Applicant {
+  id: String
+  firstName: String
+  lastName: String
+  middleName: String
+  dateOfBirth: String
+  nationality: String
+  countryOfBirth: String
+  countryOfResidence: String
+  reasonsForOpeningAnAccount: String
+  accountWillBeUsedFor: String
+  city: String
+  street: String
+  apartmentOrHouse: String
+  postalCode: String
+  sumsubId: String
+  idDocument: IdDocument
+  addressDocuments: [AddressDocument]
+}
+
+type IdDocument {
+  type: DocumentType
+  frontSide: Byte
+  backSide: Byte
+}
+
+enum DocumentType {
+  PASSPORT
+  ID_CARD
+  RESIDENCE_PERMIT
+}
+
+"The `Byte` scalar type represents byte value as a Buffer"
+scalar Byte
+
+type AddressDocument {
+  file: Byte
+}
+
+input GetApplicantInput {
+  query: GetApplicantRequest_Query_Input
+}
+
+input GetApplicantRequest_Query_Input {
+  id: String
+  externalId: String
 }
 
 enum ConnectivityState {
@@ -43,12 +96,14 @@ type Mutation {
   verifyIdentity(input: VerifyIdentityInput): VerifyIdentityResponse
   verifyDocuments(input: VerifyDocumentsInput): VerifyDocumentsResponse
   verifyAddresses(input: VerifyAddressesInput): VerifyAddressesResponse
+  createApplicant(input: CreateApplicantInput): CreateApplicantResponse
+  updateAddress(input: UpdateAddressInput): UpdateAddressResponse
 }
 
 type VerifyIdentityResponse {
   success: Boolean
   error: String
-  applicantId: String
+  externalUserId: String
 }
 
 input VerifyIdentityInput {
@@ -78,23 +133,14 @@ type VerifyDocumentsResponse {
 
 input VerifyDocumentsInput {
   applicantId: String
-  document: VerifyDocumentsRequest_Document_Input
+  document: IdDocument_Input
 }
 
-input VerifyDocumentsRequest_Document_Input {
+input IdDocument_Input {
   type: DocumentType
   frontSide: Byte
   backSide: Byte
 }
-
-enum DocumentType {
-  PASSPORT
-  ID_CARD
-  RESIDENCE_PERMIT
-}
-
-"The `Byte` scalar type represents byte value as a Buffer"
-scalar Byte
 
 type VerifyAddressesResponse {
   success: Boolean
@@ -103,9 +149,40 @@ type VerifyAddressesResponse {
 
 input VerifyAddressesInput {
   applicantId: String
-  addresses: [VerifyAddressesRequest_Address_Input]
+  addresses: [AddressDocument_Input]
 }
 
-input VerifyAddressesRequest_Address_Input {
+input AddressDocument_Input {
   file: Byte
+}
+
+type CreateApplicantResponse {
+  id: String
+}
+
+input CreateApplicantInput {
+  firstName: String
+  lastName: String
+  middleName: String
+  dateOfBirth: String
+  nationality: String
+  countryOfBirth: String
+  countryOfResidence: String
+  reasonsForOpeningAnAccount: String
+  accountWillBeUsedFor: String
+  city: String
+  street: String
+  apartmentOrHouse: String
+  postalCode: String
+}
+
+type UpdateAddressResponse {
+  id: String
+}
+
+input UpdateAddressInput {
+  id: String
+  city: String
+  apartmentOrHouse: String
+  postalCode: String
 }

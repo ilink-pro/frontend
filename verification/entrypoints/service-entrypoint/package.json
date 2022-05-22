@@ -34,6 +34,7 @@
     "@verification/cqrs-adapter-module": "workspace:0.0.1",
     "@verification/domain-module": "workspace:0.0.1",
     "@verification/grpc-adapter-module": "workspace:0.0.1",
+    "@verification/infrastructure-module": "workspace:0.0.1",
     "@verification/sumsub-adapter-module": "workspace:0.0.1",
     "@verification/verification-proto": "workspace:0.0.1",
     "class-transformer": "^0.4.0",

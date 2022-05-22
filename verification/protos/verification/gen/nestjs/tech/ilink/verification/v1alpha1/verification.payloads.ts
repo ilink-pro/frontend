@@ -3,7 +3,10 @@ import Long from "long";
 import _m0 from "protobufjs/minimal";
 import {
   DocumentType,
+  IdDocument,
   VerificationStatus,
+  Applicant,
+  AddressDocument,
 } from "../../../../tech/ilink/verification/v1alpha1/verification.types";
 
 export const protobufPackage = "tech.ilink.verification.v1alpha1";
@@ -14,6 +17,65 @@ export interface GetAccessTokenRequest {
 
 export interface GetAccessTokenResponse {
   accessToken: string;
+}
+
+export interface CreateApplicantRequest {
+  firstName: string;
+  lastName: string;
+  middleName: string;
+  dateOfBirth: string;
+  nationality: string;
+  countryOfBirth: string;
+  countryOfResidence: string;
+  reasonsForOpeningAnAccount: string;
+  accountWillBeUsedFor: string;
+  city: string;
+  street: string;
+  apartmentOrHouse: string;
+  postalCode: string;
+}
+
+export interface CreateApplicantResponse {
+  id: string;
+}
+
+export interface AddIdDocumentRequest {
+  id: string;
+  type: DocumentType;
+  frontSide: Uint8Array;
+  backSide: Uint8Array;
+}
+
+export interface AddIdDocumentResponse {
+  success: boolean;
+}
+
+export interface AddAddressDocumentsRequest {
+  id: string;
+  addressDocuments: AddressDocument[];
+}
+
+export interface AddAddressDocumentsResponse {
+  success: boolean;
+}
+
+export interface UpdateAddressRequest {
+  id: string;
+  city: string;
+  apartmentOrHouse: string;
+  postalCode: string;
+}
+
+export interface UpdateAddressResponse {
+  id: string;
+}
+
+export interface VerifyApplicantRequest {
+  id: string;
+}
+
+export interface VerifyApplicantResponse {
+  id: string;
 }
 
 export interface VerifyIdentityRequest {
@@ -39,18 +101,12 @@ export interface VerifyIdentityRequest_Identity {
 export interface VerifyIdentityResponse {
   success: boolean;
   error: string;
-  applicantId: string;
+  externalUserId: string;
 }
 
 export interface VerifyDocumentsRequest {
   applicantId: string;
-  document?: VerifyDocumentsRequest_Document;
-}
-
-export interface VerifyDocumentsRequest_Document {
-  type: DocumentType;
-  frontSide: Uint8Array;
-  backSide: Uint8Array;
+  document?: IdDocument;
 }
 
 export interface VerifyDocumentsResponse {
@@ -60,11 +116,7 @@ export interface VerifyDocumentsResponse {
 
 export interface VerifyAddressesRequest {
   applicantId: string;
-  addresses: VerifyAddressesRequest_Address[];
-}
-
-export interface VerifyAddressesRequest_Address {
-  file: Uint8Array;
+  addresses: AddressDocument[];
 }
 
 export interface VerifyAddressesResponse {
@@ -73,11 +125,24 @@ export interface VerifyAddressesResponse {
 }
 
 export interface GetVerificationStatusRequest {
-  applicantId: string;
+  externalUserId: string;
 }
 
 export interface GetVerificationStatusResponse {
   status: VerificationStatus;
+}
+
+export interface GetApplicantRequest {
+  query?: GetApplicantRequest_Query;
+}
+
+export interface GetApplicantRequest_Query {
+  id: string;
+  externalId: string;
+}
+
+export interface GetApplicantResponse {
+  applicant?: Applicant;
 }
 
 export const TECH_ILINK_VERIFICATION_V1ALPHA1_PACKAGE_NAME =

@@ -96,8 +96,11 @@ export class SumsubService implements SumsubServicePort {
     return response.data.token
   }
 
-  async getVerificationStatus(applicantId: string): Promise<VerificationStatus> {
-    const response = await this.request(`/resources/applicants/${applicantId}/one`, 'get')
+  async getVerificationStatus(externalUserId: string): Promise<VerificationStatus> {
+    const response = await this.request(
+      `/resources/applicants/-;externalUserId=${externalUserId}/one`,
+      'get'
+    )
 
     assert.ok(response.data.review)
 
@@ -111,8 +114,11 @@ export class SumsubService implements SumsubServicePort {
     return VerificationStatus.PENDING
   }
 
-  async getApplicant(applicantId: string): Promise<any> {
-    const response = await this.request(`/resources/applicants/${applicantId}/one`, 'get')
+  async getApplicant(externalUserId: string): Promise<any> {
+    const response = await this.request(
+      `/resources/applicants/-;externalUserId=${externalUserId}/one`,
+      'get'
+    )
 
     return { applicant: response.data }
   }

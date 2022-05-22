@@ -1,3 +1,7 @@
+export * from './add-address-document.command-handler'
+export * from './add-id-document.command-handler'
+export * from './create-applicant.command-handler'
 export * from './verify-addresses.command-handler'
 export * from './verify-documents.command-handler'
 export * from './verify-identity.command-handler'
+export * from './update-address.command-handler'

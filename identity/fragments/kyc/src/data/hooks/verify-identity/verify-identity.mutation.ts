@@ -37,7 +37,7 @@ export const VERIFY_IDENTITY = gql`
     ) {
       success
       error
-      applicantId
+      externalUserId
     }
   }
 `

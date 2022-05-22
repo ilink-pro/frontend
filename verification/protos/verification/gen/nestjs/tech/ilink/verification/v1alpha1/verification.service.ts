@@ -10,11 +10,19 @@ import {
   VerifyDocumentsResponse,
   VerifyAddressesResponse,
   GetVerificationStatusResponse,
+  GetApplicantResponse,
+  CreateApplicantResponse,
+  UpdateAddressResponse,
+  VerifyApplicantResponse,
   GetAccessTokenRequest,
   VerifyIdentityRequest,
   VerifyDocumentsRequest,
   VerifyAddressesRequest,
   GetVerificationStatusRequest,
+  GetApplicantRequest,
+  CreateApplicantRequest,
+  UpdateAddressRequest,
+  VerifyApplicantRequest,
 } from "../../../../tech/ilink/verification/v1alpha1/verification.payloads";
 
 export const protobufPackage = "tech.ilink.verification.v1alpha1";
@@ -47,6 +55,26 @@ export interface VerificationServiceClient {
     request: GetVerificationStatusRequest,
     metadata?: Metadata
   ): Observable<GetVerificationStatusResponse>;
+
+  getApplicant(
+    request: GetApplicantRequest,
+    metadata?: Metadata
+  ): Observable<GetApplicantResponse>;
+
+  createApplicant(
+    request: CreateApplicantRequest,
+    metadata?: Metadata
+  ): Observable<CreateApplicantResponse>;
+
+  updateAddress(
+    request: UpdateAddressRequest,
+    metadata?: Metadata
+  ): Observable<UpdateAddressResponse>;
+
+  verifyApplicant(
+    request: VerifyApplicantRequest,
+    metadata?: Metadata
+  ): Observable<VerifyApplicantResponse>;
 }
 
 export interface VerificationServiceController {
@@ -89,6 +117,38 @@ export interface VerificationServiceController {
     | Promise<GetVerificationStatusResponse>
     | Observable<GetVerificationStatusResponse>
     | GetVerificationStatusResponse;
+
+  getApplicant(
+    request: GetApplicantRequest,
+    metadata?: Metadata
+  ):
+    | Promise<GetApplicantResponse>
+    | Observable<GetApplicantResponse>
+    | GetApplicantResponse;
+
+  createApplicant(
+    request: CreateApplicantRequest,
+    metadata?: Metadata
+  ):
+    | Promise<CreateApplicantResponse>
+    | Observable<CreateApplicantResponse>
+    | CreateApplicantResponse;
+
+  updateAddress(
+    request: UpdateAddressRequest,
+    metadata?: Metadata
+  ):
+    | Promise<UpdateAddressResponse>
+    | Observable<UpdateAddressResponse>
+    | UpdateAddressResponse;
+
+  verifyApplicant(
+    request: VerifyApplicantRequest,
+    metadata?: Metadata
+  ):
+    | Promise<VerifyApplicantResponse>
+    | Observable<VerifyApplicantResponse>
+    | VerifyApplicantResponse;
 }
 
 export function VerificationServiceControllerMethods() {
@@ -99,6 +159,10 @@ export function VerificationServiceControllerMethods() {
       "verifyDocuments",
       "verifyAddresses",
       "getVerificationStatus",
+      "getApplicant",
+      "createApplicant",
+      "updateAddress",
+      "verifyApplicant",
     ];
     for (const method of grpcMethods) {
       const descriptor: any = Reflect.getOwnPropertyDescriptor(

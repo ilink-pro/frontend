@@ -1,3 +1,3 @@
 export class GetVerificationStatusQuery {
-  constructor(public readonly applicantId: string) {}
+  constructor(public readonly externalUserId: string) {}
 }

@@ -12,6 +12,65 @@ message GetAccessTokenResponse {
   string accessToken = 1;
 }
 
+message CreateApplicantRequest {
+  string firstName = 1;
+  string lastName = 2;
+  string middleName = 3;
+  string dateOfBirth = 4;
+  string nationality = 5;
+  string countryOfBirth = 6;
+  string countryOfResidence = 7;
+  string reasonsForOpeningAnAccount = 8;
+  string accountWillBeUsedFor = 9;
+  string city = 10;
+  string street = 11;
+  string apartmentOrHouse = 12;
+  string postalCode = 13;
+}
+
+message CreateApplicantResponse {
+  string id = 1;
+}
+
+message AddIdDocumentRequest {
+  string id = 1;
+  DocumentType type = 2;
+  bytes frontSide = 3;
+  bytes backSide = 4;
+}
+
+message AddIdDocumentResponse {
+  bool success = 1;
+}
+
+message AddAddressDocumentsRequest {
+  string id = 1;
+  repeated AddressDocument addressDocuments = 2;
+}
+
+message AddAddressDocumentsResponse {
+  bool success = 1;
+}
+
+message UpdateAddressRequest {
+  string id = 1;
+  string city = 2;
+  string apartmentOrHouse = 3;
+  string postalCode = 4;
+}
+
+message UpdateAddressResponse {
+  string id = 1;
+}
+
+message VerifyApplicantRequest {
+  string id = 1;
+}
+
+message VerifyApplicantResponse {
+  string id = 1;
+}
+
 message VerifyIdentityRequest {
   message Identity {
     string firstName = 1;
@@ -35,18 +94,12 @@ message VerifyIdentityRequest {
 message VerifyIdentityResponse {
   bool success = 1;
   string error = 2;
-  string applicantId = 3;
+  string externalUserId = 3;
 }
 
 message VerifyDocumentsRequest {
-  message Document {
-    DocumentType type = 1;
-    bytes frontSide = 2;
-    bytes backSide = 3;
-  }
-
   string applicantId = 1;
-  Document document = 2;
+  IdDocument document = 2;
 }
 
 message VerifyDocumentsResponse {
@@ -55,12 +108,8 @@ message VerifyDocumentsResponse {
 }
 
 message VerifyAddressesRequest {
-  message Address {
-    bytes file = 1;
-  }
-
   string applicantId = 1;
-  repeated Address addresses = 2;
+  repeated AddressDocument addresses = 2;
 }
 
 message VerifyAddressesResponse {
@@ -69,9 +118,22 @@ message VerifyAddressesResponse {
 }
 
 message GetVerificationStatusRequest {
-  string applicantId = 1;
+  string externalUserId = 1;
 }
 
 message GetVerificationStatusResponse {
   VerificationStatus status = 1;
+}
+
+message GetApplicantRequest {
+  message Query {
+    string id = 1;
+    string externalId = 2;
+  }
+
+  Query query = 1;
+}
+
+message GetApplicantResponse {
+  Applicant applicant = 1;
 }
