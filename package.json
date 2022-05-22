@@ -6,7 +6,8 @@
     "files/**/*",
     "site/**/*",
     "ui/**/*",
-    "identity/**/*"
+    "identity/**/*",
+    "verification/**/*"
   ],
   "resolutions": {
     "@types/react": "17",

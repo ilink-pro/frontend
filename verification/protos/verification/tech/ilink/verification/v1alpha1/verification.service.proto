@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package tech.ilink.verification.v1alpha1;
+
+import "tech/ilink/verification/v1alpha1/verification.payloads.proto";
+
+service VerificationService {
+  rpc getAccessToken (GetAccessTokenRequest) returns (GetAccessTokenResponse) {}
+  rpc verifyIdentity (VerifyIdentityRequest) returns (VerifyIdentityResponse) {}
+  rpc verifyDocuments (VerifyDocumentsRequest) returns (VerifyDocumentsResponse) {}
+  rpc verifyAddresses (VerifyAddressesRequest) returns (VerifyAddressesResponse) {}
+  rpc getVerificationStatus (GetVerificationStatusRequest) returns (GetVerificationStatusResponse) {}
+}
