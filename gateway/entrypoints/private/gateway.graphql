@@ -15,7 +15,7 @@ type GetAccessTokenResponse {
 }
 
 input GetAccessTokenInput {
-  userId: String
+  id: String
 }
 
 type GetVerificationStatusResponse {
@@ -29,7 +29,7 @@ enum VerificationStatus {
 }
 
 input GetVerificationStatusInput {
-  externalUserId: String
+  id: String
 }
 
 type GetApplicantResponse {
@@ -93,67 +93,12 @@ enum ConnectivityState {
 }
 
 type Mutation {
-  verifyIdentity(input: VerifyIdentityInput): VerifyIdentityResponse
-  verifyDocuments(input: VerifyDocumentsInput): VerifyDocumentsResponse
-  verifyAddresses(input: VerifyAddressesInput): VerifyAddressesResponse
   createApplicant(input: CreateApplicantInput): CreateApplicantResponse
   updateAddress(input: UpdateAddressInput): UpdateAddressResponse
-}
-
-type VerifyIdentityResponse {
-  success: Boolean
-  error: String
-  externalUserId: String
-}
-
-input VerifyIdentityInput {
-  identity: VerifyIdentityRequest_Identity_Input
-}
-
-input VerifyIdentityRequest_Identity_Input {
-  firstName: String
-  lastName: String
-  middleName: String
-  dateOfBirth: String
-  nationality: String
-  countryOfBirth: String
-  countryOfResidence: String
-  reasonsForOpeningAnAccount: String
-  accountWillBeUsedFor: String
-  city: String
-  street: String
-  apartmentOrHouse: String
-  postalCode: String
-}
-
-type VerifyDocumentsResponse {
-  success: Boolean
-  error: String
-}
-
-input VerifyDocumentsInput {
-  applicantId: String
-  document: IdDocument_Input
-}
-
-input IdDocument_Input {
-  type: DocumentType
-  frontSide: Byte
-  backSide: Byte
-}
-
-type VerifyAddressesResponse {
-  success: Boolean
-  error: String
-}
-
-input VerifyAddressesInput {
-  applicantId: String
-  addresses: [AddressDocument_Input]
-}
-
-input AddressDocument_Input {
-  file: Byte
+  verifyApplicant(input: VerifyApplicantInput): VerifyApplicantResponse
+  addIdDocument(input: AddIdDocumentInput): AddIdDocumentResponse
+  addAddressDocuments(input: AddAddressDocumentsInput): AddAddressDocumentsResponse
+  updateApplicant(input: UpdateApplicantInput): UpdateApplicantResponse
 }
 
 type CreateApplicantResponse {
@@ -185,4 +130,52 @@ input UpdateAddressInput {
   city: String
   apartmentOrHouse: String
   postalCode: String
+}
+
+type VerifyApplicantResponse {
+  id: String
+}
+
+input VerifyApplicantInput {
+  id: String
+}
+
+type AddIdDocumentResponse {
+  success: Boolean
+}
+
+input AddIdDocumentInput {
+  id: String
+  type: DocumentType
+  frontSide: Byte
+  backSide: Byte
+}
+
+type AddAddressDocumentsResponse {
+  success: Boolean
+}
+
+input AddAddressDocumentsInput {
+  id: String
+  addressDocuments: [AddressDocument_Input]
+}
+
+input AddressDocument_Input {
+  file: Byte
+}
+
+type UpdateApplicantResponse {
+  id: String
+}
+
+input UpdateApplicantInput {
+  firstName: String
+  lastName: String
+  middleName: String
+  dateOfBirth: String
+  nationality: String
+  countryOfBirth: String
+  countryOfResidence: String
+  reasonsForOpeningAnAccount: String
+  accountWillBeUsedFor: String
 }

@@ -90,6 +90,20 @@ services:
     depends_on:
       - db
 
+  files:
+    image: node:16
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn workspace @files/service-entrypoint dev
+    networks:
+      - default
+    environment:
+      - DB_HOST=db
+    depends_on:
+      - db
+      - gcs
+
   private-gateway:
     image: node:16
     working_dir: /workspace

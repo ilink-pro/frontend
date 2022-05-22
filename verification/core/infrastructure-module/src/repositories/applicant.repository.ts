@@ -42,13 +42,15 @@ export class ApplicantRepositoryImpl extends ApplicantRepository {
   private entityToAggregate(entity: ApplicantEntity): Applicant {
     return new Applicant({
       ...entity,
-      idDocument: new IdDocument(
-        entity.idDocument.id,
-        entity.idDocument.type,
-        entity.idDocument.frontSide,
-        entity.idDocument.backSide
-      ),
-      addressDocuments: entity.addressDocuments.map(
+      idDocument:
+        entity.idDocument &&
+        new IdDocument(
+          entity.idDocument.id,
+          entity.idDocument.type,
+          entity.idDocument.frontSide,
+          entity.idDocument.backSide
+        ),
+      addressDocuments: (entity.addressDocuments || []).map(
         (addressDocument) => new AddressDocument(addressDocument.id, addressDocument.file)
       ),
     })

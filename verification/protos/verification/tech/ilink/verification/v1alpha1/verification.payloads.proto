@@ -5,7 +5,7 @@ package tech.ilink.verification.v1alpha1;
 import "tech/ilink/verification/v1alpha1/verification.types.proto";
 
 message GetAccessTokenRequest {
-  string userId = 1;
+  string id = 1;
 }
 
 message GetAccessTokenResponse {
@@ -71,54 +71,8 @@ message VerifyApplicantResponse {
   string id = 1;
 }
 
-message VerifyIdentityRequest {
-  message Identity {
-    string firstName = 1;
-    string lastName = 2;
-    string middleName = 3;
-    string dateOfBirth = 4;
-    string nationality = 5;
-    string countryOfBirth = 6;
-    string countryOfResidence = 7;
-    string reasonsForOpeningAnAccount = 8;
-    string accountWillBeUsedFor = 9;
-    string city = 10;
-    string street = 11;
-    string apartmentOrHouse = 12;
-    string postalCode = 13;
-  }
-
-  Identity identity = 1;
-}
-
-message VerifyIdentityResponse {
-  bool success = 1;
-  string error = 2;
-  string externalUserId = 3;
-}
-
-message VerifyDocumentsRequest {
-  string applicantId = 1;
-  IdDocument document = 2;
-}
-
-message VerifyDocumentsResponse {
-  bool success = 1;
-  string error = 2;
-}
-
-message VerifyAddressesRequest {
-  string applicantId = 1;
-  repeated AddressDocument addresses = 2;
-}
-
-message VerifyAddressesResponse {
-  bool success = 1;
-  string error = 2;
-}
-
 message GetVerificationStatusRequest {
-  string externalUserId = 1;
+  string id = 1;
 }
 
 message GetVerificationStatusResponse {
@@ -136,4 +90,20 @@ message GetApplicantRequest {
 
 message GetApplicantResponse {
   Applicant applicant = 1;
+}
+
+message UpdateApplicantRequest {
+  string firstName = 1;
+  string lastName = 2;
+  string middleName = 3;
+  string dateOfBirth = 4;
+  string nationality = 5;
+  string countryOfBirth = 6;
+  string countryOfResidence = 7;
+  string reasonsForOpeningAnAccount = 8;
+  string accountWillBeUsedFor = 9;
+}
+
+message UpdateApplicantResponse {
+  string id = 1;
 }

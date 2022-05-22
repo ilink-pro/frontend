@@ -8,6 +8,7 @@ import { AddressDocumentsAdded }          from '../events'
 import { IdDocumentAdded }                from '../events'
 import { SumsubIdAdded }                  from '../events'
 import { AddressUpdated }                 from '../events'
+import { ApplicantUpdated }               from '../events'
 import { IdEmptyValueException }          from '../exceptions'
 import { FirstNameEmptyValueException }   from '../exceptions'
 import { LastNameEmptyValueException }    from '../exceptions'
@@ -294,5 +295,47 @@ export class Applicant extends AggregateRoot {
     this.#city = event.city
     this.#apartmentOrHouse = event.apartmentOrHouse
     this.#postalCode = event.postalCode
+  }
+
+  async update(
+    firstName: string,
+    lastName: string,
+    middleName: string,
+    dateOfBirth: string,
+    nationality: string,
+    countryOfBirth: string,
+    countryOfResidence: string,
+    reasonsForOpeningAnAccount: string,
+    accountWillBeUsedFor: string
+  ) {
+    assert.ok(firstName, new FirstNameEmptyValueException())
+    assert.ok(lastName, new LastNameEmptyValueException())
+    assert.ok(dateOfBirth, new DateOfBirthEmptyValueException())
+
+    this.apply(
+      new ApplicantUpdated(
+        firstName,
+        lastName,
+        middleName,
+        dateOfBirth,
+        nationality,
+        countryOfBirth,
+        countryOfResidence,
+        reasonsForOpeningAnAccount,
+        accountWillBeUsedFor
+      )
+    )
+  }
+
+  onApplicantUpdated(event: ApplicantUpdated) {
+    this.#firstName = event.firstName
+    this.#lastName = event.lastName
+    this.#middleName = event.middleName
+    this.#dateOfBirth = event.dateOfBirth
+    this.#nationality = event.nationality
+    this.#countryOfBirth = event.countryOfBirth
+    this.#countryOfResidence = event.countryOfResidence
+    this.#reasonsForOpeningAnAccount = event.reasonsForOpeningAnAccount
+    this.#accountWillBeUsedFor = event.accountWillBeUsedFor
   }
 }

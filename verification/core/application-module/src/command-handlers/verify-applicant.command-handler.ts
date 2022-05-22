@@ -25,7 +25,7 @@ export class VerifyApplicantCommandHandler
 
     assert.ok(applicant)
 
-    await this.sumsubService.createApplicant({
+    const { id: applicantId } = await this.sumsubService.createApplicant({
       externalUserId: applicant.id,
       fixedInfo: {
         firstName: applicant.firstName,
@@ -46,5 +46,40 @@ export class VerifyApplicantCommandHandler
         ],
       },
     })
+
+    await applicant.addSumsubId(applicantId)
+
+    await this.sumsubService.addIdDocument(applicantId, applicant.idDocument.frontSide, {
+      idDocType: applicant.idDocument.type,
+      idDocSubType: 'FRONT_SIDE',
+      country: applicant.countryOfResidence,
+      firstName: applicant.firstName,
+      lastName: applicant.lastName,
+      dob: applicant.dateOfBirth,
+      placeOfBirth: applicant.countryOfBirth,
+    })
+
+    await this.sumsubService.addIdDocument(applicantId, applicant.idDocument.backSide, {
+      idDocType: applicant.idDocument.type,
+      idDocSubType: 'BACK_SIDE',
+      country: applicant.countryOfResidence,
+      firstName: applicant.firstName,
+      lastName: applicant.lastName,
+      dob: applicant.dateOfBirth,
+      placeOfBirth: applicant.countryOfBirth,
+    })
+
+    for (const addressDocument of applicant.addressDocuments) {
+      await this.sumsubService.addIdDocument(applicantId, addressDocument.file, {
+        idDocType: 'UTILITY_BILL',
+        country: applicant.countryOfResidence,
+        firstName: applicant.firstName,
+        lastName: applicant.lastName,
+        dob: applicant.dateOfBirth,
+        placeOfBirth: applicant.countryOfBirth,
+      })
+    }
+
+    await this.applicantRepository.save(applicant)
   }
 }

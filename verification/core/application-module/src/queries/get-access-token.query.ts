@@ -1,3 +1,3 @@
 export class GetAccessTokenQuery {
-  constructor(public readonly applicantId: string) {}
+  constructor(public readonly id: string) {}
 }

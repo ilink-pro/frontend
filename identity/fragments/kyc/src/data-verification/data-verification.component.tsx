@@ -1,5 +1,6 @@
 import { Button }                   from '@ilink-ui-proto/button'
 
+import Cookie                       from 'js-cookie'
 import React                        from 'react'
 import { FC }                       from 'react'
 import { FormattedMessage }         from 'react-intl'
@@ -12,11 +13,10 @@ import { NextLink }                 from '@ui/link'
 import { Text }                     from '@ui/text'
 
 import { VerificationStatus }       from '../data'
-import { DataVerificationProps }    from './data-verification.interfaces'
 import { useGetVerificationStatus } from '../data'
 
-const DataVerification: FC<DataVerificationProps> = ({ externalUserId }) => {
-  const [status, loading] = useGetVerificationStatus(externalUserId)
+const DataVerification: FC = () => {
+  const [status, loading] = useGetVerificationStatus(Cookie.get('applicantId') || '')
 
   return (
     <Box width={['100%', '100%', 736]} backgroundColor='background.white'>

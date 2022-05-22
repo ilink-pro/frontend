@@ -9,19 +9,14 @@ import { CommandBus }                           from '@nestjs/cqrs'
 import { v4 as uuid }                           from 'uuid'
 
 import { GetAccessTokenQuery }                  from '@verification/application-module'
+import { UpdateApplicantCommand }               from '@verification/application-module'
 import { VerifyApplicantCommand }               from '@verification/application-module'
-import { VerifyAddressesCommand }               from '@verification/application-module'
-import { VerifyDocumentsCommand }               from '@verification/application-module'
-import { VerifyIdentityCommand }                from '@verification/application-module'
 import { AddAddressDocumentCommand }            from '@verification/application-module'
 import { AddIdDocumentCommand }                 from '@verification/application-module'
 import { GetVerificationStatusQuery }           from '@verification/application-module'
 import { UpdateAddressCommand }                 from '@verification/application-module'
 import { CreateApplicantCommand }               from '@verification/application-module'
 import { GetApplicantQuery }                    from '@verification/application-module'
-import { VerifyAddressesResponse }              from '@verification/verification-proto'
-import { VerifyDocumentsResponse }              from '@verification/verification-proto'
-import { VerifyIdentityResponse }               from '@verification/verification-proto'
 import { GetAccessTokenResponse }               from '@verification/verification-proto'
 import { GetVerificationStatusResponse }        from '@verification/verification-proto'
 import { GetApplicantResponse }                 from '@verification/verification-proto'
@@ -32,79 +27,21 @@ import { UpdateAddressResponse }                from '@verification/verification
 import { AddIdDocumentResponse }                from '@verification/verification-proto'
 import { AddAddressDocumentsResponse }          from '@verification/verification-proto'
 import { VerifyApplicantResponse }              from '@verification/verification-proto'
+import { UpdateApplicantResponse }              from '@verification/verification-proto'
 
 @Controller()
 @VerificationServiceControllerMethods()
 @UseFilters(new GrpcExceptionsFilter())
 export class VerificationController implements VerificationServiceController {
   constructor(private readonly queryBus: QueryBus, private readonly commandBus: CommandBus) {}
-
-  @UsePipes(new GrpcValidationPipe())
-  async verifyIdentity(request): Promise<VerifyIdentityResponse> {
-    const { identity } = request
-
-    const command = new VerifyIdentityCommand(
-      identity.firstName,
-      identity.lastName,
-      identity.middleName,
-      identity.dateOfBirth,
-      identity.nationality,
-      identity.countryOfBirth,
-      identity.countryOfResidence,
-      identity.reasonsForOpeningAnAccount,
-      identity.accountWillBeUsedFor,
-      identity.city,
-      identity.street,
-      identity.apartmentOrHouse,
-      identity.postalCode,
-      uuid()
-    )
-
-    await this.commandBus.execute(command)
-
-    return {
-      success: true,
-      error: '',
-      externalUserId: command.externalUserId,
-    }
-  }
-
-  @UsePipes(new GrpcValidationPipe())
-  async verifyDocuments(request): Promise<VerifyDocumentsResponse> {
-    const command = new VerifyDocumentsCommand(
-      request.applicantId,
-      request.document.type,
-      request.document
-    )
-
-    await this.commandBus.execute(command)
-
-    return {
-      success: true,
-      error: '',
-    }
-  }
-
-  @UsePipes(new GrpcValidationPipe())
-  async verifyAddresses(request): Promise<VerifyAddressesResponse> {
-    const command = new VerifyAddressesCommand(request.applicantId, request.addresses)
-
-    await this.commandBus.execute(command)
-
-    return {
-      success: true,
-      error: '',
-    }
-  }
-
   @UsePipes(new GrpcValidationPipe())
   async getVerificationStatus(request): Promise<GetVerificationStatusResponse> {
-    return this.queryBus.execute(new GetVerificationStatusQuery(request.externalUserId))
+    return this.queryBus.execute(new GetVerificationStatusQuery(request.id))
   }
 
   @UsePipes(new GrpcValidationPipe())
   async getAccessToken(request): Promise<GetAccessTokenResponse> {
-    return this.queryBus.execute(new GetAccessTokenQuery(request.applicantId))
+    return this.queryBus.execute(new GetAccessTokenQuery(request.id))
   }
 
   @UsePipes(new GrpcValidationPipe())
@@ -181,5 +118,25 @@ export class VerificationController implements VerificationServiceController {
     }
 
     return { success: true }
+  }
+
+  @UsePipes(new GrpcValidationPipe())
+  async updateApplicant(request): Promise<UpdateApplicantResponse> {
+    const command = new UpdateApplicantCommand(
+      request.id,
+      request.firstName,
+      request.lastName,
+      request.middleName,
+      request.dateOfBirth,
+      request.nationality,
+      request.countryOfBirth,
+      request.countryOfResidence,
+      request.reasonsForOpeningAnAccount,
+      request.accountWillBeUsedFor
+    )
+
+    await this.commandBus.execute(command)
+
+    return { id: command.id }
   }
 }
