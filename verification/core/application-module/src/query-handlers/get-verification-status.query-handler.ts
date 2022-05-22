@@ -17,6 +17,8 @@ export class GetVerificationStatusQueryHandler
   ) {}
 
   async execute({ applicantId }: GetVerificationStatusQuery) {
-    return this.sumsubService.getVerificationStatus(applicantId)
+    const status = await this.sumsubService.getVerificationStatus(applicantId)
+
+    return { status }
   }
 }

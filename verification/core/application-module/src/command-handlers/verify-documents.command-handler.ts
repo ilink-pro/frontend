@@ -1,14 +1,15 @@
-import { Inject }                 from '@nestjs/common'
-import { CommandHandler }         from '@nestjs/cqrs'
-import { ICommandHandler }        from '@nestjs/cqrs'
+import { Inject }                         from '@nestjs/common'
+import { CommandHandler }                 from '@nestjs/cqrs'
+import { ICommandHandler }                from '@nestjs/cqrs'
 
-import assert                     from 'assert'
+import assert                             from 'assert'
 
-import { SUMSUB_SERVICE }         from '@verification/domain-module'
-import { SumsubServicePort }      from '@verification/domain-module'
-import { DocumentMetadata }       from '@verification/domain-module'
+import { SUMSUB_SERVICE }                 from '@verification/domain-module'
+import { SumsubServicePort }              from '@verification/domain-module'
+import { DocumentMetadata }               from '@verification/domain-module'
 
-import { VerifyDocumentsCommand } from '../commands'
+import { VerifyDocumentsCommand }         from '../commands'
+import { ApplicantIdEmptyValueException } from '../exceptions'
 
 @CommandHandler(VerifyDocumentsCommand)
 export class VerifyDocumentsCommandHandler
@@ -20,7 +21,7 @@ export class VerifyDocumentsCommandHandler
   ) {}
 
   async execute(command: VerifyDocumentsCommand) {
-    assert.ok(command.applicantId)
+    assert.ok(command.applicantId, new ApplicantIdEmptyValueException())
 
     const { applicant } = await this.sumsubService.getApplicant(command.applicantId)
 

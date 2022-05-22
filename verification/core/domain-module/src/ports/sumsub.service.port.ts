@@ -46,8 +46,11 @@ export interface FixedInfo {
   placeOfBirth?: string
   countryOfBirth?: string
   stateOfBirth?: string
-  country?: string
   nationality?: string
+}
+
+export interface Info {
+  country?: string
   addresses?: Array<Address>
 }
 
@@ -59,6 +62,7 @@ export interface ApplicantPayload {
   lang?: string
   metadata?: Array<CommonMetadata>
   fixedInfo?: FixedInfo
+  info?: Info
 }
 
 export interface AddIdDocumentResponse {

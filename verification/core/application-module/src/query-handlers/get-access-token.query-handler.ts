@@ -15,6 +15,8 @@ export class GetAccessTokenQueryHandler implements IQueryHandler<GetAccessTokenQ
   ) {}
 
   async execute({ applicantId }: GetAccessTokenQuery) {
-    return this.sumsubService.generateAccessToken(applicantId)
+    const accessToken = await this.sumsubService.generateAccessToken(applicantId)
+
+    return { accessToken }
   }
 }

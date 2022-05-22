@@ -1,0 +1,111 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  getAccessToken(input: GetAccessTokenInput): GetAccessTokenResponse
+  getVerificationStatus(input: GetVerificationStatusInput): GetVerificationStatusResponse
+  connectivityState(tryToConnect: Boolean): ConnectivityState
+}
+
+type GetAccessTokenResponse {
+  accessToken: String
+}
+
+input GetAccessTokenInput {
+  userId: String
+}
+
+type GetVerificationStatusResponse {
+  status: VerificationStatus
+}
+
+enum VerificationStatus {
+  PENDING
+  SUCCESS
+  CANCELLED
+}
+
+input GetVerificationStatusInput {
+  applicantId: String
+}
+
+enum ConnectivityState {
+  IDLE
+  CONNECTING
+  READY
+  TRANSIENT_FAILURE
+  SHUTDOWN
+}
+
+type Mutation {
+  verifyIdentity(input: VerifyIdentityInput): VerifyIdentityResponse
+  verifyDocuments(input: VerifyDocumentsInput): VerifyDocumentsResponse
+  verifyAddresses(input: VerifyAddressesInput): VerifyAddressesResponse
+}
+
+type VerifyIdentityResponse {
+  success: Boolean
+  error: String
+  applicantId: String
+}
+
+input VerifyIdentityInput {
+  identity: VerifyIdentityRequest_Identity_Input
+}
+
+input VerifyIdentityRequest_Identity_Input {
+  firstName: String
+  lastName: String
+  middleName: String
+  dateOfBirth: String
+  nationality: String
+  countryOfBirth: String
+  countryOfResidence: String
+  reasonsForOpeningAnAccount: String
+  accountWillBeUsedFor: String
+  city: String
+  street: String
+  apartmentOrHouse: String
+  postalCode: String
+}
+
+type VerifyDocumentsResponse {
+  success: Boolean
+  error: String
+}
+
+input VerifyDocumentsInput {
+  applicantId: String
+  document: VerifyDocumentsRequest_Document_Input
+}
+
+input VerifyDocumentsRequest_Document_Input {
+  type: DocumentType
+  frontSide: Byte
+  backSide: Byte
+}
+
+enum DocumentType {
+  PASSPORT
+  ID_CARD
+  RESIDENCE_PERMIT
+}
+
+"The `Byte` scalar type represents byte value as a Buffer"
+scalar Byte
+
+type VerifyAddressesResponse {
+  success: Boolean
+  error: String
+}
+
+input VerifyAddressesInput {
+  applicantId: String
+  addresses: [VerifyAddressesRequest_Address_Input]
+}
+
+input VerifyAddressesRequest_Address_Input {
+  file: Byte
+}
