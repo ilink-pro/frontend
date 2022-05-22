@@ -6,6 +6,7 @@ import Cookie                  from 'js-cookie'
 import React                   from 'react'
 import { FC }                  from 'react'
 import { FormattedMessage }    from 'react-intl'
+import { useEffect }           from 'react'
 import { useIntl }             from 'react-intl'
 
 import { Box }                 from '@ui/layout'
@@ -37,12 +38,14 @@ const Address: FC<AddressProps> = ({ prevStep, nextStep }) => {
   const apartmentOrHouse = useReactiveVar<ApartmentOrHouse>(apartmentOrHouseVar)
   const postalCode = useReactiveVar<PostalCode>(postalCodeVar)
 
-  if (applicant) {
-    cityVar(applicant.city)
-    streetVar(applicant.street)
-    apartmentOrHouseVar(applicant.apartmentOrHouse)
-    postalCodeVar(applicant.postalCode)
-  }
+  useEffect(() => {
+    if (applicant) {
+      cityVar(applicant.city)
+      streetVar(applicant.street)
+      apartmentOrHouseVar(applicant.apartmentOrHouse)
+      postalCodeVar(applicant.postalCode)
+    }
+  }, [applicant])
 
   return (
     <Box width={['100%', '100%', 736]} backgroundColor='background.white'>

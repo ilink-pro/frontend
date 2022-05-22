@@ -1,3 +1,5 @@
+/* eslint-disable max-classes-per-file */
+
 import { AssertionError } from 'assert'
 
 export class IdEmptyValueException extends AssertionError {

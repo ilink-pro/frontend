@@ -1,5 +1,3 @@
-export * from './add-address-documents'
-export * from './add-id-document'
 export * from './create-applicant'
 export * from './get-applicant'
 export * from './update-address'

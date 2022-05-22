@@ -1,3 +1,5 @@
+/* eslint-disable no-await-in-loop */
+
 import { GrpcExceptionsFilter }                 from '@atls/nestjs-grpc-errors'
 import { GrpcValidationPipe }                   from '@atls/nestjs-grpc-errors'
 import { Controller }                           from '@nestjs/common'
@@ -34,6 +36,7 @@ import { UpdateApplicantResponse }              from '@verification/verification
 @UseFilters(new GrpcExceptionsFilter())
 export class VerificationController implements VerificationServiceController {
   constructor(private readonly queryBus: QueryBus, private readonly commandBus: CommandBus) {}
+
   @UsePipes(new GrpcValidationPipe())
   async getVerificationStatus(request): Promise<GetVerificationStatusResponse> {
     return this.queryBus.execute(new GetVerificationStatusQuery(request.id))

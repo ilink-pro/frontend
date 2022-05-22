@@ -1,3 +1,5 @@
+/* eslint-disable no-await-in-loop */
+
 import { Inject }                 from '@nestjs/common'
 import { CommandHandler }         from '@nestjs/cqrs'
 import { ICommandHandler }        from '@nestjs/cqrs'

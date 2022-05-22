@@ -6,6 +6,7 @@ import Cookie                      from 'js-cookie'
 import React                       from 'react'
 import { FC }                      from 'react'
 import { FormattedMessage }        from 'react-intl'
+import { useEffect }               from 'react'
 import { useIntl }                 from 'react-intl'
 
 import { Column }                  from '@ui/layout'
@@ -52,17 +53,19 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
   const reasonsForOpening = useReactiveVar<ReasonsForOpening>(reasonsForOpeningVar)
   const accountWillBeUsedFor = useReactiveVar<AccountWillBeUsedFor>(accountWillBeUsedForVar)
 
-  if (applicant) {
-    firstNameVar(applicant.firstName)
-    lastNameVar(applicant.lastName)
-    middleNameVar(applicant.middleName)
-    dateOfBirthVar(applicant.dateOfBirth)
-    nationalityVar(applicant.nationality)
-    countryOfBirthVar(applicant.countryOfBirth)
-    countryOfResidenceVar(applicant.countryOfResidence)
-    reasonsForOpeningVar(applicant.reasonsForOpeningAnAccount)
-    accountWillBeUsedForVar(applicant.accountWillBeUsedFor)
-  }
+  useEffect(() => {
+    if (applicant) {
+      firstNameVar(applicant.firstName)
+      lastNameVar(applicant.lastName)
+      middleNameVar(applicant.middleName)
+      dateOfBirthVar(applicant.dateOfBirth)
+      nationalityVar(applicant.nationality)
+      countryOfBirthVar(applicant.countryOfBirth)
+      countryOfResidenceVar(applicant.countryOfResidence)
+      reasonsForOpeningVar(applicant.reasonsForOpeningAnAccount)
+      accountWillBeUsedForVar(applicant.accountWillBeUsedFor)
+    }
+  }, [applicant])
 
   return (
     <Box width={['100%', '100%', 736]} backgroundColor='background.white'>
