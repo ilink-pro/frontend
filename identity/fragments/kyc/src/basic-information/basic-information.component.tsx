@@ -23,6 +23,7 @@ import { CountryOfResidence }      from '../store'
 import { AccountWillBeUsedFor }    from '../store'
 import { ReasonsForOpening }       from '../store'
 import { BasicInformationProps }   from './basic-information.interfaces'
+import { useVerifyIdentity }       from '../data'
 import { stepVar }                 from '../store'
 import { firstNameVar }            from '../store'
 import { middleNameVar }           from '../store'
@@ -36,6 +37,7 @@ import { accountWillBeUsedForVar } from '../store'
 
 const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
   const { formatMessage } = useIntl()
+  const { verifyIdentity, verifyIdentityResponse } = useVerifyIdentity()
 
   const firstName = useReactiveVar<FirstName>(firstNameVar)
   const lastName = useReactiveVar<LastName>(lastNameVar)
@@ -190,7 +192,27 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
           </Row>
           <Layout flexBasis={[16, 16, 12]} />
           <Row>
-            <Button size='large' style={{ width: '100%' }} onClick={() => stepVar(nextStep)}>
+            <Button
+              size='large'
+              style={{ width: '100%' }}
+              onClick={() => {
+                verifyIdentity({
+                  variables: {
+                    firstName,
+                    lastName,
+                    middleName,
+                    dateOfBirth,
+                    nationality,
+                    countryOfBirth,
+                    countryOfResidence,
+                    reasonsForOpeningAnAccount: reasonsForOpening,
+                    accountWillBeUsedFor,
+                  },
+                })
+
+                stepVar(nextStep)
+              }}
+            >
               <FormattedMessage id='kyc.next' defaultMessage='Next' />
             </Button>
           </Row>

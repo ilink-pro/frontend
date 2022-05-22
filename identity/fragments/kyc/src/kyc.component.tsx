@@ -1,25 +1,26 @@
-import { useReactiveVar }     from '@apollo/client'
+import { useReactiveVar }           from '@apollo/client'
 
-import React                  from 'react'
-import { FC }                 from 'react'
+import React                        from 'react'
+import { FC }                       from 'react'
 
-import { Condition }          from '@ui/condition'
-import { Box }                from '@ui/layout'
-import { Layout }             from '@ui/layout'
-import { Row }                from '@ui/layout'
+import { Condition }                from '@ui/condition'
+import { Box }                      from '@ui/layout'
+import { Layout }                   from '@ui/layout'
+import { Row }                      from '@ui/layout'
 
-import { Address }            from './address'
-import { BasicInformation }   from './basic-information'
-import { VerificationStatus } from './data'
-import { DataVerification }   from './data-verification'
-import { KYCLayout }          from './kyc-layout'
-import { Progress }           from './progress'
-import { ProofOfAddress }     from './proof-of-address'
-import { ProofOfIdentityOne } from './proof-of-identity-one'
-import { ProofOfIdentityTwo } from './proof-of-identity-two'
-import { Sidebar }            from './sidebar'
-import { Step }               from './store'
-import { stepVar }            from './store'
+import { Address }                  from './address'
+import { BasicInformation }         from './basic-information'
+import { VerificationStatus }       from './data'
+import { DataVerification }         from './data-verification'
+import { KYCLayout }                from './kyc-layout'
+import { Progress }                 from './progress'
+import { ProofOfAddress }           from './proof-of-address'
+import { ProofOfIdentityOne }       from './proof-of-identity-one'
+import { ProofOfIdentityTwo }       from './proof-of-identity-two'
+import { Sidebar }                  from './sidebar'
+import { Step }                     from './store'
+import { useGetVerificationStatus } from './data'
+import { stepVar }                  from './store'
 
 const ProgressRenderer = () => {
   const step = useReactiveVar<Step>(stepVar)
@@ -40,6 +41,7 @@ const ProgressRenderer = () => {
 }
 const KYC: FC = () => {
   const step = useReactiveVar<Step>(stepVar)
+  const [status] = useGetVerificationStatus()
 
   return (
     <KYCLayout>
@@ -72,8 +74,7 @@ const KYC: FC = () => {
             <ProofOfAddress prevStep={Step.PROOF_OF_IDENTITY_2} nextStep={Step.DATA_VERIFICATION} />
           </Condition>
           <Condition match={step === Step.DATA_VERIFICATION}>
-            {/* TODO fetch */}
-            <DataVerification status={VerificationStatus.PENDING} />
+            <DataVerification status={status} />
           </Condition>
         </Box>
       </Box>

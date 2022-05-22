@@ -64,4 +64,5 @@ const DataVerification: FC<DataVerificationProps> = ({ status }) => (
     <Layout flexBasis={40} />
   </Box>
 )
+
 export { DataVerification }

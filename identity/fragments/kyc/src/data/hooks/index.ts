@@ -1,0 +1,5 @@
+export * from './get-access-token'
+export * from './get-verification-status'
+export * from './verify-addresses'
+export * from './verify-documents'
+export * from './verify-identity'
