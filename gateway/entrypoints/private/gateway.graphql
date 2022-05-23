@@ -1,0 +1,181 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  getAccessToken(input: GetAccessTokenInput): GetAccessTokenResponse
+  getVerificationStatus(input: GetVerificationStatusInput): GetVerificationStatusResponse
+  getApplicant(input: GetApplicantInput): GetApplicantResponse
+  connectivityState(tryToConnect: Boolean): ConnectivityState
+}
+
+type GetAccessTokenResponse {
+  accessToken: String
+}
+
+input GetAccessTokenInput {
+  id: String
+}
+
+type GetVerificationStatusResponse {
+  status: VerificationStatus
+}
+
+enum VerificationStatus {
+  PENDING
+  SUCCESS
+  CANCELLED
+}
+
+input GetVerificationStatusInput {
+  id: String
+}
+
+type GetApplicantResponse {
+  applicant: Applicant
+}
+
+type Applicant {
+  id: String
+  firstName: String
+  lastName: String
+  middleName: String
+  dateOfBirth: String
+  nationality: String
+  countryOfBirth: String
+  countryOfResidence: String
+  reasonsForOpeningAnAccount: String
+  accountWillBeUsedFor: String
+  city: String
+  street: String
+  apartmentOrHouse: String
+  postalCode: String
+  sumsubId: String
+  idDocument: IdDocument
+  addressDocuments: [AddressDocument]
+}
+
+type IdDocument {
+  type: DocumentType
+  frontSide: Byte
+  backSide: Byte
+}
+
+enum DocumentType {
+  PASSPORT
+  ID_CARD
+  RESIDENCE_PERMIT
+}
+
+"The `Byte` scalar type represents byte value as a Buffer"
+scalar Byte
+
+type AddressDocument {
+  file: Byte
+}
+
+input GetApplicantInput {
+  query: GetApplicantRequest_Query_Input
+}
+
+input GetApplicantRequest_Query_Input {
+  id: String
+  externalId: String
+}
+
+enum ConnectivityState {
+  IDLE
+  CONNECTING
+  READY
+  TRANSIENT_FAILURE
+  SHUTDOWN
+}
+
+type Mutation {
+  createApplicant(input: CreateApplicantInput): CreateApplicantResponse
+  updateAddress(input: UpdateAddressInput): UpdateAddressResponse
+  verifyApplicant(input: VerifyApplicantInput): VerifyApplicantResponse
+  addIdDocument(input: AddIdDocumentInput): AddIdDocumentResponse
+  addAddressDocuments(input: AddAddressDocumentsInput): AddAddressDocumentsResponse
+  updateApplicant(input: UpdateApplicantInput): UpdateApplicantResponse
+}
+
+type CreateApplicantResponse {
+  id: String
+}
+
+input CreateApplicantInput {
+  firstName: String
+  lastName: String
+  middleName: String
+  dateOfBirth: String
+  nationality: String
+  countryOfBirth: String
+  countryOfResidence: String
+  reasonsForOpeningAnAccount: String
+  accountWillBeUsedFor: String
+  city: String
+  street: String
+  apartmentOrHouse: String
+  postalCode: String
+}
+
+type UpdateAddressResponse {
+  id: String
+}
+
+input UpdateAddressInput {
+  id: String
+  city: String
+  apartmentOrHouse: String
+  postalCode: String
+}
+
+type VerifyApplicantResponse {
+  id: String
+}
+
+input VerifyApplicantInput {
+  id: String
+}
+
+type AddIdDocumentResponse {
+  success: Boolean
+}
+
+input AddIdDocumentInput {
+  id: String
+  type: DocumentType
+  frontSide: Byte
+  backSide: Byte
+}
+
+type AddAddressDocumentsResponse {
+  success: Boolean
+}
+
+input AddAddressDocumentsInput {
+  id: String
+  addressDocuments: [AddressDocument_Input]
+}
+
+input AddressDocument_Input {
+  file: Byte
+}
+
+type UpdateApplicantResponse {
+  id: String
+}
+
+input UpdateApplicantInput {
+  firstName: String
+  lastName: String
+  middleName: String
+  dateOfBirth: String
+  nationality: String
+  countryOfBirth: String
+  countryOfResidence: String
+  reasonsForOpeningAnAccount: String
+  accountWillBeUsedFor: String
+}

@@ -26,5 +26,5 @@
     "jsx": "react",
     "outDir": "./dist"
   },
-  "include": ["site/**/*", "files/**/*"]
+  "include": ["site/**/*", "files/**/*", "identity/**/*", "verification/**/*", "gateway/**/*"]
 }

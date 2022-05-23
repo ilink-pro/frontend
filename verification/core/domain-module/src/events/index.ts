@@ -1,0 +1,6 @@
+export * from './applicant-created.event'
+export * from './address-documents.added.event'
+export * from './id-document.added.event'
+export * from './sumsub-id-added.event'
+export * from './address-updated.event'
+export * from './applicant-updated.event'

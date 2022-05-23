@@ -10,7 +10,6 @@ import { Row }                from '@ui/layout'
 
 import { Address }            from './address'
 import { BasicInformation }   from './basic-information'
-import { VerificationStatus } from './data'
 import { DataVerification }   from './data-verification'
 import { KYCLayout }          from './kyc-layout'
 import { Progress }           from './progress'
@@ -72,12 +71,12 @@ const KYC: FC = () => {
             <ProofOfAddress prevStep={Step.PROOF_OF_IDENTITY_2} nextStep={Step.DATA_VERIFICATION} />
           </Condition>
           <Condition match={step === Step.DATA_VERIFICATION}>
-            {/* TODO fetch */}
-            <DataVerification status={VerificationStatus.PENDING} />
+            <DataVerification />
           </Condition>
         </Box>
       </Box>
     </KYCLayout>
   )
 }
+
 export { KYC }

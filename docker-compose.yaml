@@ -66,9 +66,41 @@ services:
       - KRATOS_BROWSER_URL=http://localhost:4433/
       - KRATOS_ADMIN_URL=http://kratos:4434/
       - BASE_URL=http://localhost:3000
+      - PRIVATE_GATEWAY_URL=http://localhost:3001/
     depends_on:
       - kratos
+      - private-gateway
     networks:
       - default
     ports:
       - 3000:3000
+
+  verification:
+    image: node:16
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn workspace @verification/service-entrypoint dev
+    networks:
+      - default
+    environment:
+      - DB_HOST=db
+      - SUMSUB_APP_TOKEN=sbx:NzowShNiQ5DZWdY0oS1hN8F3.c2bF9HxN5TJzVI8yyf7q2F0YsUBEeFnV
+      - SUMSUB_SECRET_KEY=HATEOOllPBMAxjqG2CCJL5uy2eFFlbVj
+    depends_on:
+      - db
+
+  private-gateway:
+    image: node:16
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn workspace @gateway/private-gateway-entrypoint dev
+    environment:
+      - VERIFICATION_SERVICE_URL=verification:50051
+    networks:
+      - default
+    ports:
+      - 3001:3000
+    depends_on:
+      - verification

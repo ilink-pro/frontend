@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package tech.ilink.verification.v1alpha1;
+
+message AccessToken {
+  string token = 1;
+  string userId = 2;
+}
+
+enum DocumentType {
+  PASSPORT = 0;
+  ID_CARD = 1;
+  RESIDENCE_PERMIT = 2;
+}
+
+enum VerificationStatus {
+  PENDING = 0;
+  SUCCESS = 1;
+  CANCELLED = 2;
+}
+
+message IdDocument {
+  DocumentType type = 1;
+  bytes frontSide = 2;
+  bytes backSide = 3;
+}
+
+message AddressDocument {
+  bytes file = 1;
+}
+
+message Applicant {
+  string id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string middleName = 4;
+  string dateOfBirth = 5;
+  string nationality = 6;
+  string countryOfBirth = 7;
+  string countryOfResidence = 8;
+  string reasonsForOpeningAnAccount = 9;
+  string accountWillBeUsedFor = 10;
+  string city = 11;
+  string street = 12;
+  string apartmentOrHouse = 13;
+  string postalCode = 14;
+  string sumsubId = 15;
+  IdDocument idDocument = 16;
+  repeated AddressDocument addressDocuments = 17;
+}

@@ -2,9 +2,11 @@ import { Button }              from '@ilink-ui-proto/button'
 import { Input }               from '@ilink-ui-proto/input'
 import { useReactiveVar }      from '@apollo/client'
 
+import Cookie                  from 'js-cookie'
 import React                   from 'react'
 import { FC }                  from 'react'
 import { FormattedMessage }    from 'react-intl'
+import { useEffect }           from 'react'
 import { useIntl }             from 'react-intl'
 
 import { Box }                 from '@ui/layout'
@@ -18,6 +20,8 @@ import { Street }              from '../store'
 import { ApartmentOrHouse }    from '../store'
 import { PostalCode }          from '../store'
 import { AddressProps }        from './address.interfaces'
+import { useUpdateAddress }    from '../data'
+import { useGetApplicant }     from '../data'
 import { stepVar }             from '../store'
 import { cityVar }             from '../store'
 import { streetVar }           from '../store'
@@ -26,11 +30,22 @@ import { postalCodeVar }       from '../store'
 
 const Address: FC<AddressProps> = ({ prevStep, nextStep }) => {
   const { formatMessage } = useIntl()
+  const [updateAddress, , loading] = useUpdateAddress()
+  const [applicant] = useGetApplicant(Cookie.get('applicantId') || '')
 
   const city = useReactiveVar<City>(cityVar)
   const street = useReactiveVar<Street>(streetVar)
   const apartmentOrHouse = useReactiveVar<ApartmentOrHouse>(apartmentOrHouseVar)
   const postalCode = useReactiveVar<PostalCode>(postalCodeVar)
+
+  useEffect(() => {
+    if (applicant) {
+      cityVar(applicant.city)
+      streetVar(applicant.street)
+      apartmentOrHouseVar(applicant.apartmentOrHouse)
+      postalCodeVar(applicant.postalCode)
+    }
+  }, [applicant])
 
   return (
     <Box width={['100%', '100%', 736]} backgroundColor='background.white'>
@@ -102,7 +117,21 @@ const Address: FC<AddressProps> = ({ prevStep, nextStep }) => {
           </Row>
           <Layout flexBasis={[16, 16, 12]} />
           <Row>
-            <Button size='large' style={{ width: '100%' }} onClick={() => stepVar(nextStep)}>
+            <Button
+              disabled={loading}
+              size='large'
+              style={{ width: '100%' }}
+              onClick={() => {
+                updateAddress({
+                  variables: {
+                    id: Cookie.get('applicantId'),
+                    city,
+                    apartmentOrHouse,
+                    postalCode,
+                  },
+                }).then(() => stepVar(nextStep))
+              }}
+            >
               <FormattedMessage id='kyc.next' defaultMessage='Next' />
             </Button>
           </Row>

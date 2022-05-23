@@ -2,9 +2,11 @@ import { Button }                  from '@ilink-ui-proto/button'
 import { Input }                   from '@ilink-ui-proto/input'
 import { useReactiveVar }          from '@apollo/client'
 
+import Cookie                      from 'js-cookie'
 import React                       from 'react'
 import { FC }                      from 'react'
 import { FormattedMessage }        from 'react-intl'
+import { useEffect }               from 'react'
 import { useIntl }                 from 'react-intl'
 
 import { Column }                  from '@ui/layout'
@@ -23,6 +25,8 @@ import { CountryOfResidence }      from '../store'
 import { AccountWillBeUsedFor }    from '../store'
 import { ReasonsForOpening }       from '../store'
 import { BasicInformationProps }   from './basic-information.interfaces'
+import { useCreateApplicant }      from '../data'
+import { useGetApplicant }         from '../data'
 import { stepVar }                 from '../store'
 import { firstNameVar }            from '../store'
 import { middleNameVar }           from '../store'
@@ -36,6 +40,8 @@ import { accountWillBeUsedForVar } from '../store'
 
 const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
   const { formatMessage } = useIntl()
+  const [createApplicant, , loading] = useCreateApplicant()
+  const [applicant] = useGetApplicant(Cookie.get('applicantId') || '')
 
   const firstName = useReactiveVar<FirstName>(firstNameVar)
   const lastName = useReactiveVar<LastName>(lastNameVar)
@@ -46,6 +52,20 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
   const countryOfResidence = useReactiveVar<CountryOfResidence>(countryOfResidenceVar)
   const reasonsForOpening = useReactiveVar<ReasonsForOpening>(reasonsForOpeningVar)
   const accountWillBeUsedFor = useReactiveVar<AccountWillBeUsedFor>(accountWillBeUsedForVar)
+
+  useEffect(() => {
+    if (applicant) {
+      firstNameVar(applicant.firstName)
+      lastNameVar(applicant.lastName)
+      middleNameVar(applicant.middleName)
+      dateOfBirthVar(applicant.dateOfBirth)
+      nationalityVar(applicant.nationality)
+      countryOfBirthVar(applicant.countryOfBirth)
+      countryOfResidenceVar(applicant.countryOfResidence)
+      reasonsForOpeningVar(applicant.reasonsForOpeningAnAccount)
+      accountWillBeUsedForVar(applicant.accountWillBeUsedFor)
+    }
+  }, [applicant])
 
   return (
     <Box width={['100%', '100%', 736]} backgroundColor='background.white'>
@@ -190,7 +210,29 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
           </Row>
           <Layout flexBasis={[16, 16, 12]} />
           <Row>
-            <Button size='large' style={{ width: '100%' }} onClick={() => stepVar(nextStep)}>
+            <Button
+              disabled={loading}
+              size='large'
+              style={{ width: '100%' }}
+              onClick={() => {
+                createApplicant({
+                  variables: {
+                    firstName,
+                    lastName,
+                    middleName,
+                    dateOfBirth,
+                    nationality,
+                    countryOfBirth,
+                    countryOfResidence,
+                    reasonsForOpeningAnAccount: reasonsForOpening,
+                    accountWillBeUsedFor,
+                  },
+                }).then((response) => {
+                  Cookie.set('applicantId', response?.data?.createApplicant?.id)
+                  stepVar(nextStep)
+                })
+              }}
+            >
               <FormattedMessage id='kyc.next' defaultMessage='Next' />
             </Button>
           </Row>

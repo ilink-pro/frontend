@@ -1,0 +1,110 @@
+syntax = "proto3";
+
+package tech.ilink.verification.v1alpha1;
+
+import "tech/ilink/verification/v1alpha1/verification.types.proto";
+
+message GetAccessTokenRequest {
+  string id = 1;
+}
+
+message GetAccessTokenResponse {
+  string accessToken = 1;
+}
+
+message CreateApplicantRequest {
+  string firstName = 1;
+  string lastName = 2;
+  string middleName = 3;
+  string dateOfBirth = 4;
+  string nationality = 5;
+  string countryOfBirth = 6;
+  string countryOfResidence = 7;
+  string reasonsForOpeningAnAccount = 8;
+  string accountWillBeUsedFor = 9;
+  string city = 10;
+  string street = 11;
+  string apartmentOrHouse = 12;
+  string postalCode = 13;
+}
+
+message CreateApplicantResponse {
+  string id = 1;
+}
+
+message AddIdDocumentRequest {
+  string id = 1;
+  DocumentType type = 2;
+  bytes frontSide = 3;
+  bytes backSide = 4;
+}
+
+message AddIdDocumentResponse {
+  bool success = 1;
+}
+
+message AddAddressDocumentsRequest {
+  string id = 1;
+  repeated AddressDocument addressDocuments = 2;
+}
+
+message AddAddressDocumentsResponse {
+  bool success = 1;
+}
+
+message UpdateAddressRequest {
+  string id = 1;
+  string city = 2;
+  string apartmentOrHouse = 3;
+  string postalCode = 4;
+}
+
+message UpdateAddressResponse {
+  string id = 1;
+}
+
+message VerifyApplicantRequest {
+  string id = 1;
+}
+
+message VerifyApplicantResponse {
+  string id = 1;
+}
+
+message GetVerificationStatusRequest {
+  string id = 1;
+}
+
+message GetVerificationStatusResponse {
+  VerificationStatus status = 1;
+}
+
+message GetApplicantRequest {
+  message Query {
+    string id = 1;
+    string externalId = 2;
+  }
+
+  Query query = 1;
+}
+
+message GetApplicantResponse {
+  Applicant applicant = 1;
+}
+
+message UpdateApplicantRequest {
+  string id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string middleName = 4;
+  string dateOfBirth = 5;
+  string nationality = 6;
+  string countryOfBirth = 7;
+  string countryOfResidence = 8;
+  string reasonsForOpeningAnAccount = 9;
+  string accountWillBeUsedFor = 10;
+}
+
+message UpdateApplicantResponse {
+  string id = 1;
+}
