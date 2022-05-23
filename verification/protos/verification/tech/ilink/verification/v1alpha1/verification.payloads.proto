@@ -93,15 +93,16 @@ message GetApplicantResponse {
 }
 
 message UpdateApplicantRequest {
-  string firstName = 1;
-  string lastName = 2;
-  string middleName = 3;
-  string dateOfBirth = 4;
-  string nationality = 5;
-  string countryOfBirth = 6;
-  string countryOfResidence = 7;
-  string reasonsForOpeningAnAccount = 8;
-  string accountWillBeUsedFor = 9;
+  string id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string middleName = 4;
+  string dateOfBirth = 5;
+  string nationality = 6;
+  string countryOfBirth = 7;
+  string countryOfResidence = 8;
+  string reasonsForOpeningAnAccount = 9;
+  string accountWillBeUsedFor = 10;
 }
 
 message UpdateApplicantResponse {
