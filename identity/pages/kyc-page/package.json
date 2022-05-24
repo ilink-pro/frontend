@@ -19,6 +19,7 @@
   "peerDependencies": {
     "@apollo/client": "*",
     "@sumsub/websdk-react": "*",
+    "next": "*",
     "react": "^17.0.1",
     "react-intl": "*"
   }
