@@ -3639,16 +3639,21 @@ __metadata:
     "@identity/messages-fragment": "workspace:0.0.1"
     "@ilink-ui-proto/button": 0.0.1
     "@ilink-ui-proto/input": 0.0.1
+    "@testing-library/react": ^12.1.2
     "@types/react": ^17.0.8
     "@types/styled-system": ^5.1.11
     "@ui/layout": "workspace:0.0.1"
     "@ui/link": "workspace:0.0.1"
+    "@ui/theme": "workspace:0.0.1"
+    next: ^12.1.6
     react: ^17.0.2
+    react-dom: ^17.0.2
     react-intl: ^5.25.1
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
     react: ^17.0.1
+    react-dom: ^17.0.2
     react-intl: "*"
   languageName: unknown
   linkType: soft
