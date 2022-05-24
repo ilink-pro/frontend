@@ -111,6 +111,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@apollo/client@npm:latest":
+  version: 3.6.5
+  resolution: "@apollo/client@npm:3.6.5"
+  dependencies:
+    "@graphql-typed-document-node/core": ^3.1.1
+    "@wry/context": ^0.6.0
+    "@wry/equality": ^0.5.0
+    "@wry/trie": ^0.3.0
+    graphql-tag: ^2.12.6
+    hoist-non-react-statics: ^3.3.2
+    optimism: ^0.16.1
+    prop-types: ^15.7.2
+    symbol-observable: ^4.0.0
+    ts-invariant: ^0.10.3
+    tslib: ^2.3.0
+    zen-observable-ts: ^1.2.5
+  peerDependencies:
+    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    graphql-ws: ^5.5.5
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    subscriptions-transport-ws: ^0.9.0 || ^0.11.0
+  peerDependenciesMeta:
+    graphql-ws:
+      optional: true
+    react:
+      optional: true
+    subscriptions-transport-ws:
+      optional: true
+  checksum: f4afbb311e4c599aafe384a4a2766546c5dfcdac320afc4ab336accbf9b43cae790d782284e21ff23a2cdf7670a3999b8d3098413e0638d8b6190c32b2b34bdd
+  languageName: node
+  linkType: hard
+
 "@apollo/protobufjs@npm:1.2.2":
   version: 1.2.2
   resolution: "@apollo/protobufjs@npm:1.2.2"
@@ -132,6 +164,15 @@ __metadata:
     apollo-pbjs: bin/pbjs
     apollo-pbts: bin/pbts
   checksum: 3f3ec1f428cbcc53760daa6f1076c9043a5aa270b2c9a2ca9f97610eabd3ee1aea08dd36fac658bab83eb6607bc62340bbc6c13ba6bba3c6776df71d68b55929
+  languageName: node
+  linkType: hard
+
+"@apollo/react-testing@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@apollo/react-testing@npm:4.0.0"
+  dependencies:
+    "@apollo/client": latest
+  checksum: 89159eb0a51a4254607a462eb2bb34d4575b041cccd1738fbafc8c6afe57d8e49a01891f3397e4df8d453445bb3ea3de9f73357a2e67909dd11a8112fb83318f
   languageName: node
   linkType: hard
 
@@ -3516,12 +3557,14 @@ __metadata:
   resolution: "@identity/kyc-fragment@workspace:identity/fragments/kyc"
   dependencies:
     "@apollo/client": ^3.6.2
+    "@apollo/react-testing": ^4.0.0
     "@atls/next-identity-integration": ^0.0.8
     "@emotion/react": ^11.9.0
     "@emotion/styled": ^11.8.1
     "@ilink-ui-proto/button": 0.0.1
     "@ilink-ui-proto/input": 0.0.1
     "@sumsub/websdk-react": ^1.3.0
+    "@testing-library/react": ^12.1.2
     "@types/js-cookie": ^3
     "@types/react": ^17.0.8
     "@types/styled-system": ^5.1.11
@@ -3529,7 +3572,12 @@ __metadata:
     "@ui/layout": "workspace:0.0.1"
     "@ui/link": "workspace:0.0.1"
     "@ui/text": "workspace:0.0.1"
+    "@ui/theme": "workspace:0.0.1"
+    graphql: ^16.5.0
     js-cookie: ^3.0.1
+    next: ^12.1.6
+    react: ^17.0.1
+    react-dom: ^17.0.2
     react-intl: ^5.25.1
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
@@ -3537,6 +3585,7 @@ __metadata:
     "@apollo/client": "*"
     "@sumsub/websdk-react": "*"
     react: ^17.0.1
+    react-dom: ^17.0.2
     react-intl: "*"
   languageName: unknown
   linkType: soft
