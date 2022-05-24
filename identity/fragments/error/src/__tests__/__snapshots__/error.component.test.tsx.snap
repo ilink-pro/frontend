@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`identity error error.component should match the latest render snapshot 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  max-width: 448px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: 70px;
+  -ms-flex-preferred-size: 70px;
+  flex-basis: 70px;
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-4 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  word-break: break-word;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  border: 1px solid transparent;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Khula;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 6px;
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+<div
+    class="emotion-0"
+    display="flex"
+    height="100%"
+  >
+    <div
+      class="emotion-1"
+      display="flex"
+      width="100%"
+    />
+    <div
+      class="emotion-2"
+      display="flex"
+    />
+    <div
+      class="emotion-3"
+      display="flex"
+    >
+      <a
+        class="emotion-4"
+        href="/auth/login"
+        style="text-decoration: none;"
+      >
+        Go to login page
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

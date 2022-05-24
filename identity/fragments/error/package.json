@@ -8,15 +8,22 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@ilink-ui-proto/button": "0.0.1",
+    "@testing-library/react": "^12.1.2",
     "@types/react": "^17.0.38",
     "@types/styled-system": "^5.1.15",
     "@ui/layout": "workspace:0.0.1",
     "@ui/text": "workspace:0.0.1",
+    "@ui/theme": "workspace:0.0.1",
+    "next": "^12.1.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.2",
+    "react-intl": "^5.18.1",
     "styled-system": "^5.1.5",
     "styled-tools": "^1.7.2"
   },
   "peerDependencies": {
     "react": "^17.0.1",
+    "react-dom": "^17.0.2",
     "react-intl": "^5.18.1"
   }
 }
