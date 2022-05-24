@@ -1,0 +1,1934 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`identity kyc kyc.component should match the latest render snapshot 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgb(251,250,255);
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-0 {
+    background-color: rgb(251,250,255);
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-0 {
+    background-color: rgb(255,255,255);
+  }
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-1 {
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-1 {
+    -webkit-flex-basis: 160px;
+    -ms-flex-preferred-size: 160px;
+    flex-basis: 160px;
+  }
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: 40px;
+  -ms-flex-preferred-size: 40px;
+  flex-basis: 40px;
+}
+
+.emotion-4 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-5 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: 19px;
+  -ms-flex-preferred-size: 19px;
+  flex-basis: 19px;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-5 {
+    -webkit-flex-basis: 19px;
+    -ms-flex-preferred-size: 19px;
+    flex-basis: 19px;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-5 {
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+  }
+}
+
+.emotion-6 {
+  color: rgb(54,52,61);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 48px;
+  font-family: Khula;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-7 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: 24px;
+  -ms-flex-preferred-size: 24px;
+  flex-basis: 24px;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-7 {
+    -webkit-flex-basis: 24px;
+    -ms-flex-preferred-size: 24px;
+    flex-basis: 24px;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-7 {
+    -webkit-flex-basis: 40px;
+    -ms-flex-preferred-size: 40px;
+    flex-basis: 40px;
+  }
+}
+
+.emotion-8 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-8 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-8 {
+    display: none;
+  }
+}
+
+.emotion-9 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: 19px;
+  -ms-flex-preferred-size: 19px;
+  flex-basis: 19px;
+}
+
+.emotion-10 {
+  box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-10 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-10 {
+    width: auto;
+  }
+}
+
+.emotion-11 {
+  box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-11 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-11 {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-11 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-11 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.emotion-12 {
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  opacity: 1;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-12 {
+    width: 32px;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-12 {
+    width: auto;
+  }
+}
+
+.emotion-13 {
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-14 {
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(116,97,240);
+  border-radius: 100%;
+}
+
+.emotion-15 {
+  color: rgb(255,255,255);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Khula;
+  line-height: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-16 {
+  box-sizing: border-box;
+  display: none;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-flex-basis: 16px;
+  -ms-flex-preferred-size: 16px;
+  flex-basis: 16px;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-16 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-16 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-17 {
+  box-sizing: border-box;
+  display: none;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-17 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-17 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-18 {
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgb(54,52,61);
+  font-weight: 600;
+  font-size: 14px;
+  font-family: Khula;
+  line-height: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-19 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: 32px;
+  -ms-flex-preferred-size: 32px;
+  flex-basis: 32px;
+}
+
+.emotion-20 {
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-20 {
+    width: 32px;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-20 {
+    width: auto;
+  }
+}
+
+.emotion-60 {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-60 {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-60 {
+    width: 1120px;
+    height: 872px;
+  }
+}
+
+.emotion-61 {
+  box-sizing: border-box;
+  width: 384px;
+  height: 100%;
+  display: none;
+  background-color: rgb(219,216,238);
+  border: 1px solid #E3DEF0;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-61 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-61 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-116 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #E3DEF0;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-116 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-116 {
+    width: 736px;
+  }
+}
+
+.emotion-117 {
+  box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgb(255,255,255);
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-117 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-117 {
+    width: 736px;
+  }
+}
+
+.emotion-122 {
+  color: rgb(54,52,61);
+  font-size: 32px;
+  font-family: Khula;
+  font-weight: 400;
+  line-height: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-124 {
+  box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-124 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-124 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.emotion-125 {
+  box-sizing: border-box;
+  width: 312px;
+  height: 56px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-126 {
+  box-sizing: border-box;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: text;
+  height: 40px;
+  border-width: 1px;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: Khula;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 6px;
+  background-color: white;
+  border-color: #DADEED;
+  color: black;
+}
+
+.emotion-127 {
+  background: transparent;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-166 {
+  color: rgb(54,52,61);
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Khula;
+  line-height: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-167 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: 24px;
+  -ms-flex-preferred-size: 24px;
+  flex-basis: 24px;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-167 {
+    -webkit-flex-basis: 24px;
+    -ms-flex-preferred-size: 24px;
+    flex-basis: 24px;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-167 {
+    -webkit-flex-basis: 16px;
+    -ms-flex-preferred-size: 16px;
+    flex-basis: 16px;
+  }
+}
+
+.emotion-171 {
+  box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-171 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-171 {
+    width: 254px;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-171 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-171 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.emotion-172 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.emotion-173 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  word-break: break-word;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  border: 1px solid transparent;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Khula;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 6px;
+}
+
+.emotion-174 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: 16px;
+  -ms-flex-preferred-size: 16px;
+  flex-basis: 16px;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-174 {
+    -webkit-flex-basis: 16px;
+    -ms-flex-preferred-size: 16px;
+    flex-basis: 16px;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-174 {
+    -webkit-flex-basis: 12px;
+    -ms-flex-preferred-size: 12px;
+    flex-basis: 12px;
+  }
+}
+
+.emotion-176 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  word-break: break-word;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  border: 1px solid transparent;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Khula;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 6px;
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+.emotion-179 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+@media screen and (min-width: 40em) {
+  .emotion-179 {
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .emotion-179 {
+    -webkit-flex-basis: 128px;
+    -ms-flex-preferred-size: 128px;
+    flex-basis: 128px;
+  }
+}
+
+<div
+    class="emotion-0"
+    display="flex"
+  >
+    <div
+      class="emotion-1"
+      display="flex"
+    />
+    <div
+      class="emotion-2"
+      display="flex"
+      height="100%"
+    >
+      <div
+        class="emotion-3"
+        display="flex"
+      />
+      <div
+        class="emotion-4"
+        display="flex"
+      >
+        <div
+          class="emotion-5"
+          display="flex"
+        />
+        <span
+          class="emotion-6"
+          color="text.primary"
+          display="inline-flex"
+          font-family="primary"
+          font-size="big"
+          font-weight="medium"
+        >
+          KYC
+        </span>
+      </div>
+      <div
+        class="emotion-7"
+        display="flex"
+      />
+      <div
+        class="emotion-8"
+        display="flex,flex,none"
+        width="100%"
+      >
+        <div
+          class="emotion-9"
+          display="flex"
+        />
+        <div
+          class="emotion-10"
+          display="flex"
+          width="100%,100%,auto"
+        >
+          <div
+            class="emotion-11"
+            display="flex"
+            width="100%,100%,auto"
+          >
+            <div
+              class="emotion-12"
+              display="flex"
+              height="32"
+              opacity="1"
+              width="32,32,auto"
+            >
+              <div
+                class="emotion-13"
+                display="flex"
+                height="32"
+                width="32"
+              >
+                <div
+                  class="emotion-14"
+                  display="flex"
+                  height="32"
+                  width="32"
+                >
+                  <span
+                    class="emotion-15"
+                    color="text.white"
+                    display="inline-flex"
+                    font-family="primary"
+                    font-size="semiRegular"
+                    font-weight="semiBold"
+                  >
+                    1
+                  </span>
+                </div>
+              </div>
+              <div
+                class="emotion-16"
+                display="none,none,flex"
+              />
+              <div
+                class="emotion-17"
+                display="none,none,flex"
+              >
+                <span
+                  class="emotion-18"
+                  color="text.primary"
+                  display="inline-flex"
+                  font-family="primary"
+                  font-size="semiRegular"
+                  font-weight="semiBold"
+                >
+                  Basic information
+                </span>
+              </div>
+            </div>
+            <div
+              class="emotion-19"
+              display="flex"
+            />
+            <div
+              class="emotion-20"
+              display="flex"
+              height="32"
+              opacity="0.5"
+              width="32,32,auto"
+            >
+              <div
+                class="emotion-13"
+                display="flex"
+                height="32"
+                width="32"
+              >
+                <div
+                  class="emotion-14"
+                  display="flex"
+                  height="32"
+                  width="32"
+                >
+                  <span
+                    class="emotion-15"
+                    color="text.white"
+                    display="inline-flex"
+                    font-family="primary"
+                    font-size="semiRegular"
+                    font-weight="semiBold"
+                  >
+                    2
+                  </span>
+                </div>
+              </div>
+              <div
+                class="emotion-16"
+                display="none,none,flex"
+              />
+              <div
+                class="emotion-17"
+                display="none,none,flex"
+              >
+                <span
+                  class="emotion-18"
+                  color="text.primary"
+                  display="inline-flex"
+                  font-family="primary"
+                  font-size="semiRegular"
+                  font-weight="semiBold"
+                >
+                  Address
+                </span>
+              </div>
+            </div>
+            <div
+              class="emotion-19"
+              display="flex"
+            />
+            <div
+              class="emotion-20"
+              display="flex"
+              height="32"
+              opacity="0.5"
+              width="32,32,auto"
+            >
+              <div
+                class="emotion-13"
+                display="flex"
+                height="32"
+                width="32"
+              >
+                <div
+                  class="emotion-14"
+                  display="flex"
+                  height="32"
+                  width="32"
+                >
+                  <span
+                    class="emotion-15"
+                    color="text.white"
+                    display="inline-flex"
+                    font-family="primary"
+                    font-size="semiRegular"
+                    font-weight="semiBold"
+                  >
+                    3
+                  </span>
+                </div>
+              </div>
+              <div
+                class="emotion-16"
+                display="none,none,flex"
+              />
+              <div
+                class="emotion-17"
+                display="none,none,flex"
+              >
+                <span
+                  class="emotion-18"
+                  color="text.primary"
+                  display="inline-flex"
+                  font-family="primary"
+                  font-size="semiRegular"
+                  font-weight="semiBold"
+                >
+                  Proof of identity step 1
+                </span>
+              </div>
+            </div>
+            <div
+              class="emotion-19"
+              display="flex"
+            />
+            <div
+              class="emotion-20"
+              display="flex"
+              height="32"
+              opacity="0.5"
+              width="32,32,auto"
+            >
+              <div
+                class="emotion-13"
+                display="flex"
+                height="32"
+                width="32"
+              >
+                <div
+                  class="emotion-14"
+                  display="flex"
+                  height="32"
+                  width="32"
+                >
+                  <span
+                    class="emotion-15"
+                    color="text.white"
+                    display="inline-flex"
+                    font-family="primary"
+                    font-size="semiRegular"
+                    font-weight="semiBold"
+                  >
+                    4
+                  </span>
+                </div>
+              </div>
+              <div
+                class="emotion-16"
+                display="none,none,flex"
+              />
+              <div
+                class="emotion-17"
+                display="none,none,flex"
+              >
+                <span
+                  class="emotion-18"
+                  color="text.primary"
+                  display="inline-flex"
+                  font-family="primary"
+                  font-size="semiRegular"
+                  font-weight="semiBold"
+                >
+                  Proof of identity step 2
+                </span>
+              </div>
+            </div>
+            <div
+              class="emotion-19"
+              display="flex"
+            />
+            <div
+              class="emotion-20"
+              display="flex"
+              height="32"
+              opacity="0.5"
+              width="32,32,auto"
+            >
+              <div
+                class="emotion-13"
+                display="flex"
+                height="32"
+                width="32"
+              >
+                <div
+                  class="emotion-14"
+                  display="flex"
+                  height="32"
+                  width="32"
+                >
+                  <span
+                    class="emotion-15"
+                    color="text.white"
+                    display="inline-flex"
+                    font-family="primary"
+                    font-size="semiRegular"
+                    font-weight="semiBold"
+                  >
+                    5
+                  </span>
+                </div>
+              </div>
+              <div
+                class="emotion-16"
+                display="none,none,flex"
+              />
+              <div
+                class="emotion-17"
+                display="none,none,flex"
+              >
+                <span
+                  class="emotion-18"
+                  color="text.primary"
+                  display="inline-flex"
+                  font-family="primary"
+                  font-size="semiRegular"
+                  font-weight="semiBold"
+                >
+                  Proof of address
+                </span>
+              </div>
+            </div>
+            <div
+              class="emotion-19"
+              display="flex"
+            />
+            <div
+              class="emotion-20"
+              display="flex"
+              height="32"
+              opacity="0.5"
+              width="32,32,auto"
+            >
+              <div
+                class="emotion-13"
+                display="flex"
+                height="32"
+                width="32"
+              >
+                <div
+                  class="emotion-14"
+                  display="flex"
+                  height="32"
+                  width="32"
+                >
+                  <span
+                    class="emotion-15"
+                    color="text.white"
+                    display="inline-flex"
+                    font-family="primary"
+                    font-size="semiRegular"
+                    font-weight="semiBold"
+                  >
+                    6
+                  </span>
+                </div>
+              </div>
+              <div
+                class="emotion-16"
+                display="none,none,flex"
+              />
+              <div
+                class="emotion-17"
+                display="none,none,flex"
+              >
+                <span
+                  class="emotion-18"
+                  color="text.primary"
+                  display="inline-flex"
+                  font-family="primary"
+                  font-size="semiRegular"
+                  font-weight="semiBold"
+                >
+                  Data verification
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="emotion-9"
+          display="flex"
+        />
+      </div>
+      <div
+        class="emotion-60"
+        display="flex"
+        height="auto,auto,872"
+        width="100%,100%,1120"
+      >
+        <div
+          class="emotion-61"
+          display="none,none,flex"
+          height="100%"
+          width="384"
+        >
+          <div
+            class="emotion-3"
+            display="flex"
+          />
+          <div
+            class="emotion-2"
+            display="flex"
+            height="100%"
+          >
+            <div
+              class="emotion-3"
+              display="flex"
+            />
+            <div
+              class="emotion-10"
+              display="flex"
+              width="100%,100%,auto"
+            >
+              <div
+                class="emotion-11"
+                display="flex"
+                width="100%,100%,auto"
+              >
+                <div
+                  class="emotion-12"
+                  display="flex"
+                  height="32"
+                  opacity="1"
+                  width="32,32,auto"
+                >
+                  <div
+                    class="emotion-13"
+                    display="flex"
+                    height="32"
+                    width="32"
+                  >
+                    <div
+                      class="emotion-14"
+                      display="flex"
+                      height="32"
+                      width="32"
+                    >
+                      <span
+                        class="emotion-15"
+                        color="text.white"
+                        display="inline-flex"
+                        font-family="primary"
+                        font-size="semiRegular"
+                        font-weight="semiBold"
+                      >
+                        1
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="emotion-16"
+                    display="none,none,flex"
+                  />
+                  <div
+                    class="emotion-17"
+                    display="none,none,flex"
+                  >
+                    <span
+                      class="emotion-18"
+                      color="text.primary"
+                      display="inline-flex"
+                      font-family="primary"
+                      font-size="semiRegular"
+                      font-weight="semiBold"
+                    >
+                      Basic information
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="emotion-19"
+                  display="flex"
+                />
+                <div
+                  class="emotion-20"
+                  display="flex"
+                  height="32"
+                  opacity="0.5"
+                  width="32,32,auto"
+                >
+                  <div
+                    class="emotion-13"
+                    display="flex"
+                    height="32"
+                    width="32"
+                  >
+                    <div
+                      class="emotion-14"
+                      display="flex"
+                      height="32"
+                      width="32"
+                    >
+                      <span
+                        class="emotion-15"
+                        color="text.white"
+                        display="inline-flex"
+                        font-family="primary"
+                        font-size="semiRegular"
+                        font-weight="semiBold"
+                      >
+                        2
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="emotion-16"
+                    display="none,none,flex"
+                  />
+                  <div
+                    class="emotion-17"
+                    display="none,none,flex"
+                  >
+                    <span
+                      class="emotion-18"
+                      color="text.primary"
+                      display="inline-flex"
+                      font-family="primary"
+                      font-size="semiRegular"
+                      font-weight="semiBold"
+                    >
+                      Address
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="emotion-19"
+                  display="flex"
+                />
+                <div
+                  class="emotion-20"
+                  display="flex"
+                  height="32"
+                  opacity="0.5"
+                  width="32,32,auto"
+                >
+                  <div
+                    class="emotion-13"
+                    display="flex"
+                    height="32"
+                    width="32"
+                  >
+                    <div
+                      class="emotion-14"
+                      display="flex"
+                      height="32"
+                      width="32"
+                    >
+                      <span
+                        class="emotion-15"
+                        color="text.white"
+                        display="inline-flex"
+                        font-family="primary"
+                        font-size="semiRegular"
+                        font-weight="semiBold"
+                      >
+                        3
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="emotion-16"
+                    display="none,none,flex"
+                  />
+                  <div
+                    class="emotion-17"
+                    display="none,none,flex"
+                  >
+                    <span
+                      class="emotion-18"
+                      color="text.primary"
+                      display="inline-flex"
+                      font-family="primary"
+                      font-size="semiRegular"
+                      font-weight="semiBold"
+                    >
+                      Proof of identity step 1
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="emotion-19"
+                  display="flex"
+                />
+                <div
+                  class="emotion-20"
+                  display="flex"
+                  height="32"
+                  opacity="0.5"
+                  width="32,32,auto"
+                >
+                  <div
+                    class="emotion-13"
+                    display="flex"
+                    height="32"
+                    width="32"
+                  >
+                    <div
+                      class="emotion-14"
+                      display="flex"
+                      height="32"
+                      width="32"
+                    >
+                      <span
+                        class="emotion-15"
+                        color="text.white"
+                        display="inline-flex"
+                        font-family="primary"
+                        font-size="semiRegular"
+                        font-weight="semiBold"
+                      >
+                        4
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="emotion-16"
+                    display="none,none,flex"
+                  />
+                  <div
+                    class="emotion-17"
+                    display="none,none,flex"
+                  >
+                    <span
+                      class="emotion-18"
+                      color="text.primary"
+                      display="inline-flex"
+                      font-family="primary"
+                      font-size="semiRegular"
+                      font-weight="semiBold"
+                    >
+                      Proof of identity step 2
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="emotion-19"
+                  display="flex"
+                />
+                <div
+                  class="emotion-20"
+                  display="flex"
+                  height="32"
+                  opacity="0.5"
+                  width="32,32,auto"
+                >
+                  <div
+                    class="emotion-13"
+                    display="flex"
+                    height="32"
+                    width="32"
+                  >
+                    <div
+                      class="emotion-14"
+                      display="flex"
+                      height="32"
+                      width="32"
+                    >
+                      <span
+                        class="emotion-15"
+                        color="text.white"
+                        display="inline-flex"
+                        font-family="primary"
+                        font-size="semiRegular"
+                        font-weight="semiBold"
+                      >
+                        5
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="emotion-16"
+                    display="none,none,flex"
+                  />
+                  <div
+                    class="emotion-17"
+                    display="none,none,flex"
+                  >
+                    <span
+                      class="emotion-18"
+                      color="text.primary"
+                      display="inline-flex"
+                      font-family="primary"
+                      font-size="semiRegular"
+                      font-weight="semiBold"
+                    >
+                      Proof of address
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="emotion-19"
+                  display="flex"
+                />
+                <div
+                  class="emotion-20"
+                  display="flex"
+                  height="32"
+                  opacity="0.5"
+                  width="32,32,auto"
+                >
+                  <div
+                    class="emotion-13"
+                    display="flex"
+                    height="32"
+                    width="32"
+                  >
+                    <div
+                      class="emotion-14"
+                      display="flex"
+                      height="32"
+                      width="32"
+                    >
+                      <span
+                        class="emotion-15"
+                        color="text.white"
+                        display="inline-flex"
+                        font-family="primary"
+                        font-size="semiRegular"
+                        font-weight="semiBold"
+                      >
+                        6
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="emotion-16"
+                    display="none,none,flex"
+                  />
+                  <div
+                    class="emotion-17"
+                    display="none,none,flex"
+                  >
+                    <span
+                      class="emotion-18"
+                      color="text.primary"
+                      display="inline-flex"
+                      font-family="primary"
+                      font-size="semiRegular"
+                      font-weight="semiBold"
+                    >
+                      Data verification
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="emotion-3"
+              display="flex"
+            />
+          </div>
+          <div
+            class="emotion-3"
+            display="flex"
+          />
+        </div>
+        <div
+          class="emotion-116"
+          display="flex"
+          height="100%"
+          width="100%,100%,736"
+        >
+          <div
+            class="emotion-117"
+            display="flex"
+            width="100%,100%,736"
+          >
+            <div
+              class="emotion-3"
+              display="flex"
+            />
+            <div
+              class="emotion-2"
+              display="flex"
+              height="100%"
+            >
+              <div
+                class="emotion-3"
+                display="flex"
+              />
+              <div
+                class="emotion-4"
+                display="flex"
+              >
+                <span
+                  class="emotion-122"
+                  color="text.primary"
+                  display="inline-flex"
+                  font-family="primary"
+                  font-size="huge"
+                  font-weight="normal"
+                >
+                  Basic information
+                </span>
+              </div>
+              <div
+                class="emotion-19"
+                display="flex"
+              />
+              <div
+                class="emotion-124"
+                display="flex"
+                width="100%"
+              >
+                <div
+                  class="emotion-125"
+                  display="flex"
+                  height="56"
+                  width="312"
+                >
+                  <div
+                    class="emotion-126"
+                    placeholder="First name"
+                  >
+                    <input
+                      class="emotion-127"
+                      placeholder="First name"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="emotion-19"
+                  display="flex"
+                />
+                <div
+                  class="emotion-125"
+                  display="flex"
+                  height="56"
+                  width="312"
+                >
+                  <div
+                    class="emotion-126"
+                    placeholder="Last name"
+                  >
+                    <input
+                      class="emotion-127"
+                      placeholder="Last name"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="emotion-19"
+                display="flex"
+              />
+              <div
+                class="emotion-124"
+                display="flex"
+                width="100%"
+              >
+                <div
+                  class="emotion-125"
+                  display="flex"
+                  height="56"
+                  width="312"
+                >
+                  <div
+                    class="emotion-126"
+                    placeholder="Middle name"
+                  >
+                    <input
+                      class="emotion-127"
+                      placeholder="Middle name"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="emotion-19"
+                  display="flex"
+                />
+                <div
+                  class="emotion-125"
+                  display="flex"
+                  height="56"
+                  width="312"
+                >
+                  <div
+                    class="emotion-126"
+                    placeholder="Date of birth"
+                  >
+                    <input
+                      class="emotion-127"
+                      placeholder="Date of birth"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="emotion-19"
+                display="flex"
+              />
+              <div
+                class="emotion-124"
+                display="flex"
+                width="100%"
+              >
+                <div
+                  class="emotion-125"
+                  display="flex"
+                  height="56"
+                  width="312"
+                >
+                  <div
+                    class="emotion-126"
+                    placeholder="Nationality"
+                  >
+                    <input
+                      class="emotion-127"
+                      placeholder="Nationality"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="emotion-19"
+                  display="flex"
+                />
+                <div
+                  class="emotion-125"
+                  display="flex"
+                  height="56"
+                  width="312"
+                >
+                  <div
+                    class="emotion-126"
+                    placeholder="Country of birth"
+                  >
+                    <input
+                      class="emotion-127"
+                      placeholder="Country of birth"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="emotion-19"
+                display="flex"
+              />
+              <div
+                class="emotion-124"
+                display="flex"
+                width="100%"
+              >
+                <div
+                  class="emotion-125"
+                  display="flex"
+                  height="56"
+                  width="312"
+                >
+                  <div
+                    class="emotion-126"
+                    placeholder="Select your country of residence"
+                  >
+                    <input
+                      class="emotion-127"
+                      placeholder="Select your country of residence"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="emotion-19"
+                  display="flex"
+                />
+                <div
+                  class="emotion-125"
+                  display="flex"
+                  height="56"
+                  width="312"
+                >
+                  <div
+                    class="emotion-126"
+                    placeholder="Reasons for opening an account"
+                  >
+                    <input
+                      class="emotion-127"
+                      placeholder="Reasons for opening an account"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="emotion-19"
+                display="flex"
+              />
+              <div
+                class="emotion-124"
+                display="flex"
+                width="100%"
+              >
+                <div
+                  class="emotion-125"
+                  display="flex"
+                  height="56"
+                  width="312"
+                >
+                  <div
+                    class="emotion-126"
+                    placeholder="Account will be used for"
+                  >
+                    <input
+                      class="emotion-127"
+                      placeholder="Account will be used for"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="emotion-19"
+                display="flex"
+              />
+              <div
+                class="emotion-4"
+                display="flex"
+              >
+                <span
+                  class="emotion-166"
+                  color="text.primary"
+                  display="inline-flex"
+                  font-family="primary"
+                  font-size="default"
+                  font-weight="medium"
+                >
+                  I am not a PEP
+                </span>
+              </div>
+              <div
+                class="emotion-167"
+                display="flex"
+              />
+              <div
+                class="emotion-4"
+                display="flex"
+              >
+                <span
+                  class="emotion-166"
+                  color="text.primary"
+                  display="inline-flex"
+                  font-family="primary"
+                  font-size="default"
+                  font-weight="medium"
+                >
+                  I am not family members and close associates of the PEP
+                </span>
+              </div>
+              <div
+                class="emotion-3"
+                display="flex"
+              />
+              <div
+                class="emotion-171"
+                display="flex"
+                width="100%,100%,254"
+              >
+                <div
+                  class="emotion-172"
+                  display="flex"
+                  width="100%"
+                >
+                  <button
+                    class="emotion-173"
+                    style="width: 100%;"
+                  >
+                    Cancel
+                  </button>
+                </div>
+                <div
+                  class="emotion-174"
+                  display="flex"
+                />
+                <div
+                  class="emotion-172"
+                  display="flex"
+                  width="100%"
+                >
+                  <button
+                    class="emotion-176"
+                    style="width: 100%;"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+              <div
+                class="emotion-3"
+                display="flex"
+              />
+            </div>
+            <div
+              class="emotion-3"
+              display="flex"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-179"
+        display="flex"
+      />
+    </div>
+    <div
+      class="emotion-1"
+      display="flex"
+    />
+  </div>
+</DocumentFragment>
+`;
