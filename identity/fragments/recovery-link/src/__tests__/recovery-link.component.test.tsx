@@ -9,16 +9,16 @@ import { IntlProvider }  from 'react-intl'
 
 import { ThemeProvider } from '@ui/theme'
 
-import { LoginPassword } from '../login-password.component'
+import { RecoveryLink }  from '../recovery-link.component'
 
 describe('identity', () => {
-  describe('login-password', () => {
-    describe('login-password.component', () => {
+  describe('recovery-link', () => {
+    describe('recovery-link.component', () => {
       it('should match the latest render snapshot', () => {
         const { asFragment } = render(
           <IntlProvider locale='ru' messages={{}}>
             <ThemeProvider>
-              <LoginPassword />
+              <RecoveryLink />
             </ThemeProvider>
           </IntlProvider>
         )

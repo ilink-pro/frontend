@@ -5,22 +5,19 @@
 import { render }        from '@testing-library/react'
 
 import React             from 'react'
-import { IntlProvider }  from 'react-intl'
 
 import { ThemeProvider } from '@ui/theme'
 
-import { LoginPassword } from '../login-password.component'
+import { Messages }      from '../messages.component'
 
 describe('identity', () => {
-  describe('login-password', () => {
-    describe('login-password.component', () => {
+  describe('messages', () => {
+    describe('messages.component', () => {
       it('should match the latest render snapshot', () => {
         const { asFragment } = render(
-          <IntlProvider locale='ru' messages={{}}>
-            <ThemeProvider>
-              <LoginPassword />
-            </ThemeProvider>
-          </IntlProvider>
+          <ThemeProvider>
+            <Messages />
+          </ThemeProvider>
         )
 
         expect(asFragment()).toMatchSnapshot()
