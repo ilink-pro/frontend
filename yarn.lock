@@ -3511,6 +3511,7 @@ __metadata:
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
+    next: "*"
     react: ^17.0.1
     react-dom: ^17.0.2
     react-intl: ^5.18.1
@@ -3529,6 +3530,7 @@ __metadata:
     "@types/react": ^17.0.38
     react-intl: ^5.25.1
   peerDependencies:
+    next: "*"
     react: ^17.0.1
     react-helmet: ^6.1.0
     react-intl: "*"
@@ -3546,6 +3548,7 @@ __metadata:
     "@types/react": ^17.0.38
     js-cookie: ^3.0.1
   peerDependencies:
+    next: "*"
     react: ^17.0.1
     react-helmet: ^6.1.0
     react-intl: ^5.18.1
@@ -3584,6 +3587,7 @@ __metadata:
   peerDependencies:
     "@apollo/client": "*"
     "@sumsub/websdk-react": "*"
+    next: "*"
     react: ^17.0.1
     react-dom: ^17.0.2
     react-intl: "*"
@@ -3606,6 +3610,7 @@ __metadata:
   peerDependencies:
     "@apollo/client": "*"
     "@sumsub/websdk-react": "*"
+    next: "*"
     react: ^17.0.1
     react-intl: "*"
   languageName: unknown
@@ -3624,6 +3629,7 @@ __metadata:
     "@ui/layout": "workspace:0.0.1"
     react-intl: ^5.25.1
   peerDependencies:
+    next: "*"
     react: ^17.0.1
     react-intl: "*"
   languageName: unknown
@@ -3652,6 +3658,7 @@ __metadata:
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
+    next: "*"
     react: ^17.0.1
     react-dom: ^17.0.2
     react-intl: "*"
@@ -3670,6 +3677,7 @@ __metadata:
     react-helmet: ^6.1.0
     react-intl: ^5.18.1
   peerDependencies:
+    next: "*"
     react: ^17.0.1
     react-helmet: ^6.1.0
     react-intl: ^5.18.1
@@ -3695,6 +3703,7 @@ __metadata:
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
+    next: "*"
     react: ^17.0.1
     react-dom: ^17.0.2
   languageName: unknown
@@ -3722,6 +3731,7 @@ __metadata:
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
+    next: "*"
     react: ^17.0.1
     react-dom: ^17.0.2
     react-intl: "*"
@@ -3741,6 +3751,7 @@ __metadata:
     "@ui/layout": "workspace:0.0.1"
     react-intl: ^5.25.1
   peerDependencies:
+    next: "*"
     react: ^17.0.1
     react-intl: "*"
   languageName: unknown
@@ -3758,6 +3769,7 @@ __metadata:
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
+    next: "*"
     react: ^17.0.1
   languageName: unknown
   linkType: soft
@@ -3775,6 +3787,7 @@ __metadata:
     "@ui/layout": "workspace:0.0.1"
     react-intl: ^5.25.1
   peerDependencies:
+    next: "*"
     react: ^17.0.1
     react-intl: "*"
   languageName: unknown
@@ -3804,6 +3817,7 @@ __metadata:
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
+    next: "*"
     react: ^17.0.1
     react-dom: ^17.0.2
     react-intl: "*"

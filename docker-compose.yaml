@@ -1,6 +1,13 @@
 version: '3.8'
 
 services:
+  yarn:
+    image: node:16
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn
+
   db:
     image: bitnami/postgresql
     environment:
