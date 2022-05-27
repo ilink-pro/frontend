@@ -9,7 +9,6 @@
   "scripts": {
     "build": "yarn next build src --no-lint && yarn next export src && cp -r src/out/ dist/ && rm -rf src/out",
     "dev": "yarn next dev src",
-    "postinstall": "yarn workspace @ui/icons build",
     "prepack": "run build",
     "start": "http-server dist"
   },
