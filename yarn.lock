@@ -1144,6 +1144,86 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@dashboard/index-page@workspace:0.0.1, @dashboard/index-page@workspace:dashboard/pages/index-page":
+  version: 0.0.0-use.local
+  resolution: "@dashboard/index-page@workspace:dashboard/pages/index-page"
+  dependencies:
+    "@dashboard/navigation-fragment": "workspace:0.0.1"
+    "@types/react": ^17.0.38
+    "@types/react-helmet": ^6
+    "@types/styled-system": ^5.1.15
+    "@ui/layout": "workspace:0.0.1"
+    react-helmet: ^6.1.0
+    react-intl: ^5.24.8
+  peerDependencies:
+    "@apollo/client": "*"
+    "@atls/react-user": "*"
+    react: ^17.0.1
+    react-intl: "*"
+  languageName: unknown
+  linkType: soft
+
+"@dashboard/navigation-fragment@workspace:0.0.1, @dashboard/navigation-fragment@workspace:dashboard/fragments/navigation":
+  version: 0.0.0-use.local
+  resolution: "@dashboard/navigation-fragment@workspace:dashboard/fragments/navigation"
+  dependencies:
+    "@apollo/client": ^3.5.10
+    "@atls/react-user": ^0.1.44
+    "@emotion/react": ^11.9.0
+    "@emotion/styled": ^11.8.1
+    "@testing-library/react": ^12.1.2
+    "@types/react": ^17.0.38
+    "@types/styled-system": ^5.1.15
+    "@ui/divider": "workspace:0.0.1"
+    "@ui/icons": "workspace:0.0.1"
+    "@ui/layout": "workspace:0.0.1"
+    "@ui/link": "workspace:0.0.1"
+    "@ui/logo": "workspace:0.0.1"
+    "@ui/select": "workspace:0.0.1"
+    "@ui/text": "workspace:0.0.1"
+    "@ui/theme": "workspace:0.0.1"
+    next: 12.1.1
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-intl: ^5.24.8
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
+  peerDependencies:
+    "@apollo/client": "*"
+    "@atls/react-user": "*"
+    next: "*"
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-intl: "*"
+  languageName: unknown
+  linkType: soft
+
+"@dashboard/renderer-entrypoint@workspace:dashboard/entrypoints/renderer":
+  version: 0.0.0-use.local
+  resolution: "@dashboard/renderer-entrypoint@workspace:dashboard/entrypoints/renderer"
+  dependencies:
+    "@apollo/client": ^3.5.10
+    "@atls/kratos-session": ^0.0.1
+    "@atls/react-identity-user-provider": ^0.0.2
+    "@atls/react-user": ^0.1.44
+    "@dashboard/index-page": "workspace:0.0.1"
+    "@emotion/react": ^11.7.1
+    "@emotion/styled": ^11.6.0
+    "@types/express": ^4.17.13
+    "@types/node": ^17.0.0
+    "@types/react": ^17.0.37
+    "@types/react-dom": ^17.0.11
+    "@ui/theme": "workspace:0.0.1"
+    graphql: ^16.3.0
+    http-server: ^14.1.0
+    next: ^12.1.0
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-intl: ^5.24.8
+    typescript: ^4.5.4
+  languageName: unknown
+  linkType: soft
+
 "@emotion/babel-plugin@npm:^11.7.1":
   version: 11.9.2
   resolution: "@emotion/babel-plugin@npm:11.9.2"
@@ -5289,86 +5369,6 @@ __metadata:
   checksum: 09b5a158ce013a6c37613258bad79ca4efeb99b1f59c41c73cca36cac00b258aefcf46eeea970fccf06b989414d86fe9f54c1102272c0c3bdd51a313cea80949
   languageName: node
   linkType: hard
-
-"@site/index-page@workspace:0.0.1, @site/index-page@workspace:site/pages/index-page":
-  version: 0.0.0-use.local
-  resolution: "@site/index-page@workspace:site/pages/index-page"
-  dependencies:
-    "@site/navigation-fragment": "workspace:0.0.1"
-    "@types/react": ^17.0.38
-    "@types/react-helmet": ^6
-    "@types/styled-system": ^5.1.15
-    "@ui/layout": "workspace:0.0.1"
-    react-helmet: ^6.1.0
-    react-intl: ^5.24.8
-  peerDependencies:
-    "@apollo/client": "*"
-    "@atls/react-user": "*"
-    react: ^17.0.1
-    react-intl: "*"
-  languageName: unknown
-  linkType: soft
-
-"@site/navigation-fragment@workspace:0.0.1, @site/navigation-fragment@workspace:site/fragments/navigation":
-  version: 0.0.0-use.local
-  resolution: "@site/navigation-fragment@workspace:site/fragments/navigation"
-  dependencies:
-    "@apollo/client": ^3.5.10
-    "@atls/react-user": ^0.1.44
-    "@emotion/react": ^11.9.0
-    "@emotion/styled": ^11.8.1
-    "@testing-library/react": ^12.1.2
-    "@types/react": ^17.0.38
-    "@types/styled-system": ^5.1.15
-    "@ui/divider": "workspace:0.0.1"
-    "@ui/icons": "workspace:0.0.1"
-    "@ui/layout": "workspace:0.0.1"
-    "@ui/link": "workspace:0.0.1"
-    "@ui/logo": "workspace:0.0.1"
-    "@ui/select": "workspace:0.0.1"
-    "@ui/text": "workspace:0.0.1"
-    "@ui/theme": "workspace:0.0.1"
-    next: 12.1.1
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-intl: ^5.24.8
-    styled-system: ^5.1.5
-    styled-tools: ^1.7.2
-  peerDependencies:
-    "@apollo/client": "*"
-    "@atls/react-user": "*"
-    next: "*"
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-intl: "*"
-  languageName: unknown
-  linkType: soft
-
-"@site/renderer-entrypoint@workspace:site/entrypoints/renderer":
-  version: 0.0.0-use.local
-  resolution: "@site/renderer-entrypoint@workspace:site/entrypoints/renderer"
-  dependencies:
-    "@apollo/client": ^3.5.10
-    "@atls/kratos-session": ^0.0.1
-    "@atls/react-identity-user-provider": ^0.0.2
-    "@atls/react-user": ^0.1.44
-    "@emotion/react": ^11.7.1
-    "@emotion/styled": ^11.6.0
-    "@site/index-page": "workspace:0.0.1"
-    "@types/express": ^4.17.13
-    "@types/node": ^17.0.0
-    "@types/react": ^17.0.37
-    "@types/react-dom": ^17.0.11
-    "@ui/theme": "workspace:0.0.1"
-    graphql: ^16.3.0
-    http-server: ^14.1.0
-    next: ^12.1.0
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-intl: ^5.24.8
-    typescript: ^4.5.4
-  languageName: unknown
-  linkType: soft
 
 "@sqltools/formatter@npm:^1.2.2":
   version: 1.2.3

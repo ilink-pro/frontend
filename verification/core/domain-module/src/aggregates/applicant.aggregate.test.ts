@@ -237,11 +237,7 @@ describe('verification', () => {
 
         applicant.commit()
 
-        await applicant.updateAddress(
-          'city1',
-          'apartmentOrHouse1',
-          'postalCode1'
-        )
+        await applicant.updateAddress('city1', 'apartmentOrHouse1', 'postalCode1')
 
         expect(applicant.city).toBe('city1')
         expect(applicant.apartmentOrHouse).toBe('apartmentOrHouse1')

@@ -1,90 +1,102 @@
+import { Metadata }                     from '@grpc/grpc-js'
 /* eslint-disable */
-import { GrpcMethod, GrpcStreamMethod } from "@nestjs/microservices";
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { Observable } from "rxjs";
-import { Metadata } from "@grpc/grpc-js";
-import {
-  GetAccessTokenResponse,
-  GetVerificationStatusResponse,
-  GetApplicantResponse,
-  CreateApplicantResponse,
-  UpdateAddressResponse,
-  VerifyApplicantResponse,
-  AddIdDocumentResponse,
-  AddAddressDocumentsResponse,
-  UpdateApplicantResponse,
-  GetAccessTokenRequest,
-  GetVerificationStatusRequest,
-  GetApplicantRequest,
-  CreateApplicantRequest,
-  UpdateAddressRequest,
-  VerifyApplicantRequest,
-  AddIdDocumentRequest,
-  AddAddressDocumentsRequest,
-  UpdateApplicantRequest,
-} from "../../../../tech/ilink/verification/v1alpha1/verification.payloads";
+import { GrpcMethod }                   from '@nestjs/microservices'
 
-export const protobufPackage = "tech.ilink.verification.v1alpha1";
+import { GrpcStreamMethod } from '@nestjs/microservices'
 
-export const TECH_ILINK_VERIFICATION_V1ALPHA1_PACKAGE_NAME =
-  "tech.ilink.verification.v1alpha1";
+import _m0                              from 'protobufjs/minimal'
+import Long                             from 'long'
+import { Observable }                   from 'rxjs'
+
+import { AddAddressDocumentsRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { AddAddressDocumentsResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { AddIdDocumentRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { AddIdDocumentResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { CreateApplicantRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { CreateApplicantResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { GetAccessTokenRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { GetAccessTokenResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { GetApplicantRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { GetApplicantResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { GetVerificationStatusRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { GetVerificationStatusResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { UpdateAddressRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { UpdateAddressResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { UpdateApplicantRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { UpdateApplicantResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { VerifyApplicantRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { VerifyApplicantResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+export const protobufPackage = 'tech.ilink.verification.v1alpha1'
+
+export const TECH_ILINK_VERIFICATION_V1ALPHA1_PACKAGE_NAME = 'tech.ilink.verification.v1alpha1'
 
 export interface VerificationServiceClient {
   getAccessToken(
     request: GetAccessTokenRequest,
     metadata?: Metadata
-  ): Observable<GetAccessTokenResponse>;
+  ): Observable<GetAccessTokenResponse>
 
   getVerificationStatus(
     request: GetVerificationStatusRequest,
     metadata?: Metadata
-  ): Observable<GetVerificationStatusResponse>;
+  ): Observable<GetVerificationStatusResponse>
 
-  getApplicant(
-    request: GetApplicantRequest,
-    metadata?: Metadata
-  ): Observable<GetApplicantResponse>;
+  getApplicant(request: GetApplicantRequest, metadata?: Metadata): Observable<GetApplicantResponse>
 
   createApplicant(
     request: CreateApplicantRequest,
     metadata?: Metadata
-  ): Observable<CreateApplicantResponse>;
+  ): Observable<CreateApplicantResponse>
 
   updateAddress(
     request: UpdateAddressRequest,
     metadata?: Metadata
-  ): Observable<UpdateAddressResponse>;
+  ): Observable<UpdateAddressResponse>
 
   verifyApplicant(
     request: VerifyApplicantRequest,
     metadata?: Metadata
-  ): Observable<VerifyApplicantResponse>;
+  ): Observable<VerifyApplicantResponse>
 
   addIdDocument(
     request: AddIdDocumentRequest,
     metadata?: Metadata
-  ): Observable<AddIdDocumentResponse>;
+  ): Observable<AddIdDocumentResponse>
 
   addAddressDocuments(
     request: AddAddressDocumentsRequest,
     metadata?: Metadata
-  ): Observable<AddAddressDocumentsResponse>;
+  ): Observable<AddAddressDocumentsResponse>
 
   updateApplicant(
     request: UpdateApplicantRequest,
     metadata?: Metadata
-  ): Observable<UpdateApplicantResponse>;
+  ): Observable<UpdateApplicantResponse>
 }
 
 export interface VerificationServiceController {
   getAccessToken(
     request: GetAccessTokenRequest,
     metadata?: Metadata
-  ):
-    | Promise<GetAccessTokenResponse>
-    | Observable<GetAccessTokenResponse>
-    | GetAccessTokenResponse;
+  ): Promise<GetAccessTokenResponse> | Observable<GetAccessTokenResponse> | GetAccessTokenResponse
 
   getVerificationStatus(
     request: GetVerificationStatusRequest,
@@ -92,15 +104,12 @@ export interface VerificationServiceController {
   ):
     | Promise<GetVerificationStatusResponse>
     | Observable<GetVerificationStatusResponse>
-    | GetVerificationStatusResponse;
+    | GetVerificationStatusResponse
 
   getApplicant(
     request: GetApplicantRequest,
     metadata?: Metadata
-  ):
-    | Promise<GetApplicantResponse>
-    | Observable<GetApplicantResponse>
-    | GetApplicantResponse;
+  ): Promise<GetApplicantResponse> | Observable<GetApplicantResponse> | GetApplicantResponse
 
   createApplicant(
     request: CreateApplicantRequest,
@@ -108,15 +117,12 @@ export interface VerificationServiceController {
   ):
     | Promise<CreateApplicantResponse>
     | Observable<CreateApplicantResponse>
-    | CreateApplicantResponse;
+    | CreateApplicantResponse
 
   updateAddress(
     request: UpdateAddressRequest,
     metadata?: Metadata
-  ):
-    | Promise<UpdateAddressResponse>
-    | Observable<UpdateAddressResponse>
-    | UpdateAddressResponse;
+  ): Promise<UpdateAddressResponse> | Observable<UpdateAddressResponse> | UpdateAddressResponse
 
   verifyApplicant(
     request: VerifyApplicantRequest,
@@ -124,15 +130,12 @@ export interface VerificationServiceController {
   ):
     | Promise<VerifyApplicantResponse>
     | Observable<VerifyApplicantResponse>
-    | VerifyApplicantResponse;
+    | VerifyApplicantResponse
 
   addIdDocument(
     request: AddIdDocumentRequest,
     metadata?: Metadata
-  ):
-    | Promise<AddIdDocumentResponse>
-    | Observable<AddIdDocumentResponse>
-    | AddIdDocumentResponse;
+  ): Promise<AddIdDocumentResponse> | Observable<AddIdDocumentResponse> | AddIdDocumentResponse
 
   addAddressDocuments(
     request: AddAddressDocumentsRequest,
@@ -140,7 +143,7 @@ export interface VerificationServiceController {
   ):
     | Promise<AddAddressDocumentsResponse>
     | Observable<AddAddressDocumentsResponse>
-    | AddAddressDocumentsResponse;
+    | AddAddressDocumentsResponse
 
   updateApplicant(
     request: UpdateApplicantRequest,
@@ -148,51 +151,41 @@ export interface VerificationServiceController {
   ):
     | Promise<UpdateApplicantResponse>
     | Observable<UpdateApplicantResponse>
-    | UpdateApplicantResponse;
+    | UpdateApplicantResponse
 }
 
 export function VerificationServiceControllerMethods() {
   return function (constructor: Function) {
     const grpcMethods: string[] = [
-      "getAccessToken",
-      "getVerificationStatus",
-      "getApplicant",
-      "createApplicant",
-      "updateAddress",
-      "verifyApplicant",
-      "addIdDocument",
-      "addAddressDocuments",
-      "updateApplicant",
-    ];
+      'getAccessToken',
+      'getVerificationStatus',
+      'getApplicant',
+      'createApplicant',
+      'updateAddress',
+      'verifyApplicant',
+      'addIdDocument',
+      'addAddressDocuments',
+      'updateApplicant',
+    ]
     for (const method of grpcMethods) {
-      const descriptor: any = Reflect.getOwnPropertyDescriptor(
-        constructor.prototype,
-        method
-      );
-      GrpcMethod("VerificationService", method)(
-        constructor.prototype[method],
-        method,
-        descriptor
-      );
+      const descriptor: any = Reflect.getOwnPropertyDescriptor(constructor.prototype, method)
+      GrpcMethod('VerificationService', method)(constructor.prototype[method], method, descriptor)
     }
-    const grpcStreamMethods: string[] = [];
+    const grpcStreamMethods: string[] = []
     for (const method of grpcStreamMethods) {
-      const descriptor: any = Reflect.getOwnPropertyDescriptor(
-        constructor.prototype,
-        method
-      );
-      GrpcStreamMethod("VerificationService", method)(
+      const descriptor: any = Reflect.getOwnPropertyDescriptor(constructor.prototype, method)
+      GrpcStreamMethod('VerificationService', method)(
         constructor.prototype[method],
         method,
         descriptor
-      );
+      )
     }
-  };
+  }
 }
 
-export const VERIFICATION_SERVICE_NAME = "VerificationService";
+export const VERIFICATION_SERVICE_NAME = 'VerificationService'
 
 if (_m0.util.Long !== Long) {
-  _m0.util.Long = Long as any;
-  _m0.configure();
+  _m0.util.Long = Long as any
+  _m0.configure()
 }
