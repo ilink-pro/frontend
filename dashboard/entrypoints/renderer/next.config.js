@@ -3,6 +3,6 @@ module.exports = {
     externalDir: true,
     workerThreads: true,
     swcFileReading: false,
-    esmExternals: 'loose'
-  }
+    esmExternals: 'loose',
+  },
 }

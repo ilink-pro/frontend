@@ -1,124 +1,125 @@
+import _m0  from 'protobufjs/minimal'
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import {
-  DocumentType,
-  VerificationStatus,
-  Applicant,
-  AddressDocument,
-} from "../../../../tech/ilink/verification/v1alpha1/verification.types";
+import Long from 'long'
 
-export const protobufPackage = "tech.ilink.verification.v1alpha1";
+import { AddressDocument } from '../../../../tech/ilink/verification/v1alpha1/verification.types'
+
+import { Applicant } from '../../../../tech/ilink/verification/v1alpha1/verification.types'
+
+import { DocumentType } from '../../../../tech/ilink/verification/v1alpha1/verification.types'
+
+import { VerificationStatus } from '../../../../tech/ilink/verification/v1alpha1/verification.types'
+
+export const protobufPackage = 'tech.ilink.verification.v1alpha1'
 
 export interface GetAccessTokenRequest {
-  id: string;
+  id: string
 }
 
 export interface GetAccessTokenResponse {
-  accessToken: string;
+  accessToken: string
 }
 
 export interface CreateApplicantRequest {
-  firstName: string;
-  lastName: string;
-  middleName: string;
-  dateOfBirth: string;
-  nationality: string;
-  countryOfBirth: string;
-  countryOfResidence: string;
-  reasonsForOpeningAnAccount: string;
-  accountWillBeUsedFor: string;
-  city: string;
-  street: string;
-  apartmentOrHouse: string;
-  postalCode: string;
+  firstName: string
+  lastName: string
+  middleName: string
+  dateOfBirth: string
+  nationality: string
+  countryOfBirth: string
+  countryOfResidence: string
+  reasonsForOpeningAnAccount: string
+  accountWillBeUsedFor: string
+  city: string
+  street: string
+  apartmentOrHouse: string
+  postalCode: string
 }
 
 export interface CreateApplicantResponse {
-  id: string;
+  id: string
 }
 
 export interface AddIdDocumentRequest {
-  id: string;
-  type: DocumentType;
-  frontSide: Uint8Array;
-  backSide: Uint8Array;
+  id: string
+  type: DocumentType
+  frontSide: Uint8Array
+  backSide: Uint8Array
 }
 
 export interface AddIdDocumentResponse {
-  success: boolean;
+  success: boolean
 }
 
 export interface AddAddressDocumentsRequest {
-  id: string;
-  addressDocuments: AddressDocument[];
+  id: string
+  addressDocuments: AddressDocument[]
 }
 
 export interface AddAddressDocumentsResponse {
-  success: boolean;
+  success: boolean
 }
 
 export interface UpdateAddressRequest {
-  id: string;
-  city: string;
-  apartmentOrHouse: string;
-  postalCode: string;
+  id: string
+  city: string
+  apartmentOrHouse: string
+  postalCode: string
 }
 
 export interface UpdateAddressResponse {
-  id: string;
+  id: string
 }
 
 export interface VerifyApplicantRequest {
-  id: string;
+  id: string
 }
 
 export interface VerifyApplicantResponse {
-  id: string;
+  id: string
 }
 
 export interface GetVerificationStatusRequest {
-  id: string;
+  id: string
 }
 
 export interface GetVerificationStatusResponse {
-  status: VerificationStatus;
+  status: VerificationStatus
 }
 
 export interface GetApplicantRequest {
-  query?: GetApplicantRequest_Query;
+  query?: GetApplicantRequest_Query
 }
 
 export interface GetApplicantRequest_Query {
-  id: string;
-  externalId: string;
+  id: string
+  externalId: string
 }
 
 export interface GetApplicantResponse {
-  applicant?: Applicant;
+  applicant?: Applicant
 }
 
 export interface UpdateApplicantRequest {
-  id: string;
-  firstName: string;
-  lastName: string;
-  middleName: string;
-  dateOfBirth: string;
-  nationality: string;
-  countryOfBirth: string;
-  countryOfResidence: string;
-  reasonsForOpeningAnAccount: string;
-  accountWillBeUsedFor: string;
+  id: string
+  firstName: string
+  lastName: string
+  middleName: string
+  dateOfBirth: string
+  nationality: string
+  countryOfBirth: string
+  countryOfResidence: string
+  reasonsForOpeningAnAccount: string
+  accountWillBeUsedFor: string
 }
 
 export interface UpdateApplicantResponse {
-  id: string;
+  id: string
 }
 
-export const TECH_ILINK_VERIFICATION_V1ALPHA1_PACKAGE_NAME =
-  "tech.ilink.verification.v1alpha1";
+export const TECH_ILINK_VERIFICATION_V1ALPHA1_PACKAGE_NAME = 'tech.ilink.verification.v1alpha1'
 
 if (_m0.util.Long !== Long) {
-  _m0.util.Long = Long as any;
-  _m0.configure();
+  _m0.util.Long = Long as any
+  _m0.configure()
 }

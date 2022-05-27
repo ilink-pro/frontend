@@ -1,16 +1,16 @@
-import * as entities                   from '../entities'
+import * as entities               from '../entities'
 
-import { CqrsModule }                  from '@nestjs/cqrs'
-import { Test }                        from '@nestjs/testing'
-import { TypeOrmModule }               from '@nestjs/typeorm'
-import { getRepositoryToken }          from '@nestjs/typeorm'
+import { CqrsModule }              from '@nestjs/cqrs'
+import { Test }                    from '@nestjs/testing'
+import { TypeOrmModule }           from '@nestjs/typeorm'
+import { getRepositoryToken }      from '@nestjs/typeorm'
 
-import { Repository }                  from 'typeorm'
-import { Connection }                  from 'typeorm'
-import { newDb }                       from 'pg-mem'
-import { v4 as uuid }                  from 'uuid'
+import { Repository }              from 'typeorm'
+import { Connection }              from 'typeorm'
+import { newDb }                   from 'pg-mem'
+import { v4 as uuid }              from 'uuid'
 
-import { Applicant } from '@verification/domain-module'
+import { Applicant }               from '@verification/domain-module'
 
 import { ApplicantEntity }         from '../entities'
 import { ApplicantRepositoryImpl } from './applicant.repository'
@@ -108,11 +108,9 @@ describe('verification', () => {
 
         await repository.save(applicant)
 
-        expect(
-          applicantRepository.findOne({ id })
-        ).resolves.toEqual(
+        expect(applicantRepository.findOne({ id })).resolves.toEqual(
           expect.objectContaining({
-            sumsubId: 'sumsubId'
+            sumsubId: 'sumsubId',
           })
         )
       })
@@ -138,17 +136,11 @@ describe('verification', () => {
           'apartmentOrHouse',
           'postalCode'
         )
-        await applicant.updateAddress(
-          'city1',
-          'apartmentOrHouse1',
-          'postalCode1'
-        )
+        await applicant.updateAddress('city1', 'apartmentOrHouse1', 'postalCode1')
 
         await repository.save(applicant)
 
-        expect(
-          applicantRepository.findOne({ id })
-        ).resolves.toEqual(
+        expect(applicantRepository.findOne({ id })).resolves.toEqual(
           expect.objectContaining({
             city: 'city1',
             apartmentOrHouse: 'apartmentOrHouse1',
@@ -192,9 +184,7 @@ describe('verification', () => {
 
         await repository.save(applicant)
 
-        expect(
-          applicantRepository.findOne({ id })
-        ).resolves.toEqual(
+        expect(applicantRepository.findOne({ id })).resolves.toEqual(
           expect.objectContaining({
             firstName: 'firstName1',
             lastName: 'lastName1',
