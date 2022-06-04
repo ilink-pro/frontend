@@ -1,0 +1,65 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ConfirmUploadResponse {
+  id: String!
+  url: String!
+}
+
+type CreateUploadResponse {
+  id: String!
+  url: String!
+}
+
+type File {
+  id: String!
+  url: String!
+}
+
+type Query {
+  getFile(input: GetFileInput!): File!
+  getFiles(input: GetFilesInput): File!
+}
+
+input GetFileInput {
+  id: String!
+}
+
+input GetFilesInput {
+  id: IdQuery
+  url: UrlQuery
+}
+
+input IdQuery {
+  eq: EqualsCondition
+  in: IncludesCondition
+}
+
+input EqualsCondition {
+  value: String!
+}
+
+input IncludesCondition {
+  value: String!
+}
+
+input UrlQuery {
+  eq: EqualsCondition
+  in: IncludesCondition
+}
+
+type Mutation {
+  createUpload(input: CreateUploadInput!): CreateUploadResponse!
+  confirmUpload(input: ConfirmUploadInput!): ConfirmUploadResponse!
+}
+
+input CreateUploadInput {
+  bucket: String!
+  name: String!
+  size: Float!
+}
+
+input ConfirmUploadInput {
+  id: ID!
+}

@@ -1,5 +1,5 @@
-import { GatewaySourceType }          from '@atls/nestjs-gateway'
 import { GatewayModule }              from '@atls/nestjs-gateway'
+import { GatewaySourceType }          from '@atls/nestjs-gateway'
 import { Module }                     from '@nestjs/common'
 
 import { verificationGatewayHandler } from '@verification/verification-proto'

@@ -25,6 +25,7 @@
     "@identity/kyc-page": "workspace:0.0.1",
     "@identity/login-page": "workspace:0.0.1",
     "@identity/logout-page": "workspace:0.0.1",
+    "@identity/profile-settings-page": "workspace:0.0.1",
     "@identity/recovery-page": "workspace:0.0.1",
     "@identity/registration-page": "workspace:0.0.1",
     "@sumsub/websdk": "^1.3.0",

@@ -7,6 +7,7 @@ import React                       from 'react'
 import { FC }                      from 'react'
 import { FormattedMessage }        from 'react-intl'
 import { useEffect }               from 'react'
+import { useState }                from 'react'
 import { useIntl }                 from 'react-intl'
 
 import { Column }                  from '@ui/layout'
@@ -26,6 +27,7 @@ import { AccountWillBeUsedFor }    from '../store'
 import { ReasonsForOpening }       from '../store'
 import { BasicInformationProps }   from './basic-information.interfaces'
 import { useCreateApplicant }      from '../data'
+import { useUpdateApplicant }      from '../data'
 import { useGetApplicant }         from '../data'
 import { stepVar }                 from '../store'
 import { firstNameVar }            from '../store'
@@ -38,10 +40,13 @@ import { countryOfResidenceVar }   from '../store'
 import { reasonsForOpeningVar }    from '../store'
 import { accountWillBeUsedForVar } from '../store'
 
+const useAction = (isExist: boolean) => (isExist ? useUpdateApplicant() : useCreateApplicant())
+
 const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
   const { formatMessage } = useIntl()
-  const [createApplicant, , loading] = useCreateApplicant()
   const [applicant] = useGetApplicant(Cookie.get('applicantId') || '')
+  const [isExist, setIsExist] = useState<boolean>(false)
+  const [update, , loading] = useAction(isExist)
 
   const firstName = useReactiveVar<FirstName>(firstNameVar)
   const lastName = useReactiveVar<LastName>(lastNameVar)
@@ -55,6 +60,8 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
 
   useEffect(() => {
     if (applicant) {
+      if (!isExist) setIsExist(true)
+
       firstNameVar(applicant.firstName)
       lastNameVar(applicant.lastName)
       middleNameVar(applicant.middleName)
@@ -215,20 +222,24 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
               size='large'
               style={{ width: '100%' }}
               onClick={() => {
-                createApplicant({
+                update({
                   variables: {
-                    firstName,
-                    lastName,
-                    middleName,
-                    dateOfBirth,
-                    nationality,
-                    countryOfBirth,
-                    countryOfResidence,
-                    reasonsForOpeningAnAccount: reasonsForOpening,
-                    accountWillBeUsedFor,
+                    input: {
+                      firstName,
+                      lastName,
+                      middleName,
+                      dateOfBirth,
+                      nationality,
+                      countryOfBirth,
+                      countryOfResidence,
+                      reasonsForOpeningAnAccount: reasonsForOpening,
+                      accountWillBeUsedFor,
+                    },
                   },
                 }).then((response) => {
-                  Cookie.set('applicantId', response?.data?.createApplicant?.id)
+                  if (response?.data?.createApplicant?.id) {
+                    Cookie.set('applicantId', response?.data?.createApplicant?.id)
+                  }
                   stepVar(nextStep)
                 })
               }}

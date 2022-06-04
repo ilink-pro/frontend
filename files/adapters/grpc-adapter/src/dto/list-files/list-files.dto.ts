@@ -2,7 +2,7 @@ import { Type }             from 'class-transformer'
 import { ValidateNested }   from 'class-validator'
 import { IsOptional }       from 'class-validator'
 
-import { ListFilesRequest } from '@files/files-service-proto'
+import { ListFilesRequest } from '@files/files-proto'
 
 import { OrderDto }         from './order.dto'
 import { PagerDto }         from './pager.dto'

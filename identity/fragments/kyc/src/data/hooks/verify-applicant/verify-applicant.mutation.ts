@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client'
 
 export const VERIFY_APPLICANT = gql`
-  mutation VerifyApplicant($id: String!) {
-    verifyApplicant(input: { id: $id }) {
+  mutation VerifyApplicant($input: VerifyApplicantInput) {
+    verifyApplicant(input: $input) {
       id
     }
   }

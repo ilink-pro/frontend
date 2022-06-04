@@ -1,7 +1,7 @@
 import { Transform }                       from 'class-transformer'
 import { IsIn }                            from 'class-validator'
 
-import { ListFilesRequest_OrderDirection } from '@files/files-service-proto'
+import { ListFilesRequest_OrderDirection } from '@files/files-proto'
 
 export class OrderDto {
   @IsIn(['id'])

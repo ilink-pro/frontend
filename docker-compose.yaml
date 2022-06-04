@@ -18,7 +18,7 @@ services:
 
   gcs:
     image: fsouza/fake-gcs-server
-    command: -scheme http -external-url http://localhost:8600
+    command: -scheme http -external-url http://gcs:4443
     volumes:
       - .data/gcs:/data
     ports:
@@ -77,6 +77,7 @@ services:
     depends_on:
       - kratos
       - private-gateway
+      - public-gateway
     networks:
       - default
     ports:
@@ -97,6 +98,21 @@ services:
     depends_on:
       - db
 
+  files:
+    image: node:16
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn workspace @files/service-entrypoint dev
+    networks:
+      - default
+    environment:
+      - DB_HOST=db
+    env_file:
+      - .env
+    depends_on:
+      - db
+
   private-gateway:
     image: node:16
     working_dir: /workspace
@@ -111,3 +127,18 @@ services:
       - 3001:3000
     depends_on:
       - verification
+
+  public-gateway:
+    image: node:16
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn workspace @gateway/public-gateway-entrypoint dev
+    networks:
+      - default
+    environment:
+      - FILES_SERVICE_URL=files:50051
+    depends_on:
+      - files
+    ports:
+      - 3002:3000

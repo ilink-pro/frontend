@@ -1,4 +1,4 @@
-import { protobufPackage }  from '../gen/nestjs/tech/ilink/files/v1alpha1/files_service'
+import { protobufPackage }  from '../gen/nestjs/tech/atls/files/v1alpha1/files_service'
 import { filesServicePath } from '../paths'
 import { includeDirs }      from '../paths'
 

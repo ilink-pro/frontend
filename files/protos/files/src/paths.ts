@@ -7,7 +7,7 @@ import { join } from 'path'
 
 export const filesServicePath =
   typeof __non_webpack_require__ === 'undefined'
-    ? join(__dirname, '../tech/ilink/files/v1alpha1/files_service.proto')
-    : require('../tech/ilink/files/v1alpha1/files_service.proto').default
+    ? join(__dirname, '../tech/atls/files/v1alpha1/files_service.proto')
+    : require('../tech/atls/files/v1alpha1/files_service.proto').default
 
 export const includeDirs = [__dirname, join(__dirname, '..')]

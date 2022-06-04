@@ -124,10 +124,12 @@ const Address: FC<AddressProps> = ({ prevStep, nextStep }) => {
               onClick={() => {
                 updateAddress({
                   variables: {
-                    id: Cookie.get('applicantId'),
-                    city,
-                    apartmentOrHouse,
-                    postalCode,
+                    input: {
+                      id: Cookie.get('applicantId'),
+                      city,
+                      apartmentOrHouse,
+                      postalCode,
+                    },
                   },
                 }).then(() => stepVar(nextStep))
               }}

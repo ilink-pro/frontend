@@ -19,9 +19,9 @@ import { v4 as uuid }                          from 'uuid'
 import { FILES_BUCKETS_MODULE_OPTIONS }        from '@files/buckets-config-adapter-module'
 import { FILES_INFRASTRUCTURE_MODULE_OPTIONS } from '@files/infrastructure-module'
 import { FILES_STORAGE_MODULE_OPTIONS }        from '@files/storage-adapter-module'
-import { UploadServiceClientModule }           from '@files/upload-service-proto'
-import { UPLOAD_SERVICE_CLIENT_TOKEN }         from '@files/upload-service-proto'
-import { UploadServiceClient }                 from '@files/upload-service-proto'
+import { UploadServiceClientModule }           from '@files/upload-proto'
+import { UPLOAD_SERVICE_CLIENT_TOKEN }         from '@files/upload-proto'
+import { UploadServiceClient }                 from '@files/upload-proto'
 import { serverOptions }                       from '@files/grpc-adapter-module'
 
 import { FilesServiceEntrypointModule }        from '../src/files-service-entrypoint.module'
@@ -141,7 +141,7 @@ describe('files upload grpc adapter', () => {
         )
       )
     } catch (error) {
-      expect(ErrorStatus.fromServiceError(error as any).toObject()).toEqual(
+      expect(ErrorStatus.fromServiceError(error).toObject()).toEqual(
         expect.objectContaining({
           details: expect.arrayContaining([
             expect.objectContaining({
@@ -182,7 +182,7 @@ describe('files upload grpc adapter', () => {
         )
       )
     } catch (error) {
-      expect(ErrorStatus.fromServiceError(error as any)).toEqual(
+      expect(ErrorStatus.fromServiceError(error)).toEqual(
         expect.objectContaining({
           code: 3,
           message: 'Files bucket uknown not found',
@@ -206,7 +206,7 @@ describe('files upload grpc adapter', () => {
         )
       )
     } catch (error) {
-      expect(ErrorStatus.fromServiceError(error as any)).toEqual(
+      expect(ErrorStatus.fromServiceError(error)).toEqual(
         expect.objectContaining({
           code: 3,
           message: `Files bucket public not support type 'application/zip', only 'image/*'.`,
@@ -230,7 +230,7 @@ describe('files upload grpc adapter', () => {
         )
       )
     } catch (error) {
-      expect(ErrorStatus.fromServiceError(error as any)).toEqual(
+      expect(ErrorStatus.fromServiceError(error)).toEqual(
         expect.objectContaining({
           code: 3,
           message: 'File size must be greater than 0 and less than 1000, current size is 2000',
@@ -267,7 +267,7 @@ describe('files upload grpc adapter', () => {
         )
       )
     } catch (error) {
-      expect(ErrorStatus.fromServiceError(error as any)).toEqual(
+      expect(ErrorStatus.fromServiceError(error)).toEqual(
         expect.objectContaining({
           code: 3,
           message: 'Upload not found.',
@@ -300,7 +300,7 @@ describe('files upload grpc adapter', () => {
         )
       )
     } catch (error) {
-      expect(ErrorStatus.fromServiceError(error as any)).toEqual(
+      expect(ErrorStatus.fromServiceError(error)).toEqual(
         expect.objectContaining({
           code: 3,
           message: 'File not uploaded.',
@@ -380,7 +380,7 @@ describe('files upload grpc adapter', () => {
         )
       )
     } catch (error) {
-      expect(ErrorStatus.fromServiceError(error as any)).toEqual(
+      expect(ErrorStatus.fromServiceError(error)).toEqual(
         expect.objectContaining({
           code: 3,
           message: 'Upload already confirmed.',
@@ -425,7 +425,7 @@ describe('files upload grpc adapter', () => {
         )
       )
     } catch (error) {
-      expect(ErrorStatus.fromServiceError(error as any)).toEqual(
+      expect(ErrorStatus.fromServiceError(error)).toEqual(
         expect.objectContaining({
           code: 3,
           message: 'Upload initiator does not match the endorsement.',

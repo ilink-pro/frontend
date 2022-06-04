@@ -16,29 +16,27 @@ import { CreateUploadCommand }            from '@files/application-module'
 import { ConfirmUploadCommand }           from '@files/application-module'
 import { GetUploadByIdQuery }             from '@files/application-module'
 import { GetFileByIdQuery }               from '@files/application-module'
-import { CreateUploadResponse }           from '@files/upload-service-proto'
-import { ConfirmUploadResponse }          from '@files/upload-service-proto'
-import { UploadServiceControllerMethods } from '@files/upload-service-proto'
-import { UploadServiceController }        from '@files/upload-service-proto'
+import { CreateUploadResponse }           from '@files/upload-proto'
+import { ConfirmUploadResponse }          from '@files/upload-proto'
+import { UploadServiceControllerMethods } from '@files/upload-proto'
+import { UploadServiceController }        from '@files/upload-proto'
 
 import { ConfirmUploadDto }               from '../dto'
 import { CreateUploadDto }                from '../dto'
 
 @Controller()
 @UploadServiceControllerMethods()
-@UseGuards(GrpcJwtIdentityGuard)
 @UseFilters(new GrpcExceptionsFilter())
 export class UploadController implements UploadServiceController {
   constructor(private readonly commandBus: CommandBus, private readonly queryBus: QueryBus) {}
 
   @UsePipes(new GrpcValidationPipe())
   async createUpload(
-    @Payload() request: CreateUploadDto,
-    @Subject() subject
+    @Payload() request: CreateUploadDto
   ): Promise<CreateUploadResponse> {
     const command = new CreateUploadCommand(
       uuid(),
-      subject,
+      uuid(),
       request.bucket,
       request.name,
       request.size
@@ -51,10 +49,9 @@ export class UploadController implements UploadServiceController {
 
   @UsePipes(new GrpcValidationPipe())
   async confirmUpload(
-    @Payload() request: ConfirmUploadDto,
-    @Subject() subject
+    @Payload() request: ConfirmUploadDto
   ): Promise<ConfirmUploadResponse> {
-    const command = new ConfirmUploadCommand(request.id, subject)
+    const command = new ConfirmUploadCommand(request.id, uuid())
 
     await this.commandBus.execute(command)
 
