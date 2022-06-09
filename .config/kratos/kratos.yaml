@@ -1,0 +1,94 @@
+version: v0.7.4-alpha.1
+
+serve:
+  public:
+    base_url: https://identity.torin-asakura.support/
+    cors:
+      enabled: true
+      allowed_origins:
+        - https://accounts.torin-asakura.support
+      debug: true
+  admin:
+    base_url: http://kratos:4434/
+
+session:
+  cookie:
+    domain: .torin-asakura.support
+  whoami:
+    required_aal: aal1
+
+selfservice:
+  default_browser_return_url: https://accounts.torin-asakura.support/profile/settings
+  whitelisted_return_urls:
+    - https://accounts.torin-asakura.support
+
+  methods:
+    password:
+      enabled: true
+    link:
+      enabled: true
+    totp:
+      enabled: false
+    lookup_secret:
+      enabled: false
+    oidc:
+      enabled: false
+
+  flows:
+    error:
+      ui_url: https://accounts.torin-asakura.support/auth/error
+
+    settings:
+      ui_url: https://accounts.torin-asakura.support/profile/settings
+      privileged_session_max_age: 15m
+      required_aal: aal1
+
+    recovery:
+      enabled: true
+      ui_url: https://accounts.torin-asakura.support/profile/recovery
+
+    verification:
+      enabled: true
+      ui_url: https://accounts.torin-asakura.support/auth/verification
+      after:
+        default_browser_return_url: https://accounts.torin-asakura.support/
+
+    logout:
+      after:
+        default_browser_return_url: https://accounts.torin-asakura.support/auth/login
+
+    login:
+      ui_url: https://accounts.torin-asakura.support/auth/login
+      lifespan: 10m
+
+    registration:
+      lifespan: 10m
+      ui_url: https://accounts.torin-asakura.support/auth/registration
+      after:
+        password:
+          hooks:
+            - hook: session
+
+log:
+  level: debug
+  format: text
+  leak_sensitive_values: true
+
+secrets:
+  cookie:
+    - PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
+
+hashers:
+  argon2:
+    parallelism: 1
+    memory: 128MB
+    iterations: 2
+    salt_length: 16
+    key_length: 16
+
+identity:
+  default_schema_url: file:///etc/config/kratos/identity.schema.json
+
+courier:
+  smtp:
+    connection_uri: smtps://test:test@mailslurper:1025/?skip_ssl_verify=true&legacy_ssl=true

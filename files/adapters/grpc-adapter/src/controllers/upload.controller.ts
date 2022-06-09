@@ -26,17 +26,19 @@ import { CreateUploadDto }                from '../dto'
 
 @Controller()
 @UploadServiceControllerMethods()
+@UseGuards(GrpcJwtIdentityGuard)
 @UseFilters(new GrpcExceptionsFilter())
 export class UploadController implements UploadServiceController {
   constructor(private readonly commandBus: CommandBus, private readonly queryBus: QueryBus) {}
 
   @UsePipes(new GrpcValidationPipe())
   async createUpload(
-    @Payload() request: CreateUploadDto
+    @Payload() request: CreateUploadDto,
+    @Subject() subject
   ): Promise<CreateUploadResponse> {
     const command = new CreateUploadCommand(
       uuid(),
-      uuid(),
+      subject,
       request.bucket,
       request.name,
       request.size
@@ -49,9 +51,10 @@ export class UploadController implements UploadServiceController {
 
   @UsePipes(new GrpcValidationPipe())
   async confirmUpload(
-    @Payload() request: ConfirmUploadDto
+    @Payload() request: ConfirmUploadDto,
+    @Subject() subject
   ): Promise<ConfirmUploadResponse> {
-    const command = new ConfirmUploadCommand(request.id, uuid())
+    const command = new ConfirmUploadCommand(request.id, subject)
 
     await this.commandBus.execute(command)
 
