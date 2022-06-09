@@ -3,8 +3,10 @@
 import { Inject }                 from '@nestjs/common'
 import { CommandHandler }         from '@nestjs/cqrs'
 import { ICommandHandler }        from '@nestjs/cqrs'
+import { ClientProxy }            from '@nestjs/microservices'
 
 import assert                     from 'assert'
+import { firstValueFrom }         from 'rxjs'
 
 import { ApplicantRepository }    from '@verification/domain-module'
 import { SUMSUB_SERVICE }         from '@verification/domain-module'
@@ -19,11 +21,16 @@ export class VerifyApplicantCommandHandler
   constructor(
     @Inject(SUMSUB_SERVICE)
     private readonly sumsubService: SumsubServicePort,
+    @Inject('FILES_SERVICE')
+    private readonly client: ClientProxy,
     private readonly applicantRepository: ApplicantRepository
   ) {}
 
   async execute(command: VerifyApplicantCommand) {
     const applicant = await this.applicantRepository.findById(command.id)
+    const listFilesResponse = await firstValueFrom(this.client.send('testit', { text: 'upperit' }))
+
+    console.log(listFilesResponse)
 
     assert.ok(applicant)
 

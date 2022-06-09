@@ -8,10 +8,10 @@ import { Resolver }                   from '@nestjs/graphql'
 import { FILES_SERVICE_CLIENT_TOKEN } from '@files/files-proto'
 import { FilesServiceClient }         from '@files/files-proto'
 
+import { FileLoader }                 from '../dataloaders'
 import { GetFileInput }               from '../inputs'
 import { GetFilesInput }              from '../inputs'
 import { File }                       from '../types'
-import { FileLoader } from '../dataloaders'
 
 @Resolver((of) => File)
 export class FilesQueries {
@@ -34,7 +34,6 @@ export class FilesQueries {
     input: GetFilesInput,
     @Context('authorization') authorization: string
   ) {
-
     return this.fileLoader.listFiles()
   }
 }

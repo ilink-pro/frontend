@@ -249,6 +249,35 @@ describe('verification', () => {
         expect(response.applicant).toBeDefined()
         expect(response.applicant?.id).toBeDefined()
       })
+
+      it('should verify applicant', async () => {
+        const applicant = await firstValueFrom(
+          client.createApplicant({
+            firstName: 'firstName',
+            lastName: 'lastName',
+            middleName: 'middleName',
+            dateOfBirth: '1996-06-20',
+            nationality: 'nationality',
+            countryOfBirth: 'countryOfBirth',
+            countryOfResidence: 'countryOfResidence',
+            reasonsForOpeningAnAccount: 'reasonsForOpeningAnAccount',
+            accountWillBeUsedFor: 'accountWillBeUsedFor',
+            city: 'city',
+            street: 'street',
+            apartmentOrHouse: 'apartmentOrHouse',
+            postalCode: 'postalCode',
+          })
+        )
+
+        const response = await firstValueFrom(
+          client.verifyApplicant({
+            id: applicant.id,
+          })
+        )
+
+        // expect(response.applicant).toBeDefined()
+        expect(1).toBe(2)
+      })
     })
   })
 })

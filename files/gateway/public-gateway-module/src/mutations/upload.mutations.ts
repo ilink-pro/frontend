@@ -21,7 +21,7 @@ export class UploadMutations {
   @Mutation((returns) => CreateUploadResponse)
   createUpload(
     @Args('input')
-      input: CreateUploadInput,
+    input: CreateUploadInput,
     @Context('authorization') authorization: string
   ) {
     const metadata = new Metadata()
@@ -34,7 +34,7 @@ export class UploadMutations {
   @Mutation((returns) => ConfirmUploadResponse)
   confirmUpload(
     @Args('input')
-      input: ConfirmUploadInput,
+    input: ConfirmUploadInput,
     @Context('authorization') authorization: string
   ) {
     const metadata = new Metadata()

@@ -37,6 +37,8 @@
     "@verification/infrastructure-module": "workspace:0.0.1",
     "@verification/sumsub-adapter-module": "workspace:0.0.1",
     "@verification/verification-proto": "workspace:0.0.1",
+    "amqp-connection-manager": "^4.1.3",
+    "amqplib": "^0.10.0",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "get-port": "^5.1.1",

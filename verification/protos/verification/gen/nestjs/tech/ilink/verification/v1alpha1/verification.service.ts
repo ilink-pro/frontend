@@ -1,30 +1,48 @@
-import { Metadata }                      from '@grpc/grpc-js'
+import { Metadata }                     from '@grpc/grpc-js'
 /* eslint-disable */
-import { GrpcMethod }                    from '@nestjs/microservices'
-import { GrpcStreamMethod }              from '@nestjs/microservices'
+import { GrpcMethod }                   from '@nestjs/microservices'
 
-import _m0                               from 'protobufjs/minimal'
-import Long                              from 'long'
-import { Observable }                    from 'rxjs'
+import { GrpcStreamMethod } from '@nestjs/microservices'
 
-import { AddAddressDocumentsRequest }    from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { AddAddressDocumentsResponse }   from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { AddIdDocumentRequest }          from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { AddIdDocumentResponse }         from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { CreateApplicantRequest }        from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { CreateApplicantResponse }       from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { GetAccessTokenRequest }         from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { GetAccessTokenResponse }        from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { GetApplicantRequest }           from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { GetApplicantResponse }          from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { GetVerificationStatusRequest }  from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+import _m0                              from 'protobufjs/minimal'
+import Long                             from 'long'
+import { Observable }                   from 'rxjs'
+
+import { AddAddressDocumentsRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { AddAddressDocumentsResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { AddIdDocumentRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { AddIdDocumentResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { CreateApplicantRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { CreateApplicantResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { GetAccessTokenRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { GetAccessTokenResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { GetApplicantRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { GetApplicantResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { GetVerificationStatusRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
 import { GetVerificationStatusResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { UpdateAddressRequest }          from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { UpdateAddressResponse }         from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { UpdateApplicantRequest }        from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { UpdateApplicantResponse }       from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { VerifyApplicantRequest }        from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
-import { VerifyApplicantResponse }       from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { UpdateAddressRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { UpdateAddressResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { UpdateApplicantRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { UpdateApplicantResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { VerifyApplicantRequest } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
+
+import { VerifyApplicantResponse } from '../../../../tech/ilink/verification/v1alpha1/verification.payloads'
 
 export const protobufPackage = 'tech.ilink.verification.v1alpha1'
 

@@ -43,9 +43,7 @@ export class FileLoader implements NestDataLoader {
 
   async listFiles() {
     const files: Array<File> = await firstValueFrom(
-      this.client
-        .listFiles({})
-        .pipe(map((data: ListFilesResponse) => data.files))
+      this.client.listFiles({}).pipe(map((data: ListFilesResponse) => data.files))
     )
 
     return files
