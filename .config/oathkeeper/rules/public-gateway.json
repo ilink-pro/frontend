@@ -1,0 +1,34 @@
+[
+  {
+    "id": "rules:public-gateway",
+    "upstream": {
+      "preserveHost": "true",
+      "url": "http://gateway:3000"
+    },
+    "match": {
+      "url": "https://gateway.torin-asakura.support/<.*>",
+      "methods": ["GET", "POST", "OPTIONS"]
+    },
+    "authenticators": [
+      {
+        "handler": "cookie_session"
+      }
+    ],
+    "authorizer": {
+      "handler": "allow"
+    },
+    "mutators": [
+      {
+        "handler": "id_token"
+      },
+      {
+        "handler": "header",
+        "config": {
+          "headers": {
+            "X-User": "{{ print .Subject }}"
+          }
+        }
+      }
+    ]
+  }
+]

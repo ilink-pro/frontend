@@ -21,16 +21,26 @@ export class UploadMutations {
   @Mutation((returns) => CreateUploadResponse)
   createUpload(
     @Args('input')
-    input: CreateUploadInput
+      input: CreateUploadInput,
+    @Context('authorization') authorization: string
   ) {
-    return this.client.createUpload(input)
+    const metadata = new Metadata()
+
+    metadata.set('authorization', authorization)
+
+    return this.client.createUpload(input, metadata)
   }
 
   @Mutation((returns) => ConfirmUploadResponse)
   confirmUpload(
     @Args('input')
-    input: ConfirmUploadInput
+      input: ConfirmUploadInput,
+    @Context('authorization') authorization: string
   ) {
-    return this.client.confirmUpload(input)
+    const metadata = new Metadata()
+
+    metadata.set('authorization', authorization)
+
+    return this.client.confirmUpload(input, metadata)
   }
 }

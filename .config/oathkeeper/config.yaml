@@ -1,0 +1,78 @@
+log:
+  level: debug
+  format: text
+
+profiling: cpu
+
+serve:
+  proxy:
+    port: 4455
+    cors:
+      enabled: true
+      debug: true
+      allowed_origins:
+        - '*'
+
+  api:
+    port: 4456
+
+access_rules:
+  repositories:
+    - file://etc/config/oathkeeper/rules/public-gateway.json
+
+authenticators:
+  anonymous:
+    enabled: true
+    config:
+      subject: guest
+
+  jwt:
+    enabled: true
+    config:
+      jwks_urls:
+        - file://etc/config/oathkeeper/jwks.json
+      scope_strategy: wildcard
+
+  cookie_session:
+    enabled: true
+    config:
+      check_session_url: http://kratos-public:4433/sessions/whoami
+      preserve_path: true
+      extra_from: '@this'
+      subject_from: 'identity.id'
+      only:
+        - ory_kratos_session
+
+  noop:
+    enabled: true
+
+authorizers:
+  allow:
+    enabled: true
+
+mutators:
+  header:
+    enabled: true
+    config:
+      headers:
+        X-Oathkeeper: oathkeeper
+
+  noop:
+    enabled: true
+
+  id_token:
+    enabled: true
+    config:
+      jwks_url: file://etc/config/oathkeeper/jwks.json
+      issuer_url: https://identity.torin-asakura.support/
+      ttl: 1h
+
+errors:
+  fallback:
+    - json
+
+  handlers:
+    json:
+      enabled: true
+      config:
+        verbose: true

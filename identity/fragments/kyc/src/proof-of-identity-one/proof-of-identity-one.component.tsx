@@ -19,7 +19,7 @@ import { documentTypeVar }         from '../store'
 import { frontSideVar }            from '../store'
 import { backSideVar }             from '../store'
 
-const endpoint = process.env.PUBLIC_GATEWAY_URL || 'http://localhost:3002/'
+const endpoint = process.env.PUBLIC_GATEWAY_URL || 'https://public-gateway.torin-asakura.support/'
 
 const ProofOfIdentityOne: FC<ProofOfIdentityOneProps> = ({ prevStep, nextStep }) => {
   const upload = useUpload({ bucket: 'private', endpoint })

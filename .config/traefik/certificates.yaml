@@ -1,0 +1,4 @@
+tls:
+  certificates:
+    - certFile: /certs/torin-asakura-support.crt
+      keyFile: /certs/torin-asakura-support.key
