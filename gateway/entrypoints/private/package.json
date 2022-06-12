@@ -14,7 +14,7 @@
     "@nestjs/common": "^8.4.5",
     "apollo-server-core": "2.25.2",
     "apollo-server-express": "2.25.2",
-    "graphql": "^15.6.1"
+    "graphql": "^16.5.0"
   },
   "devDependencies": {
     "@atls/nestjs-gateway": "^0.0.3",

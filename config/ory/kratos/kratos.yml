@@ -1,0 +1,96 @@
+version: v0.8.2-alpha.1
+
+dsn: memory
+
+serve:
+  public:
+    base_url: http://localhost:4434/
+    cors:
+      enabled: true
+      allowed_origins:
+        - 'https://accounts.torin-asakura.support'
+        - 'http://localhost:4434'
+      allowed_methods:
+        - POST
+        - GET
+        - PUT
+        - PATCH
+        - DELETE
+      allowed_headers:
+        - Authorization
+        - Cookie
+        - Content-Type
+      exposed_headers:
+        - Set-Cookie
+      debug: true
+  admin:
+    base_url: http://kratos:4434/
+
+selfservice:
+  default_browser_return_url: https://accounts.torin-asakura.support/
+  whitelisted_return_urls:
+    - https://accounts.torin-asakura.support/
+    - http://localhost:4434/
+
+  methods:
+    password:
+      enabled: true
+
+  flows:
+    error:
+      ui_url: https://accounts.torin-asakura.support/auth/error
+    settings:
+      ui_url: https://accounts.torin-asakura.support/auth/settings
+      privileged_session_max_age: 15m
+    recovery:
+      enabled: true
+      ui_url: https://accounts.torin-asakura.support/auth/recovery
+    verification:
+      enabled: true
+      ui_url: https://accounts.torin-asakura.support/auth/verify
+      after:
+        default_browser_return_url: http://localhost:3001/
+    logout:
+      after:
+        default_browser_return_url: https://accounts.torin-asakura.support/auth/login
+    login:
+      ui_url: https://accounts.torin-asakura.support/auth/login
+      lifespan: 10m
+    registration:
+      lifespan: 10m
+      ui_url: https://accounts.torin-asakura.support/auth/registration
+      after:
+        password:
+          hooks:
+            - hook: session
+        oidc:
+          hooks:
+            - hook: session
+
+session:
+  cookie:
+    domain: torin-asakura.support
+
+log:
+  level: debug
+  format: text
+  leak_sensitive_values: true
+
+secrets:
+  cookie:
+    - PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
+
+hashers:
+  argon2:
+    parallelism: 1
+    memory: '1GB'
+    iterations: 2
+    salt_length: 16
+    key_length: 16
+
+identity:
+  default_schema_url: file:///config/kratos/identity.schema.json
+
+courier:
+  smtp:
+    connection_uri: smtps://test:test@mailslurper:1025/?skip_ssl_verify=true

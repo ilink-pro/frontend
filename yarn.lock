@@ -1400,7 +1400,7 @@ __metadata:
     "@types/react": ^17.0.37
     "@types/react-dom": ^17.0.11
     "@ui/theme": "workspace:0.0.1"
-    graphql: ^16.3.0
+    graphql: ^16.5.0
     http-server: ^14.1.0
     next: ^12.1.0
     react: ^17.0.2
@@ -1619,6 +1619,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@envelop/core@npm:*":
+  version: 2.3.3
+  resolution: "@envelop/core@npm:2.3.3"
+  dependencies:
+    "@envelop/types": 2.2.1
+  peerDependencies:
+    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 06a851265bd956f8bf2a91fb77c5e06d41b54fffabcb3701c74412abf295a9a199b6b0e403730e98a247c2d69917a35297bce2c39f5cfa274d5134e5b8504c12
+  languageName: node
+  linkType: hard
+
+"@envelop/types@npm:2.2.1":
+  version: 2.2.1
+  resolution: "@envelop/types@npm:2.2.1"
+  peerDependencies:
+    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 294c282b72eecfc78c580ac815ecf96eb2bd6e03ee6fe5e3ec11400a438b2ff361f89b2ec95a0b82ea1b0def7b5efe8a9f995fa795910fd645e36ed30a849746
+  languageName: node
+  linkType: hard
+
 "@eslint/eslintrc@npm:^1.3.0":
   version: 1.3.0
   resolution: "@eslint/eslintrc@npm:1.3.0"
@@ -1804,7 +1824,7 @@ __metadata:
     "@nestjs/graphql": ^10.0.7
     "@nestjs/microservices": ^8.4.5
     dataloader: ^2.1.0
-    graphql: ^16.3.0
+    graphql: ^16.5.0
     rxjs: ^7.5.5
     ts-morph: ^13.0.3
   peerDependencies:
@@ -1912,7 +1932,7 @@ __metadata:
     "@apollo/client": ^3.6.5
     "@atls/react-app-links": 0.0.2
     "@types/react": ^17.0.38
-    graphql: ^16.3.0
+    graphql: ^16.5.0
     react: ^17.0.2
   peerDependencies:
     "@apollo/client": ^3.6.5
@@ -2260,7 +2280,7 @@ __metadata:
     apollo-server-express: 2.25.2
     class-transformer: ^0.4.0
     class-validator: ^0.13.1
-    graphql: ^15.6.1
+    graphql: ^16.5.0
     reflect-metadata: 0.1.13
     rxjs: 7.4.0
   languageName: unknown
@@ -2291,7 +2311,7 @@ __metadata:
     class-validator: ^0.13.2
     express: ^4.17.3
     express-graphql: "*"
-    graphql: 16.3.0
+    graphql: 16.5.0
     reflect-metadata: 0.1.13
     rxjs: 7.5.5
     ts-morph: ^13.0.3
@@ -5021,9 +5041,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/typeorm@npm:8.1.2, @nestjs/typeorm@npm:^8.0.3, @nestjs/typeorm@npm:^8.0.4":
-  version: 8.1.2
-  resolution: "@nestjs/typeorm@npm:8.1.2"
+"@nestjs/typeorm@npm:8.0.4":
+  version: 8.0.4
+  resolution: "@nestjs/typeorm@npm:8.0.4"
   dependencies:
     uuid: 8.3.2
   peerDependencies:
@@ -5031,8 +5051,8 @@ __metadata:
     "@nestjs/core": ^8.0.0
     reflect-metadata: ^0.1.13
     rxjs: ^7.2.0
-    typeorm: ^0.3.0
-  checksum: 9cb93ce1ccb3948084d64e36e11759517c6abb41a5d111accfaf210ff78ce3c53162f7715900b468d6697d122b44266320f9fa59dd777a5c66ff43fb7a41d765
+    typeorm: ^0.2.34
+  checksum: 26b66e4768c02e3dcf5bf487eedcf592ac09e0c80cba3ecba9a0429bb9268ff2b8421a6c165909d27b73e1e170c470d792d9ffc390a4f7480ef749b6f1a01a24
   languageName: node
   linkType: hard
 
@@ -12463,21 +12483,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:*, graphql@npm:^16.3.0, graphql@npm:^16.5.0":
+"graphql@npm:*, graphql@npm:16.5.0, graphql@npm:^16.5.0":
   version: 16.5.0
   resolution: "graphql@npm:16.5.0"
   checksum: a82a926d085818934d04fdf303a269af170e79de943678bd2726370a96194f9454ade9d6d76c2de69afbd7b9f0b4f8061619baecbbddbe82125860e675ac219e
   languageName: node
   linkType: hard
 
-"graphql@npm:16.3.0":
-  version: 16.3.0
-  resolution: "graphql@npm:16.3.0"
-  checksum: ba540641e9cd2a8de5b989ff1433b015f232fa73aaef478d6709c1339cd43113347917acb965a5799c004667687852fc8ff0cfaa935eb26374c91c1fd7fdaeb1
-  languageName: node
-  linkType: hard
-
-"graphql@npm:^15.6.1":
+"graphql@npm:15":
   version: 15.8.0
   resolution: "graphql@npm:15.8.0"
   checksum: 423325271db8858428641b9aca01699283d1fe5b40ef6d4ac622569ecca927019fce8196208b91dd1d8eb8114f00263fe661d241d0eb40c10e5bfd650f86ec5e

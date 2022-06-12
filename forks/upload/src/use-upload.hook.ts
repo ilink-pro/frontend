@@ -30,7 +30,7 @@ const upload = async (url: string, file: File) => {
       body: file,
       headers: {
         'Content-Type': file.type,
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
       },
     })
     // eslint-disable-next-line no-empty

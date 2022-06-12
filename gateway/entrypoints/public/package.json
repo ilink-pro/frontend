@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "apollo-server-core": "*",
-    "graphql": "16.3.0"
+    "graphql": "16.5.0"
   },
   "devDependencies": {
     "@apollo/gateway": "^2.0.3",
