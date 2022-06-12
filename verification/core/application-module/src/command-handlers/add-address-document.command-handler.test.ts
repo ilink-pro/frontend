@@ -33,7 +33,7 @@ describe('verification', () => {
         repository.save = jest.fn().mockResolvedValue(undefined)
         repository.findById = jest.fn().mockResolvedValue(applicant)
 
-        const command = new AddAddressDocumentCommand('id', 'id2', Buffer.from('file'))
+        const command = new AddAddressDocumentCommand('id', 'id2', 'fileId')
 
         await expect(handler.execute(command)).resolves.toEqual(undefined)
 

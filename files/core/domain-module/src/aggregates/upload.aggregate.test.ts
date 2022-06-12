@@ -54,7 +54,7 @@ describe('project aggregate', () => {
     try {
       await upload.create(uuid(), uuid(), 'undefined', 'test.png', 206)
     } catch (error) {
-      expect(error.message).toEqual('Files bucket undefined not found')
+      expect((error as any).message).toEqual('Files bucket undefined not found')
     }
   })
 
@@ -66,7 +66,7 @@ describe('project aggregate', () => {
     try {
       await upload.create(uuid(), uuid(), 'test', 'test.zip', 206)
     } catch (error) {
-      expect(error.message).toEqual(
+      expect((error as any).message).toEqual(
         `Files bucket test not support type 'application/zip', only 'image/*'.`
       )
     }
@@ -80,7 +80,7 @@ describe('project aggregate', () => {
     try {
       await upload.create(uuid(), uuid(), 'test', 'test.png', 2000)
     } catch (error) {
-      expect(error.message).toEqual(
+      expect((error as any).message).toEqual(
         'File size must be greater than 0 and less than 1000, current size is 2000'
       )
     }
@@ -130,7 +130,7 @@ describe('project aggregate', () => {
     try {
       await upload.confirm(owner)
     } catch (error) {
-      expect(error.message).toEqual('Upload already confirmed.')
+      expect((error as any).message).toEqual('Upload already confirmed.')
     }
   })
 
@@ -144,7 +144,7 @@ describe('project aggregate', () => {
     try {
       await upload.confirm(uuid())
     } catch (error) {
-      expect(error.message).toEqual('Upload initiator does not match the endorsement.')
+      expect((error as any).message).toEqual('Upload initiator does not match the endorsement.')
     }
   })
 })

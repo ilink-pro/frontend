@@ -5,15 +5,15 @@ export class IdDocument {
 
   #type!: DocumentType
 
-  #frontSide!: Buffer
+  #frontSideId!: string
 
-  #backSide!: Buffer
+  #backSideId!: string
 
-  constructor(id: string, type: DocumentType, frontSide: Buffer, backSide: Buffer) {
+  constructor(id: string, type: DocumentType, frontSideId: string, backSideId: string) {
     this.#id = id
     this.#type = type
-    this.#frontSide = frontSide
-    this.#backSide = backSide
+    this.#frontSideId = frontSideId
+    this.#backSideId = backSideId
   }
 
   get id() {
@@ -24,20 +24,20 @@ export class IdDocument {
     return this.#type
   }
 
-  get frontSide() {
-    return this.#frontSide
+  get frontSideId() {
+    return this.#frontSideId
   }
 
-  get backSide() {
-    return this.#backSide
+  get backSideId() {
+    return this.#backSideId
   }
 
   get properties() {
     return {
       id: this.#id,
       type: this.#type,
-      frontSide: this.#frontSide,
-      backSide: this.#backSide,
+      frontSideId: this.#frontSideId,
+      backSideId: this.#backSideId,
     }
   }
 }

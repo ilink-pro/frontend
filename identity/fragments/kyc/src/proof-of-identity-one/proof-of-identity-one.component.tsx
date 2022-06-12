@@ -16,8 +16,6 @@ import { DocumentType }            from '../store'
 import { ProofOfIdentityOneProps } from './proof-of-identity-one.interfaces'
 import { stepVar }                 from '../store'
 import { documentTypeVar }         from '../store'
-import { frontSideVar }            from '../store'
-import { backSideVar }             from '../store'
 
 const endpoint = process.env.PUBLIC_GATEWAY_URL || 'https://public-gateway.torin-asakura.support/'
 

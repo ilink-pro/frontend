@@ -1,6 +1,5 @@
 import { NestLogger }                   from '@atls/nestjs-logger'
 import { NestFactory }                  from '@nestjs/core'
-import { Transport }                    from '@nestjs/microservices'
 
 import { serverOptions }                from '@files/grpc-adapter-module'
 
@@ -14,14 +13,6 @@ const bootstrap = async () => {
   })
 
   app.connectMicroservice(serverOptions)
-  app.connectMicroservice({
-    name: 'FILES_SERVICE',
-    transport: Transport.RMQ,
-    options: {
-      urls: ['amqp://local:password@localhost:5672'],
-      queue: 'files_queue',
-    },
-  })
 
   app.enableShutdownHooks()
 

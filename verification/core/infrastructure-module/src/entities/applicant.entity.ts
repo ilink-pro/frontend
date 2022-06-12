@@ -3,6 +3,7 @@ import { Column }                from 'typeorm'
 import { PrimaryColumn }         from 'typeorm'
 import { OneToOne }              from 'typeorm'
 import { OneToMany }             from 'typeorm'
+import { JoinColumn }            from 'typeorm'
 
 import { AddressDocumentEntity } from './address-document.entity'
 import { IdDocumentEntity }      from './id-document.entity'
@@ -55,10 +56,12 @@ export class ApplicantEntity {
   sumsubId!: string
 
   @OneToOne(() => IdDocumentEntity, (idDocument) => idDocument.applicant, { cascade: true })
+  @JoinColumn()
   idDocument!: IdDocumentEntity
 
   @OneToMany(() => AddressDocumentEntity, (addressDocument) => addressDocument.applicant, {
     cascade: true,
   })
+  @JoinColumn()
   addressDocuments!: Array<AddressDocumentEntity>
 }

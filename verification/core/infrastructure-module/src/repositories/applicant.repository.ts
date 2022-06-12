@@ -34,7 +34,10 @@ export class ApplicantRepositoryImpl extends ApplicantRepository {
   }
 
   async findById(id: string): Promise<Applicant | undefined> {
-    const entity = await this.repository.findOne({ id })
+    const entity = await this.repository.findOne(
+      { id },
+      { relations: ['idDocument', 'addressDocuments'] }
+    )
 
     return entity ? this.entityToAggregate(entity) : undefined
   }
@@ -47,11 +50,11 @@ export class ApplicantRepositoryImpl extends ApplicantRepository {
         new IdDocument(
           entity.idDocument.id,
           entity.idDocument.type,
-          entity.idDocument.frontSide,
-          entity.idDocument.backSide
+          entity.idDocument.frontSideId,
+          entity.idDocument.backSideId
         ),
       addressDocuments: (entity.addressDocuments || []).map(
-        (addressDocument) => new AddressDocument(addressDocument.id, addressDocument.file)
+        (addressDocument) => new AddressDocument(addressDocument.id, addressDocument.fileId)
       ),
     })
   }

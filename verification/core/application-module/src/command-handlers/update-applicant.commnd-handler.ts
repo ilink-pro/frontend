@@ -1,11 +1,12 @@
-import { CommandHandler }         from '@nestjs/cqrs'
-import { ICommandHandler }        from '@nestjs/cqrs'
+import { CommandHandler }             from '@nestjs/cqrs'
+import { ICommandHandler }            from '@nestjs/cqrs'
 
-import assert                     from 'assert'
+import assert                         from 'assert'
 
-import { ApplicantRepository }    from '@verification/domain-module'
+import { ApplicantRepository }        from '@verification/domain-module'
 
-import { UpdateApplicantCommand } from '../commands'
+import { UpdateApplicantCommand }     from '../commands'
+import { ApplicantNotFoundException } from '../exceptions'
 
 @CommandHandler(UpdateApplicantCommand)
 export class UpdateApplicantCommndHandler implements ICommandHandler<UpdateApplicantCommand, void> {
@@ -14,7 +15,7 @@ export class UpdateApplicantCommndHandler implements ICommandHandler<UpdateAppli
   async execute(command: UpdateApplicantCommand) {
     const applicant = await this.applicantRepository.findById(command.id)
 
-    assert.ok(applicant)
+    assert.ok(applicant, new ApplicantNotFoundException({ applicantId: command.id }))
 
     await applicant.update(
       command.firstName,

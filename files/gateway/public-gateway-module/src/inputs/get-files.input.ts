@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import { Field }     from '@nestjs/graphql'
 import { InputType } from '@nestjs/graphql'
 

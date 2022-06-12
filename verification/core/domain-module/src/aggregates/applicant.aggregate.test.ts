@@ -311,24 +311,21 @@ describe('verification', () => {
 
         applicant.commit()
 
-        const fsBuffer = Buffer.from('frontSide')
-        const bsBuffer = Buffer.from('backSide')
-
-        applicant.addIdDocument('id', DocumentType.PASSPORT, fsBuffer, bsBuffer)
+        applicant.addIdDocument('id', DocumentType.PASSPORT, 'fsId', 'bsId')
 
         expect(applicant.idDocument).toBeDefined()
         expect(applicant.idDocument.id).toBe('id')
         expect(applicant.idDocument.type).toBe(DocumentType.PASSPORT)
-        expect(applicant.idDocument.frontSide).toBe(fsBuffer)
-        expect(applicant.idDocument.backSide).toBe(bsBuffer)
+        expect(applicant.idDocument.frontSideId).toBe('fsId')
+        expect(applicant.idDocument.backSideId).toBe('bsId')
 
         expect(applicant.getUncommittedEvents()).toEqual(
           expect.arrayContaining([
             expect.objectContaining({
               idDocumentId: 'id',
               type: DocumentType.PASSPORT,
-              frontSide: fsBuffer,
-              backSide: bsBuffer,
+              frontSideId: 'fsId',
+              backSideId: 'bsId',
             }),
           ])
         )
@@ -357,9 +354,9 @@ describe('verification', () => {
         applicant.commit()
 
         const addressDocuments = [
-          new AddressDocument('id1', Buffer.from('file1')),
-          new AddressDocument('id2', Buffer.from('file2')),
-          new AddressDocument('id3', Buffer.from('file3')),
+          new AddressDocument('id1', 'file1'),
+          new AddressDocument('id2', 'file2'),
+          new AddressDocument('id3', 'file3'),
         ]
 
         applicant.addAddressDocuments(addressDocuments)

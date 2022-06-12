@@ -38,8 +38,8 @@ describe('verification', () => {
           'id',
           'id2',
           DocumentType.PASSPORT,
-          Buffer.from('file1'),
-          Buffer.from('file2')
+          'file1',
+          'file2'
         )
 
         await expect(handler.execute(command)).resolves.toEqual(undefined)

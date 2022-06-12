@@ -1,25 +1,25 @@
 export class AddressDocument {
   #id!: string
 
-  #file!: Buffer
+  #fileId!: string
 
-  constructor(id: string, file: Buffer) {
+  constructor(id: string, fileId: string) {
     this.#id = id
-    this.#file = file
+    this.#fileId = fileId
   }
 
   get id() {
     return this.#id
   }
 
-  get file() {
-    return this.#file
+  get fileId() {
+    return this.#fileId
   }
 
   get properties() {
     return {
       id: this.#id,
-      file: this.#file,
+      fileId: this.#fileId,
     }
   }
 }

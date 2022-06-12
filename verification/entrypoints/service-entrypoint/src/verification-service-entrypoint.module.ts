@@ -1,6 +1,4 @@
 import { Module }                           from '@nestjs/common'
-import { ClientsModule }                    from '@nestjs/microservices'
-import { Transport }                        from '@nestjs/microservices'
 
 import { VerificationApplicationModule }    from '@verification/application-module'
 import { CqrsAdapterModule }                from '@verification/cqrs-adapter-module'

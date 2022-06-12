@@ -40,6 +40,7 @@ import { countryOfResidenceVar }   from '../store'
 import { reasonsForOpeningVar }    from '../store'
 import { accountWillBeUsedForVar } from '../store'
 
+// eslint-disable-next-line
 const useAction = (isExist: boolean) => (isExist ? useUpdateApplicant() : useCreateApplicant())
 
 const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
@@ -72,7 +73,7 @@ const BasicInformation: FC<BasicInformationProps> = ({ nextStep }) => {
       reasonsForOpeningVar(applicant.reasonsForOpeningAnAccount)
       accountWillBeUsedForVar(applicant.accountWillBeUsedFor)
     }
-  }, [applicant])
+  }, [applicant, isExist])
 
   return (
     <Box width={['100%', '100%', 736]} backgroundColor='background.white'>

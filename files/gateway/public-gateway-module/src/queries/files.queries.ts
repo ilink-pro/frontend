@@ -1,4 +1,3 @@
-import { Metadata }                   from '@grpc/grpc-js'
 import { Inject }                     from '@nestjs/common'
 import { Context }                    from '@nestjs/graphql'
 import { Args }                       from '@nestjs/graphql'

@@ -24,19 +24,6 @@ services:
       - '.config/traefik/:/configuration/'
       - '.config/certs:/certs/'
 
-  rabbitmq:
-    build:
-      context: ./config/rabbitmq/
-      dockerfile: ./Dockerfile
-    ports:
-      - 4369:4369
-      - 5671:5671
-      - 5672:5672
-      - 15672:15672
-    environment:
-      - RABBITMQ_DEFAULT_USER=local
-      - RABBITMQ_DEFAULT_PASS=password
-
   db:
     image: bitnami/postgresql
     environment:
@@ -169,7 +156,8 @@ services:
       - .env
     depends_on:
       - db
-      - rabbitmq
+    ports:
+      - 50051:50051
 
   private-gateway:
     image: node:16
