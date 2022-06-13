@@ -58,8 +58,8 @@ type Applicant {
 
 type IdDocument {
   type: DocumentType
-  frontSide: Byte
-  backSide: Byte
+  frontSideId: String
+  backSideId: String
 }
 
 enum DocumentType {
@@ -68,11 +68,8 @@ enum DocumentType {
   RESIDENCE_PERMIT
 }
 
-"The `Byte` scalar type represents byte value as a Buffer"
-scalar Byte
-
 type AddressDocument {
-  file: Byte
+  fileId: String
 }
 
 input GetApplicantInput {
@@ -147,8 +144,8 @@ type AddIdDocumentResponse {
 input AddIdDocumentInput {
   id: String
   type: DocumentType
-  frontSide: Byte
-  backSide: Byte
+  frontSideId: String
+  backSideId: String
 }
 
 type AddAddressDocumentsResponse {
@@ -161,7 +158,7 @@ input AddAddressDocumentsInput {
 }
 
 input AddressDocument_Input {
-  file: Byte
+  fileId: String
 }
 
 type UpdateApplicantResponse {
