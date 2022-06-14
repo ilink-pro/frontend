@@ -1,4 +1,3 @@
-import { Type }                 from 'class-transformer'
 import { IsNotEmpty }           from 'class-validator'
 import { IsString }             from 'class-validator'
 import { IsEnum }               from 'class-validator'
@@ -16,10 +15,10 @@ export class AddIdDocumentDto implements AddIdDocumentRequest {
   type!: DocumentType
 
   @IsNotEmpty()
-  @Type(() => Uint8Array)
-  frontSide!: Uint8Array
+  @IsString()
+  frontSideId!: string
 
   @IsNotEmpty()
-  @Type(() => Uint8Array)
-  backSide!: Uint8Array
+  @IsString()
+  backSideId!: string
 }

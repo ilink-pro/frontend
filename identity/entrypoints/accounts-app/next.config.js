@@ -1,8 +1,8 @@
 module.exports = {
   experimental: {
     externalDir: true,
-    workerThreads: true,
     swcFileReading: false,
+    workerThreads: true,
     esmExternals: 'loose',
     outputStandalone: true,
   },

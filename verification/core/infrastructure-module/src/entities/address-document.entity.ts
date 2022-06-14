@@ -10,8 +10,8 @@ export class AddressDocumentEntity {
   @PrimaryColumn('uuid')
   id!: string
 
-  @Column('bytea')
-  file!: Buffer
+  @Column()
+  fileId!: string
 
   @ManyToOne(() => ApplicantEntity, (applicant) => applicant.addressDocuments)
   applicant!: ApplicantEntity

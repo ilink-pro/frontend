@@ -2,11 +2,11 @@ import { Transport }                        from '@nestjs/microservices'
 import { GrpcOptions }                      from '@nestjs/microservices'
 import { serverReflectionPath }             from '@atls/nestjs-grpc-reflection/proto'
 
-import { filesServicePath }                 from '@files/files-service-proto'
-import { protobufPackage }                  from '@files/files-service-proto'
-import { includeDirs as filesIncludeDirs }  from '@files/files-service-proto'
-import { uploadServicePath }                from '@files/upload-service-proto'
-import { includeDirs as uploadIncludeDirs } from '@files/upload-service-proto'
+import { filesServicePath }                 from '@files/files-proto'
+import { protobufPackage }                  from '@files/files-proto'
+import { includeDirs as filesIncludeDirs }  from '@files/files-proto'
+import { uploadServicePath }                from '@files/upload-proto'
+import { includeDirs as uploadIncludeDirs } from '@files/upload-proto'
 
 export const serverOptions: GrpcOptions = {
   transport: Transport.GRPC,

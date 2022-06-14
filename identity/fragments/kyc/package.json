@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "main": "src/index.tsx",
+  "dependencies": {
+    "@forks/react-upload": "workspace:0.0.1"
+  },
   "devDependencies": {
     "@apollo/client": "^3.6.2",
     "@apollo/react-testing": "^4.0.0",

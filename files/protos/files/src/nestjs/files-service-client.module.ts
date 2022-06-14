@@ -3,9 +3,9 @@ import { Module }             from '@nestjs/common'
 import { ClientProxyFactory } from '@nestjs/microservices'
 import { Transport }          from '@nestjs/microservices'
 
-import { FilesServiceClient } from '../gen/nestjs/tech/ilink/files/v1alpha1/files_service'
-import { FILES_SERVICE_NAME } from '../gen/nestjs/tech/ilink/files/v1alpha1/files_service'
-import { protobufPackage }    from '../gen/nestjs/tech/ilink/files/v1alpha1/files_service'
+import { FilesServiceClient } from '../gen/nestjs/tech/atls/files/v1alpha1/files_service'
+import { FILES_SERVICE_NAME } from '../gen/nestjs/tech/atls/files/v1alpha1/files_service'
+import { protobufPackage }    from '../gen/nestjs/tech/atls/files/v1alpha1/files_service'
 import { filesServicePath }   from '../paths'
 import { includeDirs }        from '../paths'
 

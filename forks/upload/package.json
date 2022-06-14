@@ -1,0 +1,20 @@
+{
+  "name": "@forks/react-upload",
+  "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@atls/react-app-links": "0.0.2"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.6.5",
+    "@types/react": "^17.0.38",
+    "graphql": "^16.5.0",
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "@apollo/client": "^3.6.5",
+    "graphql": "^16.3.0",
+    "react": "^17.0.1"
+  }
+}

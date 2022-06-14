@@ -25,12 +25,12 @@ export interface AccessToken {
 
 export interface IdDocument {
   type: DocumentType
-  frontSide: Uint8Array
-  backSide: Uint8Array
+  frontSideId: string
+  backSideId: string
 }
 
 export interface AddressDocument {
-  file: Uint8Array
+  fileId: string
 }
 
 export interface Applicant {

@@ -8,7 +8,7 @@ serve:
     cors:
       enabled: true
       allowed_origins:
-        - 'http://localhost:3000'
+        - 'https://accounts.torin-asakura.support'
         - 'http://localhost:4434'
       allowed_methods:
         - POST
@@ -27,11 +27,10 @@ serve:
     base_url: http://kratos:4434/
 
 selfservice:
-  default_browser_return_url: http://localhost:3001/
+  default_browser_return_url: https://accounts.torin-asakura.support/
   whitelisted_return_urls:
-    - http://localhost:3000/
+    - https://accounts.torin-asakura.support/
     - http://localhost:4434/
-    - http://localhost:3001/
 
   methods:
     password:
@@ -39,27 +38,27 @@ selfservice:
 
   flows:
     error:
-      ui_url: http://localhost:3000/auth/error
+      ui_url: https://accounts.torin-asakura.support/auth/error
     settings:
-      ui_url: http://localhost:3000/auth/settings
+      ui_url: https://accounts.torin-asakura.support/auth/settings
       privileged_session_max_age: 15m
     recovery:
       enabled: true
-      ui_url: http://localhost:3000/auth/recovery
+      ui_url: https://accounts.torin-asakura.support/auth/recovery
     verification:
       enabled: true
-      ui_url: http://localhost:3000/auth/verify
+      ui_url: https://accounts.torin-asakura.support/auth/verify
       after:
         default_browser_return_url: http://localhost:3001/
     logout:
       after:
-        default_browser_return_url: http://localhost:3000/auth/login
+        default_browser_return_url: https://accounts.torin-asakura.support/auth/login
     login:
-      ui_url: http://localhost:3000/auth/login
+      ui_url: https://accounts.torin-asakura.support/auth/login
       lifespan: 10m
     registration:
       lifespan: 10m
-      ui_url: http://localhost:3000/auth/registration
+      ui_url: https://accounts.torin-asakura.support/auth/registration
       after:
         password:
           hooks:
@@ -70,7 +69,7 @@ selfservice:
 
 session:
   cookie:
-    domain: localhost
+    domain: torin-asakura.support
 
 log:
   level: debug

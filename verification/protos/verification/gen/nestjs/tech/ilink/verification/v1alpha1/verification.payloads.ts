@@ -1,13 +1,10 @@
-import _m0  from 'protobufjs/minimal'
+import _m0                    from 'protobufjs/minimal'
 /* eslint-disable */
-import Long from 'long'
+import Long                   from 'long'
 
-import { AddressDocument } from '../../../../tech/ilink/verification/v1alpha1/verification.types'
-
-import { Applicant } from '../../../../tech/ilink/verification/v1alpha1/verification.types'
-
-import { DocumentType } from '../../../../tech/ilink/verification/v1alpha1/verification.types'
-
+import { AddressDocument }    from '../../../../tech/ilink/verification/v1alpha1/verification.types'
+import { Applicant }          from '../../../../tech/ilink/verification/v1alpha1/verification.types'
+import { DocumentType }       from '../../../../tech/ilink/verification/v1alpha1/verification.types'
 import { VerificationStatus } from '../../../../tech/ilink/verification/v1alpha1/verification.types'
 
 export const protobufPackage = 'tech.ilink.verification.v1alpha1'
@@ -43,8 +40,8 @@ export interface CreateApplicantResponse {
 export interface AddIdDocumentRequest {
   id: string
   type: DocumentType
-  frontSide: Uint8Array
-  backSide: Uint8Array
+  frontSideId: string
+  backSideId: string
 }
 
 export interface AddIdDocumentResponse {

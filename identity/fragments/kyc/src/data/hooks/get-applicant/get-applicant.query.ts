@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client'
 
 export const GET_APPLICANT = gql`
-  query GetApplicant($id: String!) {
-    getApplicant(input: { query: { id: $id } }) {
+  query GetApplicant($input: GetApplicantInput) {
+    getApplicant(input: $input) {
       applicant {
         id
         firstName

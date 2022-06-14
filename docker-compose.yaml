@@ -8,6 +8,22 @@ services:
       - ./:/workspace
     entrypoint: yarn
 
+  traefik:
+    image: traefik:v2.6
+    command:
+      - --entrypoints.web.address=:80
+      - --entrypoints.web-secure.address=:443
+      - --providers.docker=true
+      - --providers.file.directory=/configuration/
+      - --providers.file.watch=true
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '.config/traefik/:/configuration/'
+      - '.config/certs:/certs/'
+
   db:
     image: bitnami/postgresql
     environment:
@@ -16,13 +32,11 @@ services:
     ports:
       - 5432:5432
 
-  gcs:
-    image: fsouza/fake-gcs-server
-    command: -scheme http -external-url http://localhost:8600
-    volumes:
-      - .data/gcs:/data
+  mailslurper:
+    image: oryd/mailslurper:latest-smtps
     ports:
-      - 8600:4443
+      - '4436:4436'
+      - '4437:4437'
 
   kratos-migrate:
     depends_on:
@@ -55,12 +69,36 @@ services:
       - type: bind
         source: ./config/ory/kratos
         target: /config/kratos
+    labels:
+      - 'traefik.http.services.identity.loadbalancer.server.port=4433'
+      - 'traefik.http.routers.identity.rule=Host(`identity.torin-asakura.support`)'
+      - 'traefik.http.routers.identity.tls=true'
 
-  mailslurper:
-    image: oryd/mailslurper:latest-smtps
-    ports:
-      - '4436:4436'
-      - '4437:4437'
+  oathkeeper-migrate:
+    image: oryd/oathkeeper:v0.38.25
+    environment:
+      - DSN=postgres://postgres:password@db:5432/db?sslmode=disable&max_conns=20&max_idle_conns=4
+    command: migrate sql -e --yes
+    restart: on-failure
+
+  oathkeeper:
+    image: oryd/oathkeeper:v0.38.25
+    command: serve serve --config /etc/config/oathkeeper/config.yaml
+    volumes:
+      - type: bind
+        source: .config/oathkeeper
+        target: /etc/config/oathkeeper
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/db?sslmode=disable&max_conns=20&max_idle_conns=4
+    restart: unless-stopped
+    depends_on:
+      - oathkeeper-migrate
+      - db
+    labels:
+      - 'traefik.http.middlewares.oathkeeper.forwardauth.address=http://oathkeeper:4456/decisions'
+      - 'traefik.http.middlewares.oathkeeper.forwardauth.authResponseHeaders=X-User,Authorization'
+      - 'traefik.http.middlewares.oathkeeper.forwardauth.trustForwardHeader=true'
+      - 'traefik.http.services.oathkeeper.loadbalancer.server.port=4456'
 
   identity:
     image: node:16
@@ -69,18 +107,25 @@ services:
       - ./:/workspace
     entrypoint: yarn workspace @identity/accounts-app-entrypoint dev
     environment:
-      - KRATOS_PUBLIC_URL=http://kratos:4433/
-      - KRATOS_BROWSER_URL=http://localhost:4433/
-      - KRATOS_ADMIN_URL=http://kratos:4434/
-      - BASE_URL=http://localhost:3000
-      - PRIVATE_GATEWAY_URL=http://localhost:3001/
+      - KRATOS_PUBLIC_URL=https://identity.torin-asakura.support/
+      - KRATOS_BROWSER_URL=https://identity.torin-asakura.support/
+      - KRATOS_ADMIN_URL=https://identity.torin-asakura.support/
+      - BASE_URL=https://accounts.torin-asakura.support/
+      - PRIVATE_GATEWAY_URL=https://private-gateway.torin-asakura.support/
+      - PUBLIC_GATEWAY_URL=https://public-gateway.torin-asakura.support/
     depends_on:
       - kratos
       - private-gateway
+      - public-gateway
+      - traefik
     networks:
       - default
     ports:
       - 3000:3000
+    labels:
+      - 'traefik.http.services.accounts.loadbalancer.server.port=3000'
+      - 'traefik.http.routers.accounts.rule=Host(`accounts.torin-asakura.support`)'
+      - 'traefik.http.routers.accounts.tls=true'
 
   verification:
     image: node:16
@@ -97,6 +142,23 @@ services:
     depends_on:
       - db
 
+  files:
+    image: node:16
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn workspace @files/service-entrypoint dev
+    networks:
+      - default
+    environment:
+      - DB_HOST=db
+    env_file:
+      - .env
+    depends_on:
+      - db
+    ports:
+      - 50051:50051
+
   private-gateway:
     image: node:16
     working_dir: /workspace
@@ -111,3 +173,28 @@ services:
       - 3001:3000
     depends_on:
       - verification
+      - traefik
+    labels:
+      - 'traefik.http.services.private-gateway.loadbalancer.server.port=3000'
+      - 'traefik.http.routers.private-gateway.rule=Host(`private-gateway.torin-asakura.support`)'
+      - 'traefik.http.routers.private-gateway.tls=true'
+
+  public-gateway:
+    image: node:16
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn workspace @gateway/public-gateway-entrypoint dev
+    networks:
+      - default
+    environment:
+      - FILES_SERVICE_URL=files:50051
+    depends_on:
+      - files
+      - traefik
+    ports:
+      - 3002:3000
+    labels:
+      - 'traefik.http.services.public-gateway.loadbalancer.server.port=3000'
+      - 'traefik.http.routers.public-gateway.rule=Host(`public-gateway.torin-asakura.support`)'
+      - 'traefik.http.routers.public-gateway.tls=true'

@@ -1,0 +1,20 @@
+{
+  "name": "@identity/profile-settings-page",
+  "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "main": "src/index.tsx",
+  "devDependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@types/cookie": "^0.4.1",
+    "@types/cookies": "^0.7.7",
+    "@types/react": "^17.0.38",
+    "js-cookie": "^3.0.1"
+  },
+  "peerDependencies": {
+    "next": "*",
+    "react": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-intl": "^5.18.1"
+  }
+}

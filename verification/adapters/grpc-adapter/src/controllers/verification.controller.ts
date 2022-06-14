@@ -117,8 +117,8 @@ export class VerificationController implements VerificationServiceController {
       request.id,
       uuid(),
       request.type,
-      Buffer.from(request.frontSide),
-      Buffer.from(request.backSide)
+      request.frontSideId,
+      request.backSideId
     )
 
     await this.commandBus.execute(command)
@@ -130,7 +130,7 @@ export class VerificationController implements VerificationServiceController {
   async addAddressDocuments(request: AddAddressDocumentsDto): Promise<AddAddressDocumentsResponse> {
     for (const address of request.addressDocuments) {
       await this.commandBus.execute(
-        new AddAddressDocumentCommand(request.id, uuid(), Buffer.from(address.file))
+        new AddAddressDocumentCommand(request.id, uuid(), address.fileId)
       )
     }
 

@@ -1,7 +1,6 @@
 {
-  "name": "@files/upload-service-proto",
+  "name": "@files/upload-proto",
   "version": "0.0.1",
-  "private": true,
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
   "files": [

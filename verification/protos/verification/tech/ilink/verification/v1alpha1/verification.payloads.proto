@@ -35,8 +35,8 @@ message CreateApplicantResponse {
 message AddIdDocumentRequest {
   string id = 1;
   DocumentType type = 2;
-  bytes frontSide = 3;
-  bytes backSide = 4;
+  string frontSideId = 3;
+  string backSideId = 4;
 }
 
 message AddIdDocumentResponse {

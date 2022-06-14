@@ -9,7 +9,7 @@ import { ThemeProvider }  from '@ui/theme'
 
 const App = ({ Component, pageProps, ...props }) => {
   const client = new ApolloClient({
-    uri: process.env.PRIVATE_GATEWAY_URL || 'http://localhost:3001/',
+    uri: process.env.PRIVATE_GATEWAY_URL || 'https://private-gateway.torin-asakura.support/',
     cache: new InMemoryCache(),
   })
 

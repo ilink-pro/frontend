@@ -10,7 +10,7 @@
     "start": "yarn node dist/index.js"
   },
   "dependencies": {
-    "@nestjs/common": "^8.3.1"
+    "@nestjs/common": "^8.4.5"
   },
   "devDependencies": {
     "@atls/grpc-error-status": "^0.0.3",
@@ -19,14 +19,15 @@
     "@atls/nestjs-grpc-playground": "0.0.8",
     "@atls/nestjs-logger": "^0.2.38",
     "@atls/nestjs-typeorm-seeding": "^0.0.5",
+    "@files/files-proto": "workspace:0.0.1",
     "@grpc/grpc-js": "^1.5.7",
     "@grpc/proto-loader": "^0.6.4",
-    "@nestjs/core": "^8.3.1",
-    "@nestjs/cqrs": "^8.0.2",
-    "@nestjs/microservices": "^8.3.1",
-    "@nestjs/platform-express": "^8.3.1",
-    "@nestjs/testing": "^8.3.1",
-    "@nestjs/typeorm": "^8.0.3",
+    "@nestjs/core": "^8.4.5",
+    "@nestjs/cqrs": "^8.0.4",
+    "@nestjs/microservices": "^8.4.5",
+    "@nestjs/platform-express": "^8.4.5",
+    "@nestjs/testing": "^8.4.5",
+    "@nestjs/typeorm": "^8.0.4",
     "@types/jsonwebtoken": "^8.5.4",
     "@types/node-fetch": "^2",
     "@types/uuid": "^8.3.1",

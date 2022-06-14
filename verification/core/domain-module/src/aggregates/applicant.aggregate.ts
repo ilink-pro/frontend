@@ -248,10 +248,10 @@ export class Applicant extends AggregateRoot {
   async addIdDocument(
     idDocumentId: string,
     type: DocumentType,
-    frontSide: Buffer,
-    backSide: Buffer
+    frontSideId: string,
+    backSideId: string
   ) {
-    this.apply(new IdDocumentAdded(idDocumentId, type, frontSide, backSide))
+    this.apply(new IdDocumentAdded(idDocumentId, type, frontSideId, backSideId))
 
     return this
   }
@@ -260,8 +260,8 @@ export class Applicant extends AggregateRoot {
     this.#idDocument = new IdDocument(
       event.idDocumentId,
       event.type,
-      event.frontSide,
-      event.backSide
+      event.frontSideId,
+      event.backSideId
     )
   }
 

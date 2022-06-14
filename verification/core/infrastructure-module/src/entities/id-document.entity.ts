@@ -18,11 +18,11 @@ export class IdDocumentEntity {
   })
   type!: DocumentType
 
-  @Column('bytea')
-  frontSide!: Buffer
+  @Column()
+  frontSideId!: string
 
-  @Column('bytea')
-  backSide!: Buffer
+  @Column()
+  backSideId!: string
 
   @OneToOne(() => ApplicantEntity, (applicant) => applicant.idDocument)
   applicant!: ApplicantEntity

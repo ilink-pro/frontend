@@ -7,8 +7,11 @@ import { GenericContainer }                           from 'testcontainers'
 import { StartedTestContainer }                       from 'testcontainers'
 import { Wait }                                       from 'testcontainers'
 import { firstValueFrom }                             from 'rxjs'
+import { v4 as uuid }                                 from 'uuid'
 
+import { FILES_SERVICE_CLIENT_TOKEN }                 from '@files/files-proto'
 import { SUMSUB_SERVICE }                             from '@verification/domain-module'
+import { DocumentType }                               from '@verification/domain-module'
 import { VERIFICATION_INFRASTRUCTURE_MODULE_OPTIONS } from '@verification/infrastructure-module'
 import { VerificationServiceClientModule }            from '@verification/verification-proto'
 import { VERIFICATION_SERVICE_CLIENT_TOKEN }          from '@verification/verification-proto'
@@ -17,6 +20,7 @@ import { serverOptions }                              from '@verification/verifi
 
 import { VerificationServiceEntrypointModule }        from '../src/verification-service-entrypoint.module'
 import { SumsubServiceMock }                          from './mocks'
+import { FilesServiceMock }                           from './mocks'
 
 jest.setTimeout(60000)
 
@@ -51,7 +55,9 @@ describe('verification', () => {
             },
           })
           .overrideProvider(SUMSUB_SERVICE)
-          .useValue(new SumsubServiceMock())
+          .useClass(SumsubServiceMock)
+          .overrideProvider(FILES_SERVICE_CLIENT_TOKEN)
+          .useClass(FilesServiceMock)
           .compile()
 
         service = module.createNestMicroservice({
@@ -248,6 +254,50 @@ describe('verification', () => {
 
         expect(response.applicant).toBeDefined()
         expect(response.applicant?.id).toBeDefined()
+      })
+
+      it('should verify applicant', async () => {
+        const applicant = await firstValueFrom(
+          client.createApplicant({
+            firstName: 'firstName',
+            lastName: 'lastName',
+            middleName: 'middleName',
+            dateOfBirth: '1996-06-20',
+            nationality: 'nationality',
+            countryOfBirth: 'countryOfBirth',
+            countryOfResidence: 'countryOfResidence',
+            reasonsForOpeningAnAccount: 'reasonsForOpeningAnAccount',
+            accountWillBeUsedFor: 'accountWillBeUsedFor',
+            city: 'city',
+            street: 'street',
+            apartmentOrHouse: 'apartmentOrHouse',
+            postalCode: 'postalCode',
+          })
+        )
+
+        await firstValueFrom(
+          client.addIdDocument({
+            id: applicant.id,
+            type: DocumentType.PASSPORT,
+            frontSideId: uuid(),
+            backSideId: uuid(),
+          })
+        )
+
+        await firstValueFrom(
+          client.addAddressDocuments({
+            id: applicant.id,
+            addressDocuments: [{ fileId: uuid() }],
+          })
+        )
+
+        const response = await firstValueFrom(
+          client.verifyApplicant({
+            id: applicant.id,
+          })
+        )
+
+        expect(response.id).toBe(applicant.id)
       })
     })
   })

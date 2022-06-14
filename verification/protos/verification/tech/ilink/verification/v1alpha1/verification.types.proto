@@ -21,12 +21,12 @@ enum VerificationStatus {
 
 message IdDocument {
   DocumentType type = 1;
-  bytes frontSide = 2;
-  bytes backSide = 3;
+  string frontSideId = 2;
+  string backSideId = 3;
 }
 
 message AddressDocument {
-  bytes file = 1;
+  string fileId = 1;
 }
 
 message Applicant {
